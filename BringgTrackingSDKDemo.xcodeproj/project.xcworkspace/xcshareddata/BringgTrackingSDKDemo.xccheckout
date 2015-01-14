@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>58CE33BC-D638-45C0-9CF0-22D0F5736EDC</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2E71EF8001AC343FA5A8A0CE362ECC600DD1D18C</key>
+		<string>https://github.com/bringg/customer-sdk-ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2E71EF8001AC343FA5A8A0CE362ECC600DD1D18C</key>
+		<string>BringgTracking/</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/bringg/customer-sdk-ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2E71EF8001AC343FA5A8A0CE362ECC600DD1D18C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2E71EF8001AC343FA5A8A0CE362ECC600DD1D18C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BringgTracking</string>
+		</dict>
+	</array>
+</dict>
+</plist>
