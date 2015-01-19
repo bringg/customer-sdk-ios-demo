@@ -55,12 +55,12 @@
     NSString *shareuuid = self.uuidField.text;
     
     if (uuid && [uuid length]) {
-        if ([self.tracker isMonitoringOrderWithUUID:uuid]) {
-            [self.tracker stopMonitorOrderWithUUID:uuid shareUUID:shareuuid];
+        if ([self.tracker isWatchingOrderWithUUID:uuid]) {
+            [self.tracker stopWatchingOrderWithUUID:uuid shareUUID:shareuuid];
             [self.orderButton setTitle:@"Monitor Order" forState:UIControlStateNormal];
             
         } else {
-            [self.tracker startMonitorOrederWithUUID:uuid shareUUID:shareuuid delegate:self];
+            [self.tracker startWatchingOrederWithUUID:uuid shareUUID:shareuuid delegate:self];
             [self.orderButton setTitle:@"Stop Monitor Order" forState:UIControlStateNormal];
             
         }
@@ -71,12 +71,12 @@
     NSString *uuid = self.driverField.text;
     NSString *shareuuid = self.uuidField.text;
     if (uuid && [uuid length]) {
-        if ([self.tracker isMonitoringDriverWithUUID:uuid]) {
-            [self.tracker stopMonitorDriverWithUUID:uuid shareUUID:shareuuid];
+        if ([self.tracker isWatchingDriverWithUUID:uuid]) {
+            [self.tracker stopWatchingDriverWithUUID:uuid shareUUID:shareuuid];
             [self.driverButton setTitle:@"Monitor Driver" forState:UIControlStateNormal];
             
         } else {
-            [self.tracker startMonitorDriverWithUUID:uuid shareUUID:shareuuid delegate:self];
+            [self.tracker startWatchingDriverWithUUID:uuid shareUUID:shareuuid delegate:self];
             [self.driverButton setTitle:@"Stop Monitor Driver" forState:UIControlStateNormal];
             
         }
@@ -99,7 +99,7 @@
    
 }
 
-- (void)orderMonitoringFailedForOrederWithUUID:(NSString *)uuid error:(NSError *)error {
+- (void)watchOrderFailedForOrederWithUUID:(NSString *)uuid error:(NSError *)error {
     self.orderLabel.text = [NSString stringWithFormat:@"Failed %@, error %@", uuid, error];
     [self.orderButton setTitle:@"Monitor Order" forState:UIControlStateNormal];
     
@@ -135,7 +135,7 @@
     
 }
 
-- (void)driverMonitoringFailedForDriverWithUUID:(NSString *)uuid error:(NSError *)error {
+- (void)watchDriverFailedForDriverWithUUID:(NSString *)uuid error:(NSError *)error {
     self.driverLabel.text = [NSString stringWithFormat:@"Monitoring failed for %@, error %@", uuid, error];
     [self.driverButton setTitle:@"Monitor Driver" forState:UIControlStateNormal];
     
