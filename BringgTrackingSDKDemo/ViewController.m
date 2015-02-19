@@ -28,14 +28,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    // Dismiss the keyboard when the user taps outside of a text field
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyBoard)];
+    [self.view addGestureRecognizer:singleTap];
+    singleTap.cancelsTouchesInView = NO;
 
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 
+}
+
+- (void)hideKeyBoard {
+    [self.orderField resignFirstResponder];
+    [self.driverField resignFirstResponder];
+    [self.uuidField resignFirstResponder];
+    
 }
 
 - (IBAction)connect:(id)sender {
@@ -52,15 +62,14 @@
 
 - (IBAction)monitorOrder:(id)sender {
     NSString *uuid = self.orderField.text;
-    NSString *shareuuid = self.uuidField.text;
     
     if (uuid && [uuid length]) {
         if ([self.tracker isWatchingOrderWithUUID:uuid]) {
-            [self.tracker stopWatchingOrderWithUUID:uuid shareUUID:shareuuid];
+            [self.tracker stopWatchingOrderWithUUID:uuid];
             [self.orderButton setTitle:@"Monitor Order" forState:UIControlStateNormal];
             
         } else {
-            [self.tracker startWatchingOrederWithUUID:uuid shareUUID:shareuuid delegate:self];
+            [self.tracker startWatchingOrederWithUUID:uuid delegate:self];
             [self.orderButton setTitle:@"Stop Monitor Order" forState:UIControlStateNormal];
             
         }
@@ -142,7 +151,7 @@
 }
 
 - (void)driverLocationDidChangedWithDriverUUID:(NSString *)driverUUID lat:(NSNumber *)lat lng:(NSNumber *)lng {
-    self.driverLabel.text = [NSString stringWithFormat:@"uuid %@, lat %@, lng %@", driverUUID, lat, lng];
+    self.driverLabel.text = [NSString stringWithFormat:@"lat %@, lng %@", lat, lng];
     
 }
 
