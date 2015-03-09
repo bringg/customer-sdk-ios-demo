@@ -15,6 +15,7 @@
 		A913A49A1A41CFF90002AE32 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A913A4981A41CFF90002AE32 /* LaunchScreen.xib */; };
 		A913A4A61A41CFF90002AE32 /* BringgTrackingSDKDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A913A4A51A41CFF90002AE32 /* BringgTrackingSDKDemoTests.m */; };
 		A99163F51A5165A5008BADCD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A99163F41A5165A5008BADCD /* SystemConfiguration.framework */; };
+		A9A2F7101AADB0F1003038E8 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A2F70F1AADB0F1003038E8 /* MobileCoreServices.framework */; };
 		A9E71BBC1A4304A3000BA846 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A94B8A1A42F295006C5A58 /* libicucore.dylib */; };
 		A9E71BBD1A4304A8000BA846 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A94B881A42F284006C5A58 /* CFNetwork.framework */; };
 		A9E71BBE1A4304AA000BA846 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A94B861A42F279006C5A58 /* Security.framework */; };
@@ -60,6 +61,8 @@
 		A913A4A41A41CFF90002AE32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A913A4A51A41CFF90002AE32 /* BringgTrackingSDKDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BringgTrackingSDKDemoTests.m; sourceTree = "<group>"; };
 		A99163F41A5165A5008BADCD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		A9A2F70E1AADADF3003038E8 /* BringgCustomer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BringgCustomer.h; sourceTree = "<group>"; };
+		A9A2F70F1AADB0F1003038E8 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		A9A94B841A42F272006C5A58 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A9A94B861A42F279006C5A58 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		A9A94B881A42F284006C5A58 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -75,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9A2F7101AADB0F1003038E8 /* MobileCoreServices.framework in Frameworks */,
 				A99163F51A5165A5008BADCD /* SystemConfiguration.framework in Frameworks */,
 				A9E71BBC1A4304A3000BA846 /* libicucore.dylib in Frameworks */,
 				A9E71BBD1A4304A8000BA846 /* CFNetwork.framework in Frameworks */,
@@ -97,6 +101,7 @@
 		A913A47D1A41CFF80002AE32 = {
 			isa = PBXGroup;
 			children = (
+				A9A2F70F1AADB0F1003038E8 /* MobileCoreServices.framework */,
 				A99163F41A5165A5008BADCD /* SystemConfiguration.framework */,
 				A9A94B8A1A42F295006C5A58 /* libicucore.dylib */,
 				A9A94B881A42F284006C5A58 /* CFNetwork.framework */,
@@ -162,6 +167,7 @@
 		A9F59E7D1A66BE9D0089FDE0 /* BringgTrackingLib */ = {
 			isa = PBXGroup;
 			children = (
+				A9A2F70E1AADADF3003038E8 /* BringgCustomer.h */,
 				A9F59E7E1A66BE9D0089FDE0 /* BringgTracker.h */,
 				A9F59E7F1A66BE9D0089FDE0 /* libBringgTracking.a */,
 				A9F59E801A66BE9D0089FDE0 /* SocketIO.h */,

@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 
 #import "BringgTracker.h"
+#import "BringgCustomer.h"
 
 @interface ViewController : UIViewController <RealTimeDelegate, OrderDelegate, DriverDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *customerTokenField;
 @property (weak, nonatomic) IBOutlet UILabel *connectionLabel;
 @property (weak, nonatomic) IBOutlet UIButton *connectionButton;
 @property (weak, nonatomic) IBOutlet UILabel *orderLabel;

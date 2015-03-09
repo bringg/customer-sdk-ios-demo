@@ -11,6 +11,7 @@
 @interface ViewController ()
 
 @property (nonatomic, strong) BringgTracker *tracker;
+@property (nonatomic, strong) BringgCustomer *customer;
 
 @end
 
@@ -18,6 +19,7 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
+        self.customer = [[BringgCustomer alloc] init];
         self.tracker = [[BringgTracker alloc] init];
         [self.tracker setConnectionDelegate:self];
         
@@ -33,7 +35,21 @@
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyBoard)];
     [self.view addGestureRecognizer:singleTap];
     singleTap.cancelsTouchesInView = NO;
-
+    
+    //signin to get customer token
+//    [self.customer setDeveloperToken:@"some dev token"];
+//    [self.customer signInWithName:@"some customer name"
+//                            phone:@"some customer phone"
+//                 confirmationCode:@"some confirmation for customer"
+//                       merchantId:@"some merchant identifier" completionHandler:^(BOOL success, NSString *customerToken, NSError *error) {
+//        if (success) {
+//            NSLog(@"customerToken %@", customerToken);
+//            
+//        } else {
+//            NSLog(@"error %@", error);
+//        
+//        }
+//    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,7 +71,8 @@
         
     } else {
         NSLog(@"connecting");
-        [self.tracker connect];
+        NSString *token = self.customerTokenField.text;
+        [self.tracker connectWithCustomerToken:token];
     
     }
 }
