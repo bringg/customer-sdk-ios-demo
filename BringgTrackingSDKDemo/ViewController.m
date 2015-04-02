@@ -37,19 +37,35 @@
     singleTap.cancelsTouchesInView = NO;
     
     //signin to get customer token
-//    [self.customer setDeveloperToken:@"some dev token"];
-//    [self.customer signInWithName:@"some customer name"
-//                            phone:@"some customer phone"
-//                 confirmationCode:@"some confirmation for customer"
-//                       merchantId:@"some merchant identifier" completionHandler:^(BOOL success, NSString *customerToken, NSError *error) {
+//    [self.customer setDeveloperToken:@"F-muRzCajCA-4yvPXaxm"];
+//    [self.customer signInWithName:@"Ilya Kalinin"
+//                            phone:@"+13157654321"
+//                 confirmationCode:@"7811"
+//                       merchantId:@"1" completionHandler:^(BOOL success, NSString *customerToken, NSError *error) {
 //        if (success) {
 //            NSLog(@"customerToken %@", customerToken);
+//            self.customerTokenField.text = customerToken;
 //            
 //        } else {
 //            NSLog(@"error %@", error);
 //        
 //        }
 //    }];
+    [self.customer setDeveloperToken:@"yguRVwczRyt69exGW2Vf"];
+    [self.customer signInWithName:@""
+                            phone:@"+10543061600"
+                 confirmationCode:@"5052"
+                       merchantId:@"1944" completionHandler:^(BOOL success, NSString *customerToken, NSError *error) {
+                           if (success) {
+                               NSLog(@"customerToken %@", customerToken);
+                               self.customerTokenField.text = customerToken;
+                               
+                           } else {
+                               NSLog(@"error %@", error);
+                               
+                           }
+                       }];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,6 +77,13 @@
     [self.orderField resignFirstResponder];
     [self.driverField resignFirstResponder];
     [self.uuidField resignFirstResponder];
+    [self.customerRatingField resignFirstResponder];
+    [self.customerMerchantField resignFirstResponder];
+    [self.customerNameField resignFirstResponder];
+    [self.customerPhoneField resignFirstResponder];
+    [self.customerTokenField resignFirstResponder];
+    [self.developerTokenField resignFirstResponder];
+    [self.customerCodeField resignFirstResponder];
     
 }
 
@@ -79,7 +102,6 @@
 
 - (IBAction)monitorOrder:(id)sender {
     NSString *uuid = self.orderField.text;
-    
     if (uuid && [uuid length]) {
         if ([self.tracker isWatchingOrderWithUUID:uuid]) {
             [self.tracker stopWatchingOrderWithUUID:uuid];
@@ -107,6 +129,31 @@
             
         }
     }
+}
+
+- (IBAction)signin:(id)sender {
+    //signin to get customer token
+    [self.customer setDeveloperToken:self.developerTokenField.text];
+    [self.customer signInWithName:self.customerNameField.text
+                            phone:self.customerPhoneField.text
+                 confirmationCode:self.customerCodeField.text
+                       merchantId:self.customerMerchantField.text completionHandler:^(BOOL success, NSString *customerToken, NSError *error) {
+                           if (success) {
+                               NSLog(@"customerToken %@", customerToken);
+                               self.customerTokenField.text = customerToken;
+                               
+                           } else {
+                               NSLog(@"error %@", error);
+                               
+                           }
+                       }];
+}
+
+- (IBAction)rate:(id)sender {
+    [self.customer rateWithRating:[self.customerRatingField.text integerValue] shareUUID:self.uuidField.text completionHandler:^(BOOL success, NSError *error) {
+        NSLog(@"%@, error %@", success ? @"success" : @"failed", error);
+        
+    }];
 }
 
 #pragma mark - 
