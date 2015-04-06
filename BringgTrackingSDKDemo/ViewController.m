@@ -35,36 +35,6 @@
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyBoard)];
     [self.view addGestureRecognizer:singleTap];
     singleTap.cancelsTouchesInView = NO;
-    
-    //signin to get customer token
-//    [self.customer setDeveloperToken:@"F-muRzCajCA-4yvPXaxm"];
-//    [self.customer signInWithName:@"Ilya Kalinin"
-//                            phone:@"+13157654321"
-//                 confirmationCode:@"7811"
-//                       merchantId:@"1" completionHandler:^(BOOL success, NSString *customerToken, NSError *error) {
-//        if (success) {
-//            NSLog(@"customerToken %@", customerToken);
-//            self.customerTokenField.text = customerToken;
-//            
-//        } else {
-//            NSLog(@"error %@", error);
-//        
-//        }
-//    }];
-    [self.customer setDeveloperToken:@"yguRVwczRyt69exGW2Vf"];
-    [self.customer signInWithName:@""
-                            phone:@"+10543061600"
-                 confirmationCode:@"5052"
-                       merchantId:@"1944" completionHandler:^(BOOL success, NSString *customerToken, NSError *error) {
-                           if (success) {
-                               NSLog(@"customerToken %@", customerToken);
-                               self.customerTokenField.text = customerToken;
-                               
-                           } else {
-                               NSLog(@"error %@", error);
-                               
-                           }
-                       }];
 
 }
 

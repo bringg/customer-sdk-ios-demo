@@ -6,31 +6,35 @@
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>58CE33BC-D638-45C0-9CF0-22D0F5736EDC</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BringgTrackingSDKDemo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>2E71EF8001AC343FA5A8A0CE362ECC600DD1D18C</key>
-		<string>https://github.com/bringg/customer-sdk-ios.git</string>
+		<key>09622430D3CD4D15F37F983860AE1B3C9CDEA390</key>
+		<string>https://github.com/bringg/customer-sdk-ios-demo.git</string>
 	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BringgTrackingSDKDemo.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>2E71EF8001AC343FA5A8A0CE362ECC600DD1D18C</key>
-		<string>BringgTracking/</string>
+		<key>09622430D3CD4D15F37F983860AE1B3C9CDEA390</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/bringg/customer-sdk-ios.git</string>
+	<string>https://github.com/bringg/customer-sdk-ios-demo.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>2E71EF8001AC343FA5A8A0CE362ECC600DD1D18C</string>
+	<string>09622430D3CD4D15F37F983860AE1B3C9CDEA390</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>2E71EF8001AC343FA5A8A0CE362ECC600DD1D18C</string>
+			<string>09622430D3CD4D15F37F983860AE1B3C9CDEA390</string>
 			<key>IDESourceControlWCCName</key>
-			<string>BringgTracking</string>
+			<string>BringgTrackingSDKDemo</string>
 		</dict>
 	</array>
 </dict>
