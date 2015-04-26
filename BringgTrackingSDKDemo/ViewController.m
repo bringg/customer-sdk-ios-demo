@@ -21,6 +21,7 @@
     if (self = [super initWithCoder:aDecoder]) {
         self.customer = [[BringgCustomer alloc] init];
         self.tracker = [[BringgTracker alloc] init];
+        [self.tracker setCustomer:self.customer];
         [self.tracker setConnectionDelegate:self];
         
     }
@@ -120,7 +121,7 @@
 }
 
 - (IBAction)rate:(id)sender {
-    [self.customer rateWithRating:[self.customerRatingField.text integerValue] shareUUID:self.uuidField.text completionHandler:^(BOOL success, NSError *error) {
+    [self.tracker rateWithRating:[self.customerRatingField.text integerValue] shareUUID:self.uuidField.text completionHandler:^(BOOL success, NSError *error) {
         NSLog(@"%@, error %@", success ? @"success" : @"failed", error);
         
     }];
