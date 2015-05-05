@@ -11,6 +11,7 @@
 @interface ViewController ()
 
 @property (nonatomic, strong) BringgTracker *tracker;
+@property (nonatomic, strong) BringgCustomer *customer;
 
 @end
 
@@ -18,7 +19,9 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
+        self.customer = [[BringgCustomer alloc] init];
         self.tracker = [[BringgTracker alloc] init];
+        [self.tracker setCustomer:self.customer];
         [self.tracker setConnectionDelegate:self];
         
     }
@@ -28,14 +31,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    // Dismiss the keyboard when the user taps outside of a text field
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyBoard)];
+    [self.view addGestureRecognizer:singleTap];
+    singleTap.cancelsTouchesInView = NO;
 
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 
+}
+
+- (void)hideKeyBoard {
+    [self.orderField resignFirstResponder];
+    [self.driverField resignFirstResponder];
+    [self.uuidField resignFirstResponder];
+    [self.customerRatingField resignFirstResponder];
+    [self.customerMerchantField resignFirstResponder];
+    [self.customerNameField resignFirstResponder];
+    [self.customerPhoneField resignFirstResponder];
+    [self.customerTokenField resignFirstResponder];
+    [self.developerTokenField resignFirstResponder];
+    [self.customerCodeField resignFirstResponder];
+    
 }
 
 - (IBAction)connect:(id)sender {
@@ -45,22 +65,21 @@
         
     } else {
         NSLog(@"connecting");
-        [self.tracker connect];
+        NSString *token = self.customerTokenField.text;
+        [self.tracker connectWithCustomerToken:token];
     
     }
 }
 
 - (IBAction)monitorOrder:(id)sender {
     NSString *uuid = self.orderField.text;
-    NSString *shareuuid = self.uuidField.text;
-    
     if (uuid && [uuid length]) {
         if ([self.tracker isWatchingOrderWithUUID:uuid]) {
-            [self.tracker stopWatchingOrderWithUUID:uuid shareUUID:shareuuid];
+            [self.tracker stopWatchingOrderWithUUID:uuid];
             [self.orderButton setTitle:@"Monitor Order" forState:UIControlStateNormal];
             
         } else {
-            [self.tracker startWatchingOrederWithUUID:uuid shareUUID:shareuuid delegate:self];
+            [self.tracker startWatchingOrederWithUUID:uuid delegate:self];
             [self.orderButton setTitle:@"Stop Monitor Order" forState:UIControlStateNormal];
             
         }
@@ -81,6 +100,31 @@
             
         }
     }
+}
+
+- (IBAction)signin:(id)sender {
+    //signin to get customer token
+    [self.customer setDeveloperToken:self.developerTokenField.text];
+    [self.customer signInWithName:self.customerNameField.text
+                            phone:self.customerPhoneField.text
+                 confirmationCode:self.customerCodeField.text
+                       merchantId:self.customerMerchantField.text completionHandler:^(BOOL success, NSString *customerToken, NSError *error) {
+                           if (success) {
+                               NSLog(@"customerToken %@", customerToken);
+                               self.customerTokenField.text = customerToken;
+                               
+                           } else {
+                               NSLog(@"error %@", error);
+                               
+                           }
+                       }];
+}
+
+- (IBAction)rate:(id)sender {
+    [self.tracker rateWithRating:[self.customerRatingField.text integerValue] shareUUID:self.uuidField.text completionHandler:^(BOOL success, NSError *error) {
+        NSLog(@"%@, error %@", success ? @"success" : @"failed", error);
+        
+    }];
 }
 
 #pragma mark - 
@@ -142,7 +186,7 @@
 }
 
 - (void)driverLocationDidChangedWithDriverUUID:(NSString *)driverUUID lat:(NSNumber *)lat lng:(NSNumber *)lng {
-    self.driverLabel.text = [NSString stringWithFormat:@"uuid %@, lat %@, lng %@", driverUUID, lat, lng];
+    self.driverLabel.text = [NSString stringWithFormat:@"lat %@, lng %@", lat, lng];
     
 }
 
