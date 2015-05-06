@@ -36,6 +36,8 @@
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyBoard)];
     [self.view addGestureRecognizer:singleTap];
     singleTap.cancelsTouchesInView = NO;
+    
+
 
 }
 
@@ -151,17 +153,17 @@
 
 - (void)orderDidAssignedWithOrderUUID:(NSString *)uuid driverUUID:(NSString *)driverUUID {
     self.orderLabel.text = [NSString stringWithFormat:@"Order assigned %@ for driver %@", uuid, driverUUID];
-     
+    self.driverField.text = driverUUID;
 }
 
-- (void)orderDidAcceptedOrderUUID:(NSString *)uuid {
-    self.orderLabel.text = [NSString stringWithFormat:@"Order accepted %@", uuid];
-    
+- (void)orderDidAcceptedOrderUUID:(NSString *)uuid driverUUID:(NSString *)driverUUID {
+    self.orderLabel.text = [NSString stringWithFormat:@"Order accepted %@ for driver %@", uuid, driverUUID];
+    self.driverField.text = driverUUID;
 }
 
-- (void)orderDidStartedOrderUUID:(NSString *)uuid {
-    self.orderLabel.text = [NSString stringWithFormat:@"Order started %@", uuid];
-    
+- (void)orderDidStartedOrderUUID:(NSString *)uuid driverUUID:(NSString *)driverUUID {
+    self.orderLabel.text = [NSString stringWithFormat:@"Order started %@ for driver %@", uuid, driverUUID];
+    self.driverField.text = driverUUID;
 }
 
 - (void)orderDidArrivedOrderUUID:(NSString *)uuid {
