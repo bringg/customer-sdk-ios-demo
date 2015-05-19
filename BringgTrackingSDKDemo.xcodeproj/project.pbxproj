@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1394BF511B0B5745003CB8A3 /* libBringgTracking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1394BF4F1B0B56AF003CB8A3 /* libBringgTracking.a */; };
 		A913A48C1A41CFF90002AE32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A913A48B1A41CFF90002AE32 /* main.m */; };
 		A913A48F1A41CFF90002AE32 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A913A48E1A41CFF90002AE32 /* AppDelegate.m */; };
 		A913A4921A41CFF90002AE32 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A913A4911A41CFF90002AE32 /* ViewController.m */; };
@@ -20,7 +21,6 @@
 		A9E71BBD1A4304A8000BA846 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A94B881A42F284006C5A58 /* CFNetwork.framework */; };
 		A9E71BBE1A4304AA000BA846 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A94B861A42F279006C5A58 /* Security.framework */; };
 		A9E71BBF1A4304AE000BA846 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A94B841A42F272006C5A58 /* Foundation.framework */; };
-		A9F59E821A66BE9D0089FDE0 /* libBringgTracking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F59E7F1A66BE9D0089FDE0 /* libBringgTracking.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +47,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1394BF461B0B56AF003CB8A3 /* BringgCustomer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BringgCustomer.h; sourceTree = "<group>"; };
+		1394BF471B0B56AF003CB8A3 /* BringgTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BringgTracker.h; sourceTree = "<group>"; };
+		1394BF481B0B56AF003CB8A3 /* SocketIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIO.h; sourceTree = "<group>"; };
+		1394BF491B0B56AF003CB8A3 /* SocketIOJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOJSONSerialization.h; sourceTree = "<group>"; };
+		1394BF4A1B0B56AF003CB8A3 /* SocketIOPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOPacket.h; sourceTree = "<group>"; };
+		1394BF4B1B0B56AF003CB8A3 /* SocketIOTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOTransport.h; sourceTree = "<group>"; };
+		1394BF4C1B0B56AF003CB8A3 /* SocketIOTransportWebsocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOTransportWebsocket.h; sourceTree = "<group>"; };
+		1394BF4D1B0B56AF003CB8A3 /* SocketIOTransportXHR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOTransportXHR.h; sourceTree = "<group>"; };
+		1394BF4F1B0B56AF003CB8A3 /* libBringgTracking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBringgTracking.a; sourceTree = "<group>"; };
 		A913A4861A41CFF80002AE32 /* BringgTrackingSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BringgTrackingSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A913A48A1A41CFF80002AE32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A913A48B1A41CFF90002AE32 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -61,16 +70,11 @@
 		A913A4A41A41CFF90002AE32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A913A4A51A41CFF90002AE32 /* BringgTrackingSDKDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BringgTrackingSDKDemoTests.m; sourceTree = "<group>"; };
 		A99163F41A5165A5008BADCD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		A9A2F70E1AADADF3003038E8 /* BringgCustomer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BringgCustomer.h; sourceTree = "<group>"; };
 		A9A2F70F1AADB0F1003038E8 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		A9A94B841A42F272006C5A58 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A9A94B861A42F279006C5A58 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		A9A94B881A42F284006C5A58 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		A9A94B8A1A42F295006C5A58 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
-		A9F59E7E1A66BE9D0089FDE0 /* BringgTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BringgTracker.h; sourceTree = "<group>"; };
-		A9F59E7F1A66BE9D0089FDE0 /* libBringgTracking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBringgTracking.a; sourceTree = "<group>"; };
-		A9F59E801A66BE9D0089FDE0 /* SocketIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIO.h; sourceTree = "<group>"; };
-		A9F59E811A66BE9D0089FDE0 /* SocketIOTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOTransport.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +88,7 @@
 				A9E71BBD1A4304A8000BA846 /* CFNetwork.framework in Frameworks */,
 				A9E71BBE1A4304AA000BA846 /* Security.framework in Frameworks */,
 				A9E71BBF1A4304AE000BA846 /* Foundation.framework in Frameworks */,
-				A9F59E821A66BE9D0089FDE0 /* libBringgTracking.a in Frameworks */,
+				1394BF511B0B5745003CB8A3 /* libBringgTracking.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +102,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1394BF451B0B56AF003CB8A3 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				1394BF461B0B56AF003CB8A3 /* BringgCustomer.h */,
+				1394BF471B0B56AF003CB8A3 /* BringgTracker.h */,
+				1394BF481B0B56AF003CB8A3 /* SocketIO.h */,
+				1394BF491B0B56AF003CB8A3 /* SocketIOJSONSerialization.h */,
+				1394BF4A1B0B56AF003CB8A3 /* SocketIOPacket.h */,
+				1394BF4B1B0B56AF003CB8A3 /* SocketIOTransport.h */,
+				1394BF4C1B0B56AF003CB8A3 /* SocketIOTransportWebsocket.h */,
+				1394BF4D1B0B56AF003CB8A3 /* SocketIOTransportXHR.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		1394BF4E1B0B56AF003CB8A3 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				1394BF4F1B0B56AF003CB8A3 /* libBringgTracking.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
 		A913A47D1A41CFF80002AE32 = {
 			isa = PBXGroup;
 			children = (
@@ -167,11 +194,8 @@
 		A9F59E7D1A66BE9D0089FDE0 /* BringgTrackingLib */ = {
 			isa = PBXGroup;
 			children = (
-				A9A2F70E1AADADF3003038E8 /* BringgCustomer.h */,
-				A9F59E7E1A66BE9D0089FDE0 /* BringgTracker.h */,
-				A9F59E7F1A66BE9D0089FDE0 /* libBringgTracking.a */,
-				A9F59E801A66BE9D0089FDE0 /* SocketIO.h */,
-				A9F59E811A66BE9D0089FDE0 /* SocketIOTransport.h */,
+				1394BF451B0B56AF003CB8A3 /* include */,
+				1394BF4E1B0B56AF003CB8A3 /* lib */,
 			);
 			path = BringgTrackingLib;
 			sourceTree = "<group>";
@@ -402,17 +426,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/BringgTrackingSDKDemo/SDK",
+					"$(PROJECT_DIR)/BringgTrackingSDKDemo/BringgTrackingLib/include",
 				);
 				INFOPLIST_FILE = BringgTrackingSDKDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/BringgTrackingSDKDemo/BringgTracking",
-					"$(PROJECT_DIR)/BringgTrackingSDKDemo/BringgTrackingLib",
+					"$(PROJECT_DIR)/BringgTrackingSDKDemo/BringgTrackingLib/lib",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -422,17 +447,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/BringgTrackingSDKDemo/SDK",
+					"$(PROJECT_DIR)/BringgTrackingSDKDemo/BringgTrackingLib/include",
 				);
 				INFOPLIST_FILE = BringgTrackingSDKDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/BringgTrackingSDKDemo/BringgTracking",
-					"$(PROJECT_DIR)/BringgTrackingSDKDemo/BringgTrackingLib",
+					"$(PROJECT_DIR)/BringgTrackingSDKDemo/BringgTrackingLib/lib",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

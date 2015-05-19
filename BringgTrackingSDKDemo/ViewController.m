@@ -81,7 +81,7 @@
             [self.orderButton setTitle:@"Monitor Order" forState:UIControlStateNormal];
             
         } else {
-            [self.tracker startWatchingOrederWithUUID:uuid delegate:self];
+            [self.tracker startWatchingOrderWithUUID:uuid delegate:self];
             [self.orderButton setTitle:@"Stop Monitor Order" forState:UIControlStateNormal];
             
         }
@@ -145,7 +145,7 @@
    
 }
 
-- (void)watchOrderFailedForOrederWithUUID:(NSString *)uuid error:(NSError *)error {
+- (void)watchOrderFailedForOrderWithUUID:(NSString *)uuid error:(NSError *)error {
     self.orderLabel.text = [NSString stringWithFormat:@"Failed %@, error %@", uuid, error];
     [self.orderButton setTitle:@"Monitor Order" forState:UIControlStateNormal];
     
@@ -173,7 +173,6 @@
 
 - (void)orderDidFinishedOrderUUID:(NSString *)uuid {
     self.orderLabel.text = [NSString stringWithFormat:@"Order finished %@", uuid];
-    
 }
 
 - (void)orderDidCancelledOrderUUID:(NSString *)uuid {
