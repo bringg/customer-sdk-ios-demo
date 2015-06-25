@@ -10,8 +10,8 @@
 
 @interface ViewController ()
 
-@property (nonatomic, strong) BringgTracker *tracker;
-@property (nonatomic, strong) BringgCustomer *customer;
+@property (nonatomic, strong) BringgTrackerManager *trackerManager;
+@property (nonatomic, strong) BringgCustomerManager *customerManager;
 
 @end
 
@@ -19,10 +19,10 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
-        self.customer = [[BringgCustomer alloc] init];
-        self.tracker = [[BringgTracker alloc] init];
-        [self.tracker setCustomer:self.customer];
-        [self.tracker setConnectionDelegate:self];
+        self.customerManager = [BringgCustomerManager sharedInstance];
+        self.trackerManager = [BringgTrackerManager sharedInstance];
+        [self.trackerManager setCustomerManager:self.customerManager];
+        [self.trackerManager setConnectionDelegate:self];
         
     }
     return self;
@@ -61,14 +61,14 @@
 }
 
 - (IBAction)connect:(id)sender {
-    if ([self.tracker isConnected]) {
+    if ([self.trackerManager isConnected]) {
         NSLog(@"disconnecting");
-        [self.tracker disconnect];
+        [self.trackerManager disconnect];
         
     } else {
         NSLog(@"connecting");
         NSString *token = self.customerTokenField.text;
-        [self.tracker connectWithCustomerToken:token];
+        [self.trackerManager connectWithCustomerToken:token];
     
     }
 }
@@ -76,12 +76,12 @@
 - (IBAction)monitorOrder:(id)sender {
     NSString *uuid = self.orderField.text;
     if (uuid && [uuid length]) {
-        if ([self.tracker isWatchingOrderWithUUID:uuid]) {
-            [self.tracker stopWatchingOrderWithUUID:uuid];
+        if ([self.trackerManager isWatchingOrderWithUUID:uuid]) {
+            [self.trackerManager stopWatchingOrderWithUUID:uuid];
             [self.orderButton setTitle:@"Monitor Order" forState:UIControlStateNormal];
             
         } else {
-            [self.tracker startWatchingOrderWithUUID:uuid delegate:self];
+            [self.trackerManager startWatchingOrderWithUUID:uuid delegate:self];
             [self.orderButton setTitle:@"Stop Monitor Order" forState:UIControlStateNormal];
             
         }
@@ -92,12 +92,12 @@
     NSString *uuid = self.driverField.text;
     NSString *shareuuid = self.uuidField.text;
     if (uuid && [uuid length]) {
-        if ([self.tracker isWatchingDriverWithUUID:uuid]) {
-            [self.tracker stopWatchingDriverWithUUID:uuid shareUUID:shareuuid];
+        if ([self.trackerManager isWatchingDriverWithUUID:uuid]) {
+            [self.trackerManager stopWatchingDriverWithUUID:uuid shareUUID:shareuuid];
             [self.driverButton setTitle:@"Monitor Driver" forState:UIControlStateNormal];
             
         } else {
-            [self.tracker startWatchingDriverWithUUID:uuid shareUUID:shareuuid delegate:self];
+            [self.trackerManager startWatchingDriverWithUUID:uuid shareUUID:shareuuid delegate:self];
             [self.driverButton setTitle:@"Stop Monitor Driver" forState:UIControlStateNormal];
             
         }
@@ -106,8 +106,8 @@
 
 - (IBAction)signin:(id)sender {
     //signin to get customer token
-    [self.customer setDeveloperToken:self.developerTokenField.text];
-    [self.customer signInWithName:self.customerNameField.text
+    [self.customerManager setDeveloperToken:self.developerTokenField.text];
+    [self.customerManager signInWithName:self.customerNameField.text
                             phone:self.customerPhoneField.text
                  confirmationCode:self.customerCodeField.text
                        merchantId:self.customerMerchantField.text completionHandler:^(BOOL success, NSString *customerToken, NSError *error) {
@@ -123,7 +123,7 @@
 }
 
 - (IBAction)rate:(id)sender {
-    [self.tracker rateWithRating:[self.customerRatingField.text integerValue] shareUUID:self.uuidField.text completionHandler:^(BOOL success, NSError *error) {
+    [self.trackerManager rateWithRating:[self.customerRatingField.text integerValue] shareUUID:self.uuidField.text completionHandler:^(BOOL success, NSError *error) {
         NSLog(@"%@, error %@", success ? @"success" : @"failed", error);
         
     }];

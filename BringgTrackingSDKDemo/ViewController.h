@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-#import "BringgTracker.h"
-#import "BringgCustomer.h"
-
+#import "BringgTrackerManager.h"
+#import "BringgCustomerManager.h"
+#import "GGCustomer.h"
+#import "BringgDriver.h"
  
 
 @interface ViewController : UIViewController <RealTimeDelegate, OrderDelegate, DriverDelegate>
