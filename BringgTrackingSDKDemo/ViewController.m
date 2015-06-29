@@ -14,11 +14,15 @@
 #import "GGOrderBuilder.h"
 #import "GGRealTimeMontior.h"
 
+
+
+
 @interface ViewController ()
 
 @property (nonatomic, strong) GGTrackerManager *trackerManager;
 @property (nonatomic, strong) GGHTTPClientManager *httpManager;
-
+@property (nonatomic, strong) NSString *hardCodedConfermationId;
+@property (nonatomic, strong) NSString *hardCodedMerchandId;
 @end
 
 @implementation ViewController
@@ -28,7 +32,8 @@
     
         // at first we should just init the http client manager
         self.httpManager = [GGHTTPClientManager sharedInstance];
-        
+        _hardCodedConfermationId = @"2865";
+        _hardCodedMerchandId = @"734";
         
     }
     
@@ -44,7 +49,9 @@
     [self.view addGestureRecognizer:singleTap];
     singleTap.cancelsTouchesInView = NO;
     
-
+#warning HACK - this uses private api - dont publish this part
+    
+ 
 
 }
 
@@ -82,6 +89,9 @@
 }
 
 - (IBAction)monitorOrder:(id)sender {
+    
+#warning TODO - change this to take order id and then get the true order object form the "get order by id " method
+    
     NSString *uuid = self.orderField.text;
     if (uuid && [uuid length]) {
         if ([self.trackerManager isWatchingOrderWithUUID:uuid]) {
@@ -120,17 +130,20 @@
     [self.httpManager setDeveloperToken:self.developerTokenField.text];
     [self.httpManager signInWithName:self.customerNameField.text
                             phone:self.customerPhoneField.text
-                 confirmationCode:self.customerCodeField.text
-                       merchantId:self.customerMerchantField.text
+                confirmationCode:self.customerCodeField.text
+                      merchantId:self.customerMerchantField.text
+
      completionHandler:^(BOOL success, GGCustomer *customer, NSError *error) {
          //
          
          if (customer) {
-             self.customerTokenField.text = customer.customerToken;
+             
              
              // once we have a customer token we can activate the tracking manager
              self.trackerManager = [GGTrackerManager trackerWithCustomerToken:customer.customerToken
                                                             andDeveloperToken:self.developerTokenField.text andDelegate:self];
+             
+             self.customerTokenField.text = customer.customerToken;
              
              // set the customer in the tracker manager
              [self.trackerManager setCustomer:customer];
@@ -223,5 +236,8 @@
     self.driverLabel.text = [NSString stringWithFormat:@"lat %@, lng %@", lat, lng];
     
 }
+
+
+
 
 @end
