@@ -7,11 +7,17 @@
 //
 
 #import "ViewController.h"
+#import "GGCustomer.h"
+#import "GGDriver.h"
+#import "GGSharedLocation.h"
+#import "GGOrder.h"
+#import "GGOrderBuilder.h"
+#import "GGRealTimeMontior.h"
 
 @interface ViewController ()
 
-@property (nonatomic, strong) BringgTrackerManager *trackerManager;
-@property (nonatomic, strong) BringgCustomerManager *customerManager;
+@property (nonatomic, strong) GGTrackerManager *trackerManager;
+@property (nonatomic, strong) GGHTTPClientManager *httpManager;
 
 @end
 
@@ -19,12 +25,13 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
-        self.customerManager = [BringgCustomerManager sharedInstance];
-        self.trackerManager = [BringgTrackerManager sharedInstance];
-        [self.trackerManager setCustomerManager:self.customerManager];
-        [self.trackerManager setConnectionDelegate:self];
+    
+        // at first we should just init the http client manager
+        self.httpManager = [GGHTTPClientManager sharedInstance];
+        
         
     }
+    
     return self;
     
 }
@@ -63,12 +70,13 @@
 - (IBAction)connect:(id)sender {
     if ([self.trackerManager isConnected]) {
         NSLog(@"disconnecting");
-        [self.trackerManager disconnect];
+        if (self.trackerManager) {
+            [self.trackerManager disconnect];
+        }
         
-    } else {
+    } else if (self.trackerManager){
         NSLog(@"connecting");
-        NSString *token = self.customerTokenField.text;
-        [self.trackerManager connectWithCustomerToken:token];
+        [self.trackerManager connect];
     
     }
 }
@@ -106,84 +114,109 @@
 
 - (IBAction)signin:(id)sender {
     //signin to get customer token
-    [self.customerManager setDeveloperToken:self.developerTokenField.text];
-    [self.customerManager signInWithName:self.customerNameField.text
+    
+    
+    
+    [self.httpManager setDeveloperToken:self.developerTokenField.text];
+    [self.httpManager signInWithName:self.customerNameField.text
                             phone:self.customerPhoneField.text
                  confirmationCode:self.customerCodeField.text
-                       merchantId:self.customerMerchantField.text completionHandler:^(BOOL success, NSString *customerToken, NSError *error) {
-                           if (success) {
-                               NSLog(@"customerToken %@", customerToken);
-                               self.customerTokenField.text = customerToken;
-                               
-                           } else {
-                               NSLog(@"error %@", error);
-                               
-                           }
-                       }];
+                       merchantId:self.customerMerchantField.text
+     completionHandler:^(BOOL success, GGCustomer *customer, NSError *error) {
+         //
+         
+         if (customer) {
+             self.customerTokenField.text = customer.customerToken;
+             
+             // once we have a customer token we can activate the tracking manager
+             self.trackerManager = [GGTrackerManager trackerWithCustomerToken:customer.customerToken
+                                                            andDeveloperToken:self.developerTokenField.text andDelegate:self];
+             
+             // set the customer in the tracker manager
+             [self.trackerManager setCustomer:customer];
+         }
+     }];
 }
 
 - (IBAction)rate:(id)sender {
-    [self.trackerManager rateWithRating:[self.customerRatingField.text integerValue] shareUUID:self.uuidField.text completionHandler:^(BOOL success, NSError *error) {
-        NSLog(@"%@, error %@", success ? @"success" : @"failed", error);
+    
+    // first we should gate the shared location object - only then can we rate
+    [self.httpManager getSharedLocationByID:self.uuidField.text.integerValue withCompletionHandler:^(BOOL success, GGSharedLocation *sharedLocation, NSError *error) {
+        //
         
+        if (success && sharedLocation) {
+            [self.httpManager rate:[self.customerRatingField.text intValue] withToken:sharedLocation.rating.token forSharedUUID:self.uuidField.text withCompletionHandler:^(BOOL success, GGRating *rating, NSError *error) {
+                //
+                NSLog(@"%@, error %@", success ? @"success" : @"failed", error);
+                
+            }];
+        }
     }];
+    
+    
 }
 
-#pragma mark - 
+#pragma mark - RealTimeDelegate
 
-- (void)trackerDidConnected {
+- (void)trackerDidConnect {
     NSLog(@"connected");
     self.connectionLabel.text = @"BringgTracker: connected";
     [self.connectionButton setTitle:@"Disconnect" forState:UIControlStateNormal];
     
 }
 
-- (void)trackerDidDisconnectedWithError:(NSError *)error {
+- (void)trackerDidDisconnectWithError:(NSError *)error{
     NSLog(@"disconnected %@", error);
     self.connectionLabel.text = [NSString stringWithFormat:@"BringgTracker: disconnected %@", error];
     [self.connectionButton setTitle:@"Connect" forState:UIControlStateNormal];
    
 }
 
-- (void)watchOrderFailedForOrderWithUUID:(NSString *)uuid error:(NSError *)error {
-    self.orderLabel.text = [NSString stringWithFormat:@"Failed %@, error %@", uuid, error];
+
+#pragma mark - OrderDelegate
+
+- (void)watchOrderFailForOrder:(GGOrder *)order error:(NSError *)error{
+    self.orderLabel.text = [NSString stringWithFormat:@"Failed %@, error %@", order.uuid, error];
     [self.orderButton setTitle:@"Monitor Order" forState:UIControlStateNormal];
-    
 }
 
-- (void)orderDidAssignedWithOrderUUID:(NSString *)uuid driverUUID:(NSString *)driverUUID {
-    self.orderLabel.text = [NSString stringWithFormat:@"Order assigned %@ for driver %@", uuid, driverUUID];
-    self.driverField.text = driverUUID;
+- (void)orderDidAssignWithOrder:(GGOrder *)order withDriver:(GGDriver *)driver{
+    self.orderLabel.text = [NSString stringWithFormat:@"Order assigned %@ for driver %@", order.uuid, driver.uuid];
+    self.driverField.text = driver.uuid;
 }
 
-- (void)orderDidAcceptedOrderUUID:(NSString *)uuid driverUUID:(NSString *)driverUUID {
-    self.orderLabel.text = [NSString stringWithFormat:@"Order accepted %@ for driver %@", uuid, driverUUID];
-    self.driverField.text = driverUUID;
+- (void)orderDidAcceptWithOrder:(GGOrder *)order withDriver:(GGDriver *)driver{
+    self.orderLabel.text = [NSString stringWithFormat:@"Order accepted %@ for driver %@", order.uuid, driver.uuid];
+    self.driverField.text = driver.uuid;
 }
 
-- (void)orderDidStartedOrderUUID:(NSString *)uuid driverUUID:(NSString *)driverUUID {
-    self.orderLabel.text = [NSString stringWithFormat:@"Order started %@ for driver %@", uuid, driverUUID];
-    self.driverField.text = driverUUID;
+- (void)orderDidStartWithOrder:(GGOrder *)order withDriver:(GGDriver *)driver{
+    self.orderLabel.text = [NSString stringWithFormat:@"Order started %@ for driver %@", order.uuid, driver.uuid];
+    self.driverField.text = driver.uuid;
 }
 
-- (void)orderDidArrivedOrderUUID:(NSString *)uuid {
-    self.orderLabel.text = [NSString stringWithFormat:@"Order arrived %@", uuid];
-    
+- (void)orderDidArrive:(GGOrder *)order{
+    self.orderLabel.text = [NSString stringWithFormat:@"Order arrived %@", order.uuid];
 }
 
-- (void)orderDidFinishedOrderUUID:(NSString *)uuid {
-    self.orderLabel.text = [NSString stringWithFormat:@"Order finished %@", uuid];
+- (void)orderDidFinish:(GGOrder *)order{
+    self.orderLabel.text = [NSString stringWithFormat:@"Order finished %@", order.uuid];
 }
 
-- (void)orderDidCancelledOrderUUID:(NSString *)uuid {
-    self.orderLabel.text = [NSString stringWithFormat:@"Order cancelled %@", uuid];
-    
+- (void)orderDidCancel:(GGOrder *)order{
+     self.orderLabel.text = [NSString stringWithFormat:@"Order canceled %@", order.uuid];
 }
 
-- (void)watchDriverFailedForDriverWithUUID:(NSString *)uuid error:(NSError *)error {
-    self.driverLabel.text = [NSString stringWithFormat:@"Monitoring failed for %@, error %@", uuid, error];
+
+#pragma mark - DriverDelegate
+
+- (void)watchDriverFailedForDriver:(GGDriver *)driver error:(NSError *)error{
+    self.driverLabel.text = [NSString stringWithFormat:@"Monitoring failed for %@, error %@", driver.uuid, error];
     [self.driverButton setTitle:@"Monitor Driver" forState:UIControlStateNormal];
-    
+}
+
+- (void)driverLocationDidChangeWithDriver:(GGDriver *)driver{
+    self.driverLabel.text = [NSString stringWithFormat:@"driver %@  is at %f,%f",driver.uuid, driver.latitude, driver.longitude];
 }
 
 - (void)driverLocationDidChangedWithDriverUUID:(NSString *)driverUUID lat:(NSNumber *)lat lng:(NSNumber *)lng {

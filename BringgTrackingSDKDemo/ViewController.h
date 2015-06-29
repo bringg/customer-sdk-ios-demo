@@ -8,11 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-#import "BringgTrackerManager.h"
-#import "BringgCustomerManager.h"
-#import "GGCustomer.h"
-#import "BringgDriver.h"
- 
+#import "GGTrackerManager.h"
+#import "GGHTTPClientManager.h"
+#import "BringgGlobals.h"
+
 
 @interface ViewController : UIViewController <RealTimeDelegate, OrderDelegate, DriverDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *customerTokenField;
