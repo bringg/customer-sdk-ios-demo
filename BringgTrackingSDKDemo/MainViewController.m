@@ -313,14 +313,8 @@
 
 - (void)orderDidCancel:(GGOrder *)order{
     
-    GGOrder *monitoredOrder = [_monitoredOrders objectForKey:order.uuid];
-    if (!monitoredOrder) {
-        monitoredOrder = order;
-    }else{
-        [monitoredOrder updateOrderStatus:order.status];
-    }
-    
-     self.orderLabel.text = [NSString stringWithFormat:@"Order canceled %@", order.uuid];
+    GGOrder *monitoredOrder = [self updateMonitoredOrderWithOrder:order];
+    self.orderLabel.text = [NSString stringWithFormat:@"Order canceled %@", order.uuid];
     self.uuidField.text = monitoredOrder.sharedLocation.locationUUID;
 }
 
