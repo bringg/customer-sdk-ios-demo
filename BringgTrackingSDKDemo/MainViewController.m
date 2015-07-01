@@ -14,7 +14,7 @@
 #import "GGOrderBuilder.h"
 #import "GGRealTimeMontior.h"
 
-
+#define kBringgDeveloperToken @"YOUR_DEV_KEY_HERE"
 
 
 @interface MainViewController ()
@@ -32,7 +32,7 @@
     if (self = [super initWithCoder:aDecoder]) {
     
         // at first we should just init the http client manager
-        self.httpManager = [GGHTTPClientManager sharedInstance];
+        self.httpManager = [GGHTTPClientManager managerWithDeveloperToken:kBringgDeveloperToken];
  
         
         _monitoredOrders = [NSMutableDictionary dictionary];
@@ -74,7 +74,6 @@
     [self.customerNameField resignFirstResponder];
     [self.customerPhoneField resignFirstResponder];
     [self.customerTokenField resignFirstResponder];
-    [self.developerTokenField resignFirstResponder];
     [self.customerCodeField resignFirstResponder];
     
 }
@@ -146,9 +145,6 @@
 - (IBAction)signin:(id)sender {
     //signin to get customer token
     
-    
-    
-    [self.httpManager setDeveloperToken:self.developerTokenField.text];
     [self.httpManager signInWithName:self.customerNameField.text
                             phone:self.customerPhoneField.text
                 confirmationCode:self.customerCodeField.text
@@ -165,7 +161,8 @@
              [alertView show];
              // once we have a customer token we can activate the tracking manager
              self.trackerManager = [GGTrackerManager trackerWithCustomerToken:customer.customerToken
-                                                            andDeveloperToken:self.developerTokenField.text andDelegate:self];
+                                                            andDeveloperToken:kBringgDeveloperToken
+                                                                  andDelegate:self];
              
              self.customerTokenField.text = customer.customerToken;
              

@@ -48,10 +48,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1353D5641B42D4F300704003 /* BringgCustomer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BringgCustomer.h; sourceTree = "<group>"; };
 		1353D5651B42D4F300704003 /* BringgGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BringgGlobals.h; sourceTree = "<group>"; };
-		1353D5661B42D4F300704003 /* BringgTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BringgTracker.h; sourceTree = "<group>"; };
-		1353D5671B42D4F300704003 /* GGClientAppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGClientAppManager.h; sourceTree = "<group>"; };
 		1353D5681B42D4F300704003 /* GGCustomer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGCustomer.h; sourceTree = "<group>"; };
 		1353D5691B42D4F300704003 /* GGDriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGDriver.h; sourceTree = "<group>"; };
 		1353D56A1B42D4F300704003 /* GGHTTPClientManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGHTTPClientManager.h; sourceTree = "<group>"; };
@@ -128,10 +125,7 @@
 		1353D5631B42D4F300704003 /* include */ = {
 			isa = PBXGroup;
 			children = (
-				1353D5641B42D4F300704003 /* BringgCustomer.h */,
 				1353D5651B42D4F300704003 /* BringgGlobals.h */,
-				1353D5661B42D4F300704003 /* BringgTracker.h */,
-				1353D5671B42D4F300704003 /* GGClientAppManager.h */,
 				1353D5681B42D4F300704003 /* GGCustomer.h */,
 				1353D5691B42D4F300704003 /* GGDriver.h */,
 				1353D56A1B42D4F300704003 /* GGHTTPClientManager.h */,

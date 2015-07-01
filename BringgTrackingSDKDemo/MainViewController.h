@@ -30,7 +30,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *customerPhoneField;
 @property (weak, nonatomic) IBOutlet UITextField *customerCodeField;
 @property (weak, nonatomic) IBOutlet UITextField *customerMerchantField;
-@property (weak, nonatomic) IBOutlet UITextField *developerTokenField;
 @property (weak, nonatomic) IBOutlet UITextField *customerRatingField;
 @property (weak, nonatomic) IBOutlet UIButton *signinButton;
 @property (weak, nonatomic) IBOutlet UIButton *ratingButton;
