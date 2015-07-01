@@ -2,8 +2,8 @@
 //  ViewController.m
 //  BringgTrackingSDKDemo
 //
-//  Created by Ilya Kalinin on 12/17/14.
-//  Copyright (c) 2014 Ilya Kalinin. All rights reserved.
+//  Created by Matan Poreh on 12/17/14.
+//  Copyright (c) 2014 Matan Poreh. All rights reserved.
 //
 
 #import "MainViewController.h"
@@ -164,7 +164,7 @@
              [GGTrackerManager trackerWithCustomerToken:customer.customerToken
                                                             andDeveloperToken:kBringgDeveloperToken
                                                                   andDelegate:self];
-             
+             // then we can access the tracker singelton via his conveninence initialiser 
              self.trackerManager = [GGTrackerManager tracker];
              
              self.customerTokenField.text = customer.customerToken;

@@ -2,8 +2,8 @@
 //  AppDelegate.m
 //  BringgTrackingSDKDemo
 //
-//  Created by Ilya Kalinin on 12/17/14.
-//  Copyright (c) 2014 Ilya Kalinin. All rights reserved.
+//  Created by Matan Poreh on 12/17/14.
+//  Copyright (c) 2014 Matan Poreh. All rights reserved.
 //
 
 #import "AppDelegate.h"
