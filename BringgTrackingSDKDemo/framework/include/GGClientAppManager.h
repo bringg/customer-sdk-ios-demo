@@ -3,7 +3,7 @@
 //  BringgTracking
 //
 //  Created by Ilya Kalinin on 3/9/15.
-//  Copyright (c) 2015 Matan Poreh. All rights reserved.
+//  Copyright (c) 2015 Ilya Kalinin. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -15,7 +15,7 @@
 @class GGRating;
 @class GGOrderBuilder;
 
-@interface GGHTTPClientManager : NSObject
+@interface GGClientAppManager : NSObject
 
 + (id)sharedInstance;
 
@@ -31,14 +31,14 @@
 
 - (void)getOrderByID:(NSUInteger)orderId withCompletionHandler:(void (^)(BOOL success, GGOrder *order, NSError *error))completionHandler;
 
-- (void)getSharedLocationByUUID:(NSString *)sharedLocationUUID withCompletionHandler:(void (^)(BOOL success, GGSharedLocation *sharedLocation, NSError *error))completionHandler;
+- (void)getSharedLocationByID:(NSUInteger)sharedLocationId withCompletionHandler:(void (^)(BOOL success, GGSharedLocation *sharedLocation, NSError *error))completionHandler;
 
-- (void)rate:(int)rating withToken:(NSString *)ratingToken forSharedLocationUUID:(NSString *)sharedLocationUUID withCompletionHandler:(void (^)(BOOL success, GGRating *rating, NSError *error))completionHandler;
+- (void)rate:(int)rating withToken:(NSString *)ratingToken forSharedUUID:(NSString *)sharedUUID withCompletionHandler:(void (^)(BOOL success, GGRating *rating, NSError *error))completionHandler;
 
- 
+- (void)addOrderWith:(GGOrderBuilder *)orderBuilder withCompletionHandler:(void (^)(BOOL success, GGOrder *order, NSError *error))completionHandler;
+
 - (BOOL)isSignedIn;
 - (BOOL)hasPhone;
 - (BOOL)hasMerchantId;
 
- 
 @end
