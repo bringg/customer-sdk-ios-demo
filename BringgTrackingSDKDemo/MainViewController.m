@@ -35,7 +35,12 @@
         [GGHTTPClientManager managerWithDeveloperToken:kBringgDeveloperToken];
         self.httpManager = [GGHTTPClientManager manager];
  
+        // init the tracker without the customer token
+        self.trackerManager = [GGTrackerManager tracker];
+        [self.trackerManager setDeveloperToken:kBringgDeveloperToken];
+        [self.trackerManager setRealTimeDelegate:self];
         
+
         _monitoredOrders = [NSMutableDictionary dictionary];
         _monitoredDrivers = [NSMutableDictionary dictionary];
         
@@ -95,33 +100,58 @@
 
 - (IBAction)monitorOrder:(id)sender {
 
-     NSString *orderid = self.orderField.text;
+    NSString *orderid = self.orderField.text;
     
-    // get the order object and start monitoring it
-    [self.httpManager getOrderByID:orderid.integerValue withCompletionHandler:^(BOOL success, GGOrder *order, NSError *error) {
-        //
-        if (success && order) {
-            if ([self.trackerManager isWatchingOrderWithUUID:order.uuid]) {
+    // if the customer signed in  we can use the http manager to get more data about
+    // the order before doing the actual monitoring
+    if ([self.httpManager isSignedIn]) {
+        // get the order object and start monitoring it
+        [self.httpManager getOrderByID:orderid.integerValue withCompletionHandler:^(BOOL success, GGOrder *order, NSError *error) {
+            //
+            if (success && order) {
                 
-                [_monitoredOrders setObject:[NSNull null] forKey:order.uuid];
-                
-                [self.trackerManager stopWatchingOrderWithUUID:order.uuid];
-                [self.orderButton setTitle:@"Monitor Order" forState:UIControlStateNormal];
+                [self trackOrder:order];
+
             }else{
-                
-                [_monitoredOrders setObject:order forKey:order.uuid];
-                
-                [self.trackerManager startWatchingOrderWithUUID:order.uuid delegate:self];
-                [self.orderButton setTitle:@"Stop Monitor Order" forState:UIControlStateNormal];
+                if (error) {
+                    UIAlertView  *alertView = [[UIAlertView alloc] initWithTitle:@"General Service Error" message:error.localizedDescription delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+                    
+                    [alertView show];
+                }
             }
             
-            
-            
-        }
+        }];
         
-    }];
+    }else{
+        // if customer not signed in  then it is our job to provide order uuid from the partner - api
+        // make sure the orderfield now hold uuid
+         NSString *orderuuid = self.orderField.text;
+        
+        // if no order object we create one with the uuid we got from the partner api and the 'Created' status
+        GGOrder *order = [[GGOrder alloc] initOrderWithUUID:orderuuid atStatus:OrderStatusCreated];
+        
+        [self trackOrder:order];
+    }
     
     
+    
+    
+}
+
+- (void)trackOrder:(GGOrder *)order{
+    if ([self.trackerManager isWatchingOrderWithUUID:order.uuid]) {
+        
+        [_monitoredOrders setObject:[NSNull null] forKey:order.uuid];
+        
+        [self.trackerManager stopWatchingOrderWithUUID:order.uuid];
+        [self.orderButton setTitle:@"Monitor Order" forState:UIControlStateNormal];
+    }else{
+        
+        [_monitoredOrders setObject:order forKey:order.uuid];
+        
+        [self.trackerManager startWatchingOrderWithUUID:order.uuid delegate:self];
+        [self.orderButton setTitle:@"Stop Monitor Order" forState:UIControlStateNormal];
+    }
 }
 
 - (IBAction)monitorDriver:(id)sender {
@@ -160,12 +190,16 @@
              alertView = [[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"%@ Signed in", customer.name] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
              
              [alertView show];
-             // once we have a customer token we can activate the tracking manager
-             [GGTrackerManager trackerWithCustomerToken:customer.customerToken
-                                                            andDeveloperToken:kBringgDeveloperToken
-                                                                  andDelegate:self];
-             // then we can access the tracker singelton via his conveninence initialiser 
-             self.trackerManager = [GGTrackerManager tracker];
+             
+             if (!self.trackerManager) {
+                 // once we have a customer token we can activate the tracking manager
+                 [GGTrackerManager trackerWithCustomerToken:customer.customerToken
+                                          andDeveloperToken:kBringgDeveloperToken
+                                                andDelegate:self];
+                 // then we can access the tracker singelton via his conveninence initialiser
+                 self.trackerManager = [GGTrackerManager tracker];
+
+             }
              
              self.customerTokenField.text = customer.customerToken;
              
@@ -239,6 +273,7 @@
     self.connectionLabel.text = @"BringgTracker: connected";
     [self.connectionButton setTitle:@"Disconnect" forState:UIControlStateNormal];
     
+    // cant add orders without customer (sign in required)
     [_addOrder setEnabled:self.trackerManager.customer];
     
 }
@@ -271,6 +306,13 @@
 #pragma mark - OrderDelegate
 
 - (void)watchOrderFailForOrder:(GGOrder *)order error:(NSError *)error{
+    
+    NSString *errorMessage = [NSString stringWithFormat:@"%@.\nDid you enter the correct Order UUID?", error.localizedDescription.capitalizedString];
+    
+   UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Watch Order Error" message:errorMessage delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    
+    [alertView show];
+    
     self.orderLabel.text = [NSString stringWithFormat:@"Failed %@, error %@", order.uuid, error];
     [self.orderButton setTitle:@"Monitor Order" forState:UIControlStateNormal];
     self.uuidField.text = order.sharedLocation.locationUUID;
@@ -325,6 +367,14 @@
 #pragma mark - DriverDelegate
 
 - (void)watchDriverFailedForDriver:(GGDriver *)driver error:(NSError *)error{
+    
+    
+    NSString *errorMessage = [NSString stringWithFormat:@"%@.\nDid you enter the correct Driver UUID & Share UUID?", error.localizedDescription.capitalizedString];
+    
+    UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Watch Driver Error" message:errorMessage delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    
+    [alertView show];
+    
     self.driverLabel.text = [NSString stringWithFormat:@"Monitoring failed for %@, error %@", driver.uuid, error];
     [self.driverButton setTitle:@"Monitor Driver" forState:UIControlStateNormal];
 }

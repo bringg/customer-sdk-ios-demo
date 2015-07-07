@@ -30,7 +30,7 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="order id" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="agq-Fr-FQU">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="order id / uuid" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="agq-Fr-FQU">
                                         <rect key="frame" x="308" y="154" width="272" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="v9V-hj-xgR"/>
