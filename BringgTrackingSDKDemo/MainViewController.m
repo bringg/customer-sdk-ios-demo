@@ -14,7 +14,7 @@
 #import "GGOrderBuilder.h"
 #import "GGRealTimeMontior.h"
 
-#define kBringgDeveloperToken @"YOUR_DEVELOPER_ACCESS_TOKEN"
+#define kBringgDeveloperToken @"YOUR_DEVELOPER_TOKEN_HERE"
 
 
 @interface MainViewController ()
