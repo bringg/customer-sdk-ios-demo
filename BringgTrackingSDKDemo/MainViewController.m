@@ -342,21 +342,21 @@
     self.uuidField.text = monitoredOrder.sharedLocation.locationUUID;
 }
 
-- (void)orderDidArrive:(GGOrder *)order{
+- (void)orderDidArrive:(GGOrder *)order withDriver:(GGDriver *)driver{
     
     GGOrder *monitoredOrder = [self updateMonitoredOrderWithOrder:order];
     self.orderLabel.text = [NSString stringWithFormat:@"Order arrived %@", order.uuid];
     self.uuidField.text = monitoredOrder.sharedLocation.locationUUID;
 }
 
-- (void)orderDidFinish:(GGOrder *)order{
+-(void)orderDidFinish:(GGOrder *)order withDriver:(GGDriver *)driver{
     
     GGOrder *monitoredOrder = [self updateMonitoredOrderWithOrder:order];
     self.orderLabel.text = [NSString stringWithFormat:@"Order finished %@", order.uuid];
     self.uuidField.text = monitoredOrder.sharedLocation.locationUUID;
 }
 
-- (void)orderDidCancel:(GGOrder *)order{
+- (void)orderDidCancel:(GGOrder *)order withDriver:(GGDriver *)driver{
     
     GGOrder *monitoredOrder = [self updateMonitoredOrderWithOrder:order];
     self.orderLabel.text = [NSString stringWithFormat:@"Order canceled %@", order.uuid];
