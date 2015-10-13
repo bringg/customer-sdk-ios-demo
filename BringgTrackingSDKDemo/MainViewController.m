@@ -63,7 +63,7 @@
 - (void)viewWillAppear:(BOOL)animated{
     
     // add order button is available only when there is a customer logged in
-    [_addOrder setEnabled:self.trackerManager.customer];
+    [_addOrder setEnabled:self.trackerManager.customer != nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -92,8 +92,8 @@
         }
         
     } else if (self.trackerManager){
-        NSLog(@"connecting");
-        [self.trackerManager connect];
+        NSLog(@"connecting to http/https");
+        [self.trackerManager connectUsingSecureConnection:YES];
     
     }
 }
@@ -274,7 +274,7 @@
     [self.connectionButton setTitle:@"Disconnect" forState:UIControlStateNormal];
     
     // cant add orders without customer (sign in required)
-    [_addOrder setEnabled:self.trackerManager.customer];
+    [_addOrder setEnabled:self.trackerManager.customer != nil];
     
 }
 

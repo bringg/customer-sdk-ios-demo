@@ -63,7 +63,7 @@
                                    email:nil
                                    notes:nil];
     
-    _waypointsTitleLabel.text = [NSString stringWithFormat:@"Waypoints: %lu", _orderBuilder.numWaypoints];
+    _waypointsTitleLabel.text = [NSString stringWithFormat:@"Waypoints: %lu", (unsigned long)_orderBuilder.numWaypoints];
     
 }
 
