@@ -74,7 +74,7 @@
 - (void)hideKeyBoard {
     [self.orderField resignFirstResponder];
     [self.driverField resignFirstResponder];
-    [self.uuidField resignFirstResponder];
+    [self.shareUUIDField resignFirstResponder];
     [self.customerRatingField resignFirstResponder];
     [self.customerMerchantField resignFirstResponder];
     [self.customerNameField resignFirstResponder];
@@ -156,7 +156,7 @@
 
 - (IBAction)monitorDriver:(id)sender {
     NSString *uuid = self.driverField.text;
-    NSString *shareuuid = self.uuidField.text;
+    NSString *shareuuid = self.shareUUIDField.text;
     if (uuid && [uuid length]) {
         if ([self.trackerManager isWatchingDriverWithUUID:uuid]) {
             
@@ -176,10 +176,13 @@
 - (IBAction)signin:(id)sender {
     //signin to get customer token
     
+   
+    
     [self.httpManager signInWithName:self.customerNameField.text
                             phone:self.customerPhoneField.text
                 confirmationCode:self.customerCodeField.text
                       merchantId:self.customerMerchantField.text
+                              extras:nil
 
      completionHandler:^(BOOL success, GGCustomer *customer, NSError *error) {
          //
@@ -219,11 +222,15 @@
 - (IBAction)rate:(id)sender {
     
     // first we should gate the shared location object - only then can we rate
-    [self.httpManager getSharedLocationByUUID:self.uuidField.text withCompletionHandler:^(BOOL success, GGSharedLocation *sharedLocation, NSError *error) {
+    [self.httpManager getSharedLocationByUUID:self.shareUUIDField.text withCompletionHandler:^(BOOL success, GGSharedLocation *sharedLocation, NSError *error) {
         //
         
         if (success && sharedLocation) {
-            [self.httpManager rate:[self.customerRatingField.text intValue] withToken:sharedLocation.rating.token forSharedLocationUUID:self.uuidField.text withCompletionHandler:^(BOOL success, GGRating *rating, NSError *error) {
+           
+            
+            [self.httpManager rate:[self.customerRatingField.text intValue]
+                         withToken:sharedLocation.rating.token
+                         ratingURL:self.ratingURLField.text withCompletionHandler:^(BOOL success, GGRating *rating, NSError *error) {
                 //
                 UIAlertView *alertView;
                 if (rating && rating.ratingMessage) {
@@ -315,7 +322,8 @@
     
     self.orderLabel.text = [NSString stringWithFormat:@"Failed %@, error %@", order.uuid, error];
     [self.orderButton setTitle:@"Monitor Order" forState:UIControlStateNormal];
-    self.uuidField.text = order.sharedLocation.locationUUID;
+    self.shareUUIDField.text = order.sharedLocation.locationUUID;
+    self.ratingURLField.text = order.sharedLocation.ratingURL;
 }
 
 - (void)orderDidAssignWithOrder:(GGOrder *)order withDriver:(GGDriver *)driver{
@@ -323,7 +331,7 @@
     GGOrder *monitoredOrder = [self updateMonitoredOrderWithOrder:order];
     self.orderLabel.text = [NSString stringWithFormat:@"Order assigned %@ for driver %@", order.uuid, driver.uuid];
     self.driverField.text = driver.uuid;
-    self.uuidField.text = monitoredOrder.sharedLocation.locationUUID;
+    self.shareUUIDField.text = monitoredOrder.sharedLocation.locationUUID;
 }
 
 - (void)orderDidAcceptWithOrder:(GGOrder *)order withDriver:(GGDriver *)driver{
@@ -331,7 +339,7 @@
     GGOrder *monitoredOrder = [self updateMonitoredOrderWithOrder:order];
     self.orderLabel.text = [NSString stringWithFormat:@"Order accepted %@ for driver %@", order.uuid, driver.uuid];
     self.driverField.text = driver.uuid;
-    self.uuidField.text = monitoredOrder.sharedLocation.locationUUID;
+    self.shareUUIDField.text = monitoredOrder.sharedLocation.locationUUID;
 }
 
 - (void)orderDidStartWithOrder:(GGOrder *)order withDriver:(GGDriver *)driver{
@@ -339,28 +347,28 @@
     GGOrder *monitoredOrder = [self updateMonitoredOrderWithOrder:order];
     self.orderLabel.text = [NSString stringWithFormat:@"Order started %@ for driver %@", order.uuid, driver.uuid];
     self.driverField.text = driver.uuid;
-    self.uuidField.text = monitoredOrder.sharedLocation.locationUUID;
+    self.shareUUIDField.text = monitoredOrder.sharedLocation.locationUUID;
 }
 
 - (void)orderDidArrive:(GGOrder *)order withDriver:(GGDriver *)driver{
     
     GGOrder *monitoredOrder = [self updateMonitoredOrderWithOrder:order];
     self.orderLabel.text = [NSString stringWithFormat:@"Order arrived %@", order.uuid];
-    self.uuidField.text = monitoredOrder.sharedLocation.locationUUID;
+    self.shareUUIDField.text = monitoredOrder.sharedLocation.locationUUID;
 }
 
 -(void)orderDidFinish:(GGOrder *)order withDriver:(GGDriver *)driver{
     
     GGOrder *monitoredOrder = [self updateMonitoredOrderWithOrder:order];
     self.orderLabel.text = [NSString stringWithFormat:@"Order finished %@", order.uuid];
-    self.uuidField.text = monitoredOrder.sharedLocation.locationUUID;
+    self.shareUUIDField.text = monitoredOrder.sharedLocation.locationUUID;
 }
 
 - (void)orderDidCancel:(GGOrder *)order withDriver:(GGDriver *)driver{
     
     GGOrder *monitoredOrder = [self updateMonitoredOrderWithOrder:order];
     self.orderLabel.text = [NSString stringWithFormat:@"Order canceled %@", order.uuid];
-    self.uuidField.text = monitoredOrder.sharedLocation.locationUUID;
+    self.shareUUIDField.text = monitoredOrder.sharedLocation.locationUUID;
 }
 
 

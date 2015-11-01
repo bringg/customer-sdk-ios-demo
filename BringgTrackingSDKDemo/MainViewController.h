@@ -23,7 +23,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *driverLabel;
 @property (weak, nonatomic) IBOutlet UITextField *driverField;
 @property (weak, nonatomic) IBOutlet UIButton *driverButton;
-@property (weak, nonatomic) IBOutlet UITextField *uuidField;
+@property (weak, nonatomic) IBOutlet UITextField *shareUUIDField;
+@property (weak, nonatomic) IBOutlet UITextField *ratingURLField;
 @property (weak, nonatomic) IBOutlet UILabel *customerSigninLabel;
 @property (weak, nonatomic) IBOutlet UIButton *addOrder;
 @property (weak, nonatomic) IBOutlet UITextField *customerNameField;
