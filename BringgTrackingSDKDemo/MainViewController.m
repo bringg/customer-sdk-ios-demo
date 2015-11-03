@@ -106,7 +106,7 @@
     // the order before doing the actual monitoring
     if ([self.httpManager isSignedIn]) {
         // get the order object and start monitoring it
-        [self.httpManager getOrderByID:orderid.integerValue withCompletionHandler:^(BOOL success, GGOrder *order, NSError *error) {
+        [self.httpManager getOrderByID:orderid.integerValue extras:nil  withCompletionHandler:^(BOOL success, NSDictionary * response, GGOrder *order, NSError *error) {
             //
             if (success && order) {
                 
@@ -180,11 +180,13 @@
     
     [self.httpManager signInWithName:self.customerNameField.text
                             phone:self.customerPhoneField.text
+                            email:nil
+                            password:nil
                 confirmationCode:self.customerCodeField.text
                       merchantId:self.customerMerchantField.text
                               extras:nil
 
-     completionHandler:^(BOOL success, GGCustomer *customer, NSError *error) {
+     completionHandler:^(BOOL success, NSDictionary *response, GGCustomer *customer, NSError *error) {
          //
          UIAlertView *alertView;
          
@@ -222,7 +224,7 @@
 - (IBAction)rate:(id)sender {
     
     // first we should gate the shared location object - only then can we rate
-    [self.httpManager getSharedLocationByUUID:self.shareUUIDField.text withCompletionHandler:^(BOOL success, GGSharedLocation *sharedLocation, NSError *error) {
+    [self.httpManager getSharedLocationByUUID:self.shareUUIDField.text extras:nil withCompletionHandler:^(BOOL success, NSDictionary * response, GGSharedLocation *sharedLocation, NSError *error) {
         //
         
         if (success && sharedLocation) {
@@ -230,7 +232,7 @@
             
             [self.httpManager rate:[self.customerRatingField.text intValue]
                          withToken:sharedLocation.rating.token
-                         ratingURL:self.ratingURLField.text withCompletionHandler:^(BOOL success, GGRating *rating, NSError *error) {
+                         ratingURL:self.ratingURLField.text extras:nil withCompletionHandler:^(BOOL success,NSDictionary *response,  GGRating *rating, NSError *error) {
                 //
                 UIAlertView *alertView;
                 if (rating && rating.ratingMessage) {
