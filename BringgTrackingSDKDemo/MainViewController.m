@@ -158,7 +158,7 @@
     NSString *uuid = self.driverField.text;
     NSString *shareuuid = self.shareUUIDField.text;
     if (uuid && [uuid length]) {
-        if ([self.trackerManager isWatchingDriverWithUUID:uuid]) {
+        if ([self.trackerManager isWatchingDriverWithUUID:uuid andShareUUID:shareuuid]) {
             
             [_monitoredDrivers setObject:[NSNull null] forKey:uuid];
             
@@ -200,7 +200,8 @@
                  // once we have a customer token we can activate the tracking manager
                  [GGTrackerManager trackerWithCustomerToken:customer.customerToken
                                           andDeveloperToken:kBringgDeveloperToken
-                                                andDelegate:self];
+                                                andDelegate:self
+                                             andHTTPManager:self.httpManager];
                  // then we can access the tracker singelton via his conveninence initialiser
                  self.trackerManager = [GGTrackerManager tracker];
 
