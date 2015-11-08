@@ -14,7 +14,7 @@
 #import "GGOrderBuilder.h"
 #import "GGRealTimeMontior.h"
 
-#define kBringgDeveloperToken @"YOUR_DEVELOPER_TOKEN_HERE"
+#define kBringgDeveloperToken @"G7H7RAa25Ho7eesjFVHw"
 
 
 @interface MainViewController ()
@@ -24,6 +24,7 @@
 
 @property (nonatomic, strong) NSMutableDictionary *monitoredOrders;
 @property (nonatomic, strong) NSMutableDictionary *monitoredDrivers;
+@property (nonatomic, strong) NSMutableDictionary *monitoredWaypoints;
 @end
 
 @implementation MainViewController
@@ -43,7 +44,7 @@
 
         _monitoredOrders = [NSMutableDictionary dictionary];
         _monitoredDrivers = [NSMutableDictionary dictionary];
-        
+         _monitoredWaypoints = [NSMutableDictionary dictionary];
     }
     
     return self;
@@ -173,6 +174,27 @@
     }
 }
 
+- (IBAction)monitorWaypoint:(id)sender {
+    
+    if (self.waypointIdField.text && self.waypointIdField.text.length > 0) {
+        
+        NSNumber *wpid = @(self.waypointIdField.text.doubleValue);
+        
+        if ([self.trackerManager isWatchingWaypointWithWaypointId:wpid]) {
+           [ _monitoredWaypoints setObject:[NSNull null] forKey:wpid];
+            [self.trackerManager stopWatchingWaypointWithWaypointId:wpid];
+            [self.monitorWPButton setTitle:@"Monitor Waypoint" forState:UIControlStateNormal];
+        }else{
+            [self.trackerManager startWatchingWaypointWithWaypointId:wpid delegate:self];
+            [self.monitorWPButton setTitle:@"Stop Monitor Waypoint" forState:UIControlStateNormal];
+        }
+    }
+    
+}
+
+
+
+
 - (IBAction)signin:(id)sender {
     //signin to get customer token
     
@@ -261,6 +283,7 @@
     [self performSegueWithIdentifier:@"showAddOrder" sender:self];
     
 }
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
@@ -417,6 +440,19 @@
 //    }];
     
 }
+
+#pragma mark Waypoint Delegate
+
+-(void)watchWaypointFailedForWaypointId:(NSNumber *)waypointId error:(NSError *)error{
+    self.lblWaypointStatus.text = error.localizedDescription;
+}
+
+-(void)waypointDidUpdatedWaypointId:(NSNumber *)waypointId eta:(NSDate *)eta{
+    self.lblWaypointStatus.text = @"Waypoint Status";
+    self.txtETA.text = [NSString stringWithFormat:@"ETA: %@", eta];
+}
+
+
 
 
 @end
