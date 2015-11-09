@@ -48,6 +48,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		130CA55E1BF0D9CA002C26F7 /* GGBringgUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGBringgUtils.h; sourceTree = "<group>"; };
+		130CA55F1BF0D9CA002C26F7 /* GGWaypoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGWaypoint.h; sourceTree = "<group>"; };
+		130CA5601BF0D9CA002C26F7 /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocket.h; sourceTree = "<group>"; };
 		1353D5651B42D4F300704003 /* BringgGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BringgGlobals.h; sourceTree = "<group>"; };
 		1353D5681B42D4F300704003 /* GGCustomer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGCustomer.h; sourceTree = "<group>"; };
 		1353D5691B42D4F300704003 /* GGDriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGDriver.h; sourceTree = "<group>"; };
@@ -125,6 +128,9 @@
 		1353D5631B42D4F300704003 /* include */ = {
 			isa = PBXGroup;
 			children = (
+				130CA55E1BF0D9CA002C26F7 /* GGBringgUtils.h */,
+				130CA55F1BF0D9CA002C26F7 /* GGWaypoint.h */,
+				130CA5601BF0D9CA002C26F7 /* SRWebSocket.h */,
 				1353D5651B42D4F300704003 /* BringgGlobals.h */,
 				1353D5681B42D4F300704003 /* GGCustomer.h */,
 				1353D5691B42D4F300704003 /* GGDriver.h */,

@@ -32,7 +32,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="order id / uuid" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="agq-Fr-FQU">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="order id / uuid" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="agq-Fr-FQU">
                                         <rect key="frame" x="308" y="154" width="122" height="30"/>
                                         <animations/>
                                         <constraints>
@@ -101,7 +101,7 @@
                                             <action selector="monitorWaypoint:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="yyq-LS-1tj"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="driver uuid" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nsK-L9-pk6">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="driver uuid" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="nsK-L9-pk6">
                                         <rect key="frame" x="308" y="221" width="122" height="30"/>
                                         <animations/>
                                         <constraints>
@@ -110,7 +110,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="waypoint id" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U0k-9O-enx">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="waypoint id" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="U0k-9O-enx">
                                         <rect key="frame" x="308" y="530" width="122" height="30"/>
                                         <animations/>
                                         <constraints>
@@ -119,7 +119,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="share uuid" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eRw-4F-wRc">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="share uuid" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eRw-4F-wRc">
                                         <rect key="frame" x="20" y="261" width="272" height="30"/>
                                         <animations/>
                                         <constraints>
@@ -128,7 +128,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="customer token" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="myK-QX-GE5">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="customer token" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="myK-QX-GE5">
                                         <rect key="frame" x="308" y="85" width="122" height="30"/>
                                         <animations/>
                                         <constraints>
@@ -160,7 +160,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vGw-xg-U5B">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vGw-xg-U5B">
                                         <rect key="frame" x="20" y="328" width="272" height="30"/>
                                         <animations/>
                                         <constraints>
@@ -169,7 +169,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9s0-WQ-CxB">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="code" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="9s0-WQ-CxB">
                                         <rect key="frame" x="308" y="366" width="122" height="30"/>
                                         <animations/>
                                         <constraints>
@@ -206,7 +206,7 @@
                                             <action selector="rate:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Nut-tp-aUu"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="merchant id" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NOe-Bc-AW9">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="merchant id" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="NOe-Bc-AW9">
                                         <rect key="frame" x="308" y="328" width="122" height="30"/>
                                         <animations/>
                                         <constraints>
@@ -215,7 +215,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="phone" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VdT-eA-xlA">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="phone" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VdT-eA-xlA">
                                         <rect key="frame" x="20" y="366" width="272" height="30"/>
                                         <animations/>
                                         <constraints>
@@ -224,7 +224,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="rating (1-5)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Th0-Ra-MRz">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="rating (1-5)" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Th0-Ra-MRz">
                                         <rect key="frame" x="20" y="442" width="272" height="30"/>
                                         <animations/>
                                         <constraints>
@@ -263,7 +263,7 @@
                                             <segue destination="wlK-sG-pF6" kind="presentation" identifier="showAddOrder" id="zvj-Z1-7ys"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="rating URL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BvC-u8-w1p">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="rating URL" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="BvC-u8-w1p">
                                         <rect key="frame" x="308" y="261" width="122" height="30"/>
                                         <animations/>
                                         <constraints>
@@ -357,8 +357,6 @@
                         <animations/>
                         <color key="backgroundColor" red="0.92684096097946167" green="0.95598715543746948" blue="0.94954520463943481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="Syd-rG-nJ8" secondAttribute="centerX" id="Hac-mv-zua"/>
-                            <constraint firstAttribute="centerY" secondItem="Syd-rG-nJ8" secondAttribute="centerY" id="NdF-x1-7ac"/>
                             <constraint firstItem="Syd-rG-nJ8" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Olx-Zw-bSC"/>
                             <constraint firstItem="Syd-rG-nJ8" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="bC1-fe-xcU"/>
                             <constraint firstAttribute="trailing" secondItem="Syd-rG-nJ8" secondAttribute="trailing" id="kIN-4c-wJO"/>
