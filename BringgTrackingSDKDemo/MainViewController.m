@@ -13,6 +13,7 @@
 #import "GGOrder.h"
 #import "GGOrderBuilder.h"
 #import "GGRealTimeMontior.h"
+#import "GGWaypoint.h"
 
 #define kBringgDeveloperToken @"YOUR_DEVELOPER_KEY"
 
@@ -40,7 +41,8 @@
         self.trackerManager = [GGTrackerManager tracker];
         [self.trackerManager setDeveloperToken:kBringgDeveloperToken];
         [self.trackerManager setRealTimeDelegate:self];
-        
+        [self.trackerManager setHTTPManager:self.httpManager];
+       
 
         _monitoredOrders = [NSMutableDictionary dictionary];
         _monitoredDrivers = [NSMutableDictionary dictionary];
@@ -366,35 +368,35 @@
     
     GGOrder *monitoredOrder = [self updateMonitoredOrderWithOrder:order];
     self.orderLabel.text = [NSString stringWithFormat:@"Order assigned %@ for driver %@", order.uuid, driver.uuid];
-    [self updateUIWithShared:monitoredOrder.sharedLocation.locationUUID andRatingURL:monitoredOrder.sharedLocation.ratingURL andDriver:driver.uuid];
+    [self updateUIWithShared:monitoredOrder.sharedLocation.locationUUID ? monitoredOrder.sharedLocation.locationUUID : monitoredOrder.sharedLocationUUID andRatingURL:monitoredOrder.sharedLocation.ratingURL andDriver:driver.uuid andOrder:order];
 }
 
 - (void)orderDidAcceptWithOrder:(GGOrder *)order withDriver:(GGDriver *)driver{
     
     GGOrder *monitoredOrder = [self updateMonitoredOrderWithOrder:order];
     self.orderLabel.text = [NSString stringWithFormat:@"Order accepted %@ for driver %@", order.uuid, driver.uuid];
-    [self updateUIWithShared:monitoredOrder.sharedLocation.locationUUID andRatingURL:monitoredOrder.sharedLocation.ratingURL andDriver:driver.uuid];
+    [self updateUIWithShared:monitoredOrder.sharedLocation.locationUUID ? monitoredOrder.sharedLocation.locationUUID : monitoredOrder.sharedLocationUUID andRatingURL:monitoredOrder.sharedLocation.ratingURL andDriver:driver.uuid andOrder:order];
 }
 
 - (void)orderDidStartWithOrder:(GGOrder *)order withDriver:(GGDriver *)driver{
     
     GGOrder *monitoredOrder = [self updateMonitoredOrderWithOrder:order];
     self.orderLabel.text = [NSString stringWithFormat:@"Order started %@ for driver %@", order.uuid, driver.uuid];
-     [self updateUIWithShared:monitoredOrder.sharedLocation.locationUUID andRatingURL:monitoredOrder.sharedLocation.ratingURL andDriver:driver.uuid];
+     [self updateUIWithShared:monitoredOrder.sharedLocation.locationUUID ? monitoredOrder.sharedLocation.locationUUID : monitoredOrder.sharedLocationUUID andRatingURL:monitoredOrder.sharedLocation.ratingURL andDriver:driver.uuid andOrder:order];
 }
 
 - (void)orderDidArrive:(GGOrder *)order withDriver:(GGDriver *)driver{
     
     GGOrder *monitoredOrder = [self updateMonitoredOrderWithOrder:order];
     self.orderLabel.text = [NSString stringWithFormat:@"Order arrived %@", order.uuid];
-    [self updateUIWithShared:monitoredOrder.sharedLocation.locationUUID andRatingURL:monitoredOrder.sharedLocation.ratingURL andDriver:driver.uuid];
+    [self updateUIWithShared:monitoredOrder.sharedLocation.locationUUID ? monitoredOrder.sharedLocation.locationUUID : monitoredOrder.sharedLocationUUID andRatingURL:monitoredOrder.sharedLocation.ratingURL andDriver:driver.uuid andOrder:order];
 }
 
 -(void)orderDidFinish:(GGOrder *)order withDriver:(GGDriver *)driver{
     
     GGOrder *monitoredOrder = [self updateMonitoredOrderWithOrder:order];
     self.orderLabel.text = [NSString stringWithFormat:@"Order finished %@", order.uuid];
-    [self updateUIWithShared:monitoredOrder.sharedLocation.locationUUID andRatingURL:monitoredOrder.sharedLocation.ratingURL andDriver:driver.uuid];
+    [self updateUIWithShared:monitoredOrder.sharedLocation.locationUUID ? monitoredOrder.sharedLocation.locationUUID : monitoredOrder.sharedLocationUUID andRatingURL:monitoredOrder.sharedLocation.ratingURL andDriver:driver.uuid andOrder:order];
 }
 
 - (void)orderDidCancel:(GGOrder *)order withDriver:(GGDriver *)driver{
@@ -403,15 +405,29 @@
     
     self.orderLabel.text = [NSString stringWithFormat:@"Order canceled %@", order.uuid];
     
-    [self updateUIWithShared:monitoredOrder.sharedLocation.locationUUID andRatingURL:monitoredOrder.sharedLocation.ratingURL andDriver:driver.uuid];
+    [self updateUIWithShared:monitoredOrder.sharedLocation.locationUUID ? monitoredOrder.sharedLocation.locationUUID : monitoredOrder.sharedLocationUUID andRatingURL:monitoredOrder.sharedLocation.ratingURL andDriver:driver.uuid andOrder:order];
     
 }
 
 
-- (void)updateUIWithShared:(NSString *)shared andRatingURL:(NSString *)ratingURL andDriver:(NSString *)driverUUID{
+- (void)updateUIWithShared:(NSString *)shared
+              andRatingURL:(NSString *)ratingURL
+                 andDriver:(NSString *)driverUUID
+                  andOrder:(GGOrder *)order{
+    
     self.driverField.text = driverUUID;
     self.shareUUIDField.text = shared;
     self.ratingURLField.text = ratingURL;
+    
+    GGWaypoint *activeWp = [[order.waypoints filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"waypointId==%@", @(order.activeWaypointId)]] firstObject];
+    
+    
+    
+    if (activeWp && [activeWp ETA]) {
+         self.txtETA.text = [NSString stringWithFormat:@"ETA: %@", [activeWp ETA]];
+    }
+    
+   
 }
 
 #pragma mark - DriverDelegate
