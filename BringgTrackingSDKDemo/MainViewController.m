@@ -421,6 +421,7 @@
     
     GGWaypoint *activeWp = [[order.waypoints filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"waypointId==%@", @(order.activeWaypointId)]] firstObject];
     
+    self.orderLabel.text = [NSString stringWithFormat:@"STATUS : %ld", order.status];
     
     
     if (activeWp && [activeWp ETA]) {
