@@ -18,6 +18,7 @@
 #define kBringgDeveloperToken @"YOUR_DEVELOPER_KEY"
 
 
+
 @interface MainViewController ()
 
 @property (nonatomic, strong) GGTrackerManager *trackerManager;
@@ -182,12 +183,28 @@
         
         NSNumber *wpid = @(self.waypointIdField.text.doubleValue);
         
-        if ([self.trackerManager isWatchingWaypointWithWaypointId:wpid]) {
+        // check which order has this waypoint
+        NSArray *allOrder = [self.monitoredOrders allValues];
+        
+        NSPredicate *predicateOrder = [NSPredicate predicateWithFormat:@"ANY waypoints.waypointId == %@",  wpid];
+        
+        NSString *orderUUID = [[[allOrder filteredArrayUsingPredicate:predicateOrder] firstObject] uuid];
+        
+        if (!orderUUID) {
+            //
+            UIAlertView  *alertView = [[UIAlertView alloc] initWithTitle:@"General Service Error" message:@"cant find order for waypoint" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            
+            [alertView show];
+            
+            return;
+        }
+        
+        if ([self.trackerManager isWatchingWaypointWithWaypointId:wpid andOrderUUID:orderUUID]) {
            [ _monitoredWaypoints setObject:[NSNull null] forKey:wpid];
-            [self.trackerManager stopWatchingWaypointWithWaypointId:wpid];
+            [self.trackerManager stopWatchingWaypointWithWaypointId:wpid andOrderUUID:orderUUID];
             [self.monitorWPButton setTitle:@"Monitor Waypoint" forState:UIControlStateNormal];
         }else{
-            [self.trackerManager startWatchingWaypointWithWaypointId:wpid delegate:self];
+            [self.trackerManager startWatchingWaypointWithWaypointId:wpid andOrderUUID:orderUUID delegate:self];
             [self.monitorWPButton setTitle:@"Stop Monitor Waypoint" forState:UIControlStateNormal];
         }
     }
@@ -424,8 +441,11 @@
     self.orderLabel.text = [NSString stringWithFormat:@"STATUS : %ld", order.status];
     
     
-    if (activeWp && [activeWp ETA]) {
-         self.txtETA.text = [NSString stringWithFormat:@"ETA: %@", [activeWp ETA]];
+    if (activeWp) {
+        self.waypointIdField.text = [NSString stringWithFormat:@"%ld", activeWp.waypointId] ;
+        if ([activeWp ETA]) {
+            self.txtETA.text = [NSString stringWithFormat:@"ETA: %@", [activeWp ETA]];
+        }
     }
     
    
@@ -481,10 +501,17 @@
 }
 
 -(void)waypointDidUpdatedWaypointId:(NSNumber *)waypointId eta:(NSDate *)eta{
-    self.lblWaypointStatus.text = @"Waypoint Status";
+    self.lblWaypointStatus.text = @"Waypoint Updated ";
     self.txtETA.text = [NSString stringWithFormat:@"ETA: %@", eta];
 }
 
+- (void)waypointDidArrivedWaypointId:(NSNumber *)waypointId{
+     self.lblWaypointStatus.text = @"Waypoint arrived ";
+}
+
+- (void)waypointDidFinishedWaypointId:(NSNumber *)waypointId{
+    self.lblWaypointStatus.text = @"Waypoint done ";
+}
 
 
 
