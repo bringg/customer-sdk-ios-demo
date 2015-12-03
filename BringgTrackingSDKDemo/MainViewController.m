@@ -15,7 +15,7 @@
 #import "GGRealTimeMontior.h"
 #import "GGWaypoint.h"
 
-#define kBringgDeveloperToken @"YOUR_DEVELOPER_KEY"
+#define kBringgDeveloperToken @"F-muRzCajCA-4yvPXaxm"
 
 
 
