@@ -129,12 +129,20 @@
     }else{
         // if customer not signed in  then it is our job to provide order uuid from the partner - api
         // make sure the orderfield now hold uuid
-         NSString *orderuuid = self.orderField.text;
+        NSString *orderuuid = self.orderField.text;
+        NSString *sharedUUID;
+        NSString *orderCompound = self.orderCompoundField.text;
         
-        // if no order object we create one with the uuid we got from the partner api and the 'Created' status
-        GGOrder *order = [[GGOrder alloc] initOrderWithUUID:orderuuid atStatus:OrderStatusCreated];
-        
-        [self trackOrder:order];
+        if (orderCompound && orderCompound.length > 0) {
+            [self monitorOrderWithCompoundUUID:orderCompound];
+        }else{
+            // if no order object we create one with the uuid we got from the partner api and the 'Created' status
+            GGOrder *order = [[GGOrder alloc] initOrderWithUUID:orderuuid atStatus:OrderStatusCreated];
+            order.sharedLocationUUID = sharedUUID;
+            
+            [self trackOrder:order];
+        }
+
     }
     
     
@@ -142,7 +150,42 @@
     
 }
 
+- (void)monitorOrderWithCompoundUUID:(NSString *)compoundUUID{
+    
+    NSString *orderUUID;
+    NSString *sharedUUID;
+    NSError *error;
+
+    [GGBringgUtils parseOrderCompoundUUID:compoundUUID toOrderUUID:&orderUUID andSharedUUID:&sharedUUID error:&error];
+    
+    if (error) {
+        NSLog(@"cant monitor order :%@", error);
+    }else{
+        if ([self.trackerManager isWatchingOrderWithCompoundUUID:compoundUUID]) {
+            [_monitoredOrders setObject:[NSNull null] forKey:orderUUID];
+            [self.trackerManager stopWatchingOrderWithCompoundUUID:compoundUUID];
+            [self.orderButton setTitle:@"Monitor Order" forState:UIControlStateNormal];
+        }else{
+            GGOrder *order = [[GGOrder alloc] initOrderWithUUID:orderUUID atStatus:OrderStatusCreated];
+            order.sharedLocationUUID = sharedUUID;
+            
+            [_monitoredOrders setObject:order forKey:orderUUID];
+            
+            @try {
+                [self.trackerManager startWatchingOrderWithCompoundUUID:compoundUUID delegate:self];
+                [self.orderButton setTitle:@"Stop Monitor Order" forState:UIControlStateNormal];
+            } @catch (NSException *exception) {
+                NSLog(@"failed watching order %@", exception);
+                
+                [_monitoredOrders removeObjectForKey:orderUUID];
+            }
+            
+        }
+    }
+}
+
 - (void)trackOrder:(GGOrder *)order{
+    
     if ([self.trackerManager isWatchingOrderWithUUID:order.uuid]) {
         
         [_monitoredOrders setObject:[NSNull null] forKey:order.uuid];
