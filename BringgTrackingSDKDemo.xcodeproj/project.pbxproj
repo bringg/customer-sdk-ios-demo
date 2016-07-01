@@ -68,6 +68,8 @@
 		1353D5751B42D4F300704003 /* SocketIOTransportWebsocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOTransportWebsocket.h; sourceTree = "<group>"; };
 		1353D5761B42D4F300704003 /* SocketIOTransportXHR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOTransportXHR.h; sourceTree = "<group>"; };
 		1353D5781B42D4F300704003 /* libBringgTracking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBringgTracking.a; sourceTree = "<group>"; };
+		136713611D26D3DD009D5229 /* GGFindMe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGFindMe.h; sourceTree = "<group>"; };
+		136713621D26D3DD009D5229 /* GGItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGItem.h; sourceTree = "<group>"; };
 		139AA5211B42BD3800E95ED3 /* AddOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddOrderViewController.h; sourceTree = "<group>"; };
 		139AA5221B42BD3800E95ED3 /* AddOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddOrderViewController.m; sourceTree = "<group>"; };
 		A913A4861A41CFF80002AE32 /* BringgTrackingSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BringgTrackingSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +130,8 @@
 		1353D5631B42D4F300704003 /* include */ = {
 			isa = PBXGroup;
 			children = (
+				136713611D26D3DD009D5229 /* GGFindMe.h */,
+				136713621D26D3DD009D5229 /* GGItem.h */,
 				130CA55E1BF0D9CA002C26F7 /* GGBringgUtils.h */,
 				130CA55F1BF0D9CA002C26F7 /* GGWaypoint.h */,
 				130CA5601BF0D9CA002C26F7 /* SRWebSocket.h */,
