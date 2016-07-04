@@ -7,13 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <BringgTracking/BringgTracking.h>
 
-#import "GGTrackerManager.h"
-#import "GGHTTPClientManager.h"
-#import "BringgGlobals.h"
-#import "AddOrderViewController.h"
-
-@interface MainViewController : UIViewController <RealTimeDelegate, OrderDelegate, DriverDelegate, WaypointDelegate, AddOrderDelegate>
+@interface MainViewController : UIViewController <RealTimeDelegate, OrderDelegate, DriverDelegate, WaypointDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *customerTokenField;
 @property (weak, nonatomic) IBOutlet UILabel *connectionLabel;
 @property (weak, nonatomic) IBOutlet UIButton *connectionButton;
@@ -29,7 +25,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *shareUUIDField;
 @property (weak, nonatomic) IBOutlet UITextField *ratingURLField;
 @property (weak, nonatomic) IBOutlet UILabel *customerSigninLabel;
-@property (weak, nonatomic) IBOutlet UIButton *addOrder;
 @property (weak, nonatomic) IBOutlet UITextField *customerNameField;
 @property (weak, nonatomic) IBOutlet UITextField *customerPhoneField;
 @property (weak, nonatomic) IBOutlet UITextField *customerCodeField;
@@ -49,7 +44,6 @@
 - (IBAction)monitorDriver:(id)sender;
 - (IBAction)signin:(id)sender;
 - (IBAction)rate:(id)sender;
-- (IBAction)addOrder:(id)sender;
 - (IBAction)monitorWaypoint:(id)sender;
 
 @end

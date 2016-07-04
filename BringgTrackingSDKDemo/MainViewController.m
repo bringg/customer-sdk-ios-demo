@@ -7,16 +7,8 @@
 //
 
 #import "MainViewController.h"
-#import "GGCustomer.h"
-#import "GGDriver.h"
-#import "GGSharedLocation.h"
-#import "GGOrder.h"
-#import "GGOrderBuilder.h"
-#import "GGRealTimeMontior.h"
-#import "GGWaypoint.h"
 
-#define kBringgDeveloperToken @"{YOUR_DEVELOPER_TOKEN_KEY}"
-
+#define kBringgDeveloperToken @"F-muRzCajCA-4yvPXaxm"
 
 
 @interface MainViewController ()
@@ -66,8 +58,7 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     
-    // add order button is available only when there is a customer logged in
-    [_addOrder setEnabled:self.trackerManager.customer != nil];
+    [super viewWillAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -350,26 +341,6 @@
     
 }
 
-- (IBAction)addOrder:(id)sender {
-    
-    [self performSegueWithIdentifier:@"showAddOrder" sender:self];
-    
-}
-
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
-    
-    NSString *identifier = segue.identifier;
-    
-    if ([identifier isEqualToString:@"showAddOrder"]) {
-        //
-        
-        AddOrderViewController *addVC = segue.destinationViewController;
-        
-        [addVC setDelegate:self];
-    }
-}
 
 #pragma mark - RealTimeDelegate
 
@@ -377,9 +348,7 @@
     NSLog(@"connected");
     self.connectionLabel.text = @"BringgTracker: connected";
     [self.connectionButton setTitle:@"Disconnect" forState:UIControlStateNormal];
-    
-    // cant add orders without customer (sign in required)
-    [_addOrder setEnabled:self.trackerManager.customer != nil];
+
     
 }
 
@@ -388,7 +357,6 @@
     self.connectionLabel.text = [NSString stringWithFormat:@"BringgTracker: disconnected %@", error];
     [self.connectionButton setTitle:@"Connect" forState:UIControlStateNormal];
     
-    [_addOrder setEnabled:NO];
    
 }
 
@@ -518,24 +486,7 @@
     
 }
 
-#pragma mark - AddOrderDelegate
 
--(void)orderBuilderDidCreate:(GGOrderBuilder *)orderBuilder withController:(AddOrderViewController *)controller{
-    
-#warning Add Order SDK method not available yet
-//    [self.httpManager addOrderWith:orderBuilder withCompletionHandler:^(BOOL success, GGOrder *order, NSError *error) {
-//        //
-//        UIAlertView *alertView;
-//        if (success) {
-//            alertView = [[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"Success Adding Order %lu", order.orderid] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-//            [alertView show];
-//        }else if (error){
-//            alertView = [[UIAlertView alloc] initWithTitle:@"Error adding order" message:error.localizedDescription delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-//            [alertView show];
-//        }
-//    }];
-    
-}
 
 #pragma mark Waypoint Delegate
 
