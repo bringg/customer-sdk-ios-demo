@@ -8,7 +8,7 @@
 
 #import "MainViewController.h"
 
-#define kBringgDeveloperToken @"F-muRzCajCA-4yvPXaxm"
+#define kBringgDeveloperToken @"xHDAaSnfBFcd9DRzJQpc"
 
 
 @interface MainViewController ()
@@ -263,6 +263,8 @@
 
      completionHandler:^(BOOL success, NSDictionary *response, GGCustomer *customer, NSError *error) {
          //
+         
+         
          UIAlertView *alertView;
          
          if (customer) {
