@@ -8,7 +8,7 @@
 
 #import "MainViewController.h"
 
-#define kBringgDeveloperToken @"35yJM-zqQZHiwXG8_nBU"
+#define kBringgDeveloperToken @"YOUR_DEV_TOKEN"
 
 
 @interface MainViewController ()
