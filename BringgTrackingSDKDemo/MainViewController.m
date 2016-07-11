@@ -8,7 +8,9 @@
 
 #import "MainViewController.h"
 
-#define kBringgDeveloperToken @"YOUR_DEV_TOKEN"
+#define kBringgDeveloperToken @"xHDAaSnfBFcd9DRzJQpc"
+
+#define ARC4RANDOM_MAX      0x100000000
 
 
 @interface MainViewController ()
@@ -19,6 +21,9 @@
 @property (nonatomic, strong) NSMutableDictionary *monitoredOrders;
 @property (nonatomic, strong) NSMutableDictionary *monitoredDrivers;
 @property (nonatomic, strong) NSMutableDictionary *monitoredWaypoints;
+
+@property (nonatomic, strong) GGOrder *currentMonitoredOrder;
+
 @end
 
 @implementation MainViewController
@@ -53,6 +58,12 @@
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyBoard)];
     [self.view addGestureRecognizer:singleTap];
     singleTap.cancelsTouchesInView = NO;
+    
+    self.btnFindme.layer.masksToBounds = YES;
+    self.btnFindme.layer.cornerRadius = 4.f;
+    
+    [self.btnFindme setEnabled:NO];
+    
 
 }
 
@@ -181,13 +192,13 @@
         
         [_monitoredOrders setObject:[NSNull null] forKey:order.uuid];
         
-        [self.trackerManager stopWatchingOrderWithUUID:order.uuid];
+        [self.trackerManager stopWatchingOrderWithUUID:order.uuid ];
         [self.orderButton setTitle:@"Monitor Order" forState:UIControlStateNormal];
     }else{
         
         [_monitoredOrders setObject:order forKey:order.uuid];
         
-        [self.trackerManager startWatchingOrderWithUUID:order.uuid delegate:self];
+        [self.trackerManager startWatchingOrderWithUUID:order.uuid sharedUUID:order.sharedLocationUUID ?: order.sharedLocation.locationUUID delegate:self];
         [self.orderButton setTitle:@"Stop Monitor Order" forState:UIControlStateNormal];
     }
 }
@@ -243,6 +254,46 @@
         }
     }
     
+}
+
+- (IBAction)onFindMe:(UIButton *)sender {
+    
+    //TODO: add find me button functionality
+    // for the purpose of the demo we will randomize location instead of getting an actuall one
+    if (!_currentMonitoredOrder) {
+        return;
+    }
+    
+    [self.btnFindme setEnabled:NO];
+    
+    double lat = (((double)arc4random() / ARC4RANDOM_MAX)*180) - 90;
+    double lng = (((double)arc4random() / ARC4RANDOM_MAX)*360) - 180;
+    
+    [self.trackerManager sendFindMeRequestForOrder:_currentMonitoredOrder latitude:lat longitude:lng withCompletionHandler:^(BOOL success, NSError * _Nullable error) {
+        //
+        
+        __weak __typeof(&*self)weakSelf = self;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            //
+             [weakSelf.btnFindme setEnabled:YES];
+            
+            NSString *title;
+            NSString *msg;
+            
+            if (error) {
+                title = @"Find Me Error";
+                msg = error.userInfo[NSLocalizedDescriptionKey];
+            }else{
+                msg = @"Find Me request sent";
+            }
+            
+            UIAlertView  *alertView = [[UIAlertView alloc] initWithTitle:title message:msg delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            
+            [alertView show];
+            
+        });
+        
+    }];
 }
 
 
@@ -461,6 +512,11 @@
         }
     }
     
+    [self.btnFindme setEnabled:order && order.sharedLocation && [order.sharedLocation canSendFindMe]];
+    
+    if (order) {
+        self.currentMonitoredOrder = order;
+    }
    
 }
 

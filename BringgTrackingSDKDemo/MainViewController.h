@@ -36,6 +36,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *waypointIdField;
 @property (weak, nonatomic) IBOutlet UIButton *monitorWPButton;
 @property (weak, nonatomic) IBOutlet UITextField *txtETA;
+@property (weak, nonatomic) IBOutlet UIButton *btnFindme;
 
 
 
@@ -45,6 +46,7 @@
 - (IBAction)signin:(id)sender;
 - (IBAction)rate:(id)sender;
 - (IBAction)monitorWaypoint:(id)sender;
+- (IBAction)onFindMe:(UIButton *)sender;
 
 @end
 

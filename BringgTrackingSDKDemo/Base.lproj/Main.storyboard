@@ -245,6 +245,18 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBI-NP-Aab">
+                                        <rect key="frame" x="194" y="187" width="94" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.94265711419999998" blue="0.086860629379999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="94" id="LcV-VG-d2A"/>
+                                            <constraint firstAttribute="height" constant="30" id="n07-Nr-xx4"/>
+                                        </constraints>
+                                        <state key="normal" title="Find me"/>
+                                        <connections>
+                                            <action selector="onFindMe:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="kZz-RX-Q8C"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="eRw-4F-wRc" firstAttribute="trailing" secondItem="Syd-rG-nJ8" secondAttribute="centerX" constant="-8" id="09o-Hp-B0K"/>
@@ -269,6 +281,7 @@
                                     <constraint firstItem="U0k-9O-enx" firstAttribute="top" secondItem="FGz-3O-Nnn" secondAttribute="bottom" constant="17" id="GuB-er-nsN"/>
                                     <constraint firstItem="FGz-3O-Nnn" firstAttribute="width" secondItem="Syd-rG-nJ8" secondAttribute="width" id="Hoo-rv-6Qs"/>
                                     <constraint firstItem="WuR-9w-pyM" firstAttribute="top" secondItem="CxQ-Zy-Fv0" secondAttribute="bottom" constant="9" id="IAh-xv-Mcy"/>
+                                    <constraint firstItem="yBI-NP-Aab" firstAttribute="top" secondItem="WuR-9w-pyM" secondAttribute="bottom" constant="4" id="JBI-vn-7w4"/>
                                     <constraint firstAttribute="trailing" secondItem="9s0-WQ-CxB" secondAttribute="trailing" constant="20" id="Jds-zG-vir"/>
                                     <constraint firstItem="kA0-Lc-HOa" firstAttribute="top" secondItem="M0L-C7-TGk" secondAttribute="bottom" constant="9" id="Jec-Tj-3im"/>
                                     <constraint firstItem="nsK-L9-pk6" firstAttribute="leading" secondItem="M0L-C7-TGk" secondAttribute="centerX" constant="8" id="LmO-Um-hP5"/>
@@ -291,6 +304,7 @@
                                     <constraint firstItem="MNd-hH-bls" firstAttribute="top" secondItem="9s0-WQ-CxB" secondAttribute="bottom" constant="8" id="cvK-Zb-JWr"/>
                                     <constraint firstItem="DFC-pz-hGI" firstAttribute="top" secondItem="MNd-hH-bls" secondAttribute="bottom" constant="8" id="dfk-mc-Ffy"/>
                                     <constraint firstItem="aye-KN-X0g" firstAttribute="centerX" secondItem="Syd-rG-nJ8" secondAttribute="centerX" id="fJJ-U6-3kq"/>
+                                    <constraint firstItem="IFO-dt-CND" firstAttribute="leading" secondItem="yBI-NP-Aab" secondAttribute="trailing" constant="20" id="fJV-lg-sjt"/>
                                     <constraint firstItem="9s0-WQ-CxB" firstAttribute="leading" secondItem="Syd-rG-nJ8" secondAttribute="centerX" constant="8" id="fPw-Mv-4xj"/>
                                     <constraint firstItem="agq-Fr-FQU" firstAttribute="top" secondItem="CxQ-Zy-Fv0" secondAttribute="bottom" constant="10" id="fkD-7O-1dC"/>
                                     <constraint firstItem="aye-KN-X0g" firstAttribute="top" secondItem="eRw-4F-wRc" secondAttribute="bottom" constant="8" id="fvg-Zm-wdI"/>
@@ -327,6 +341,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnFindme" destination="yBI-NP-Aab" id="vgD-wV-tk5"/>
                         <outlet property="connectionButton" destination="B8Y-7M-G5f" id="HDB-Tm-I8r"/>
                         <outlet property="connectionLabel" destination="Fz5-3f-Kw6" id="MX7-HC-CfE"/>
                         <outlet property="customerCodeField" destination="9s0-WQ-CxB" id="qCw-kd-bPF"/>
