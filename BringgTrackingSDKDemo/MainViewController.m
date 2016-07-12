@@ -8,12 +8,13 @@
 
 #import "MainViewController.h"
 
-#define kBringgDeveloperToken @"xHDAaSnfBFcd9DRzJQpc"
+#define kBringgDeveloperToken @"8a4r8XWwx18Uh8otY5LK" //@"xHDAaSnfBFcd9DRzJQpc"
 
 #define ARC4RANDOM_MAX      0x100000000
 
+#define USE_SECURE NO
 
-@interface MainViewController ()
+@interface MainViewController ()<GGHTTPClientConnectionDelegate>
 
 @property (nonatomic, strong) GGTrackerManager *trackerManager;
 @property (nonatomic, strong) GGHTTPClientManager *httpManager;
@@ -28,18 +29,29 @@
 
 @implementation MainViewController
 
+- (NSString *)hostDomainForClientManager:(GGHTTPClientManager *)clientManager{
+    return @"10.0.1.148:3030";
+}
+
+- (NSString *)hostDomainForTrackerManager:(GGTrackerManager *)trackerManager{
+    return @"10.0.1.148:3000";
+}
+
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
     
         // at first we should just init the http client manager
         [GGHTTPClientManager managerWithDeveloperToken:kBringgDeveloperToken];
         self.httpManager = [GGHTTPClientManager manager];
+        [self.httpManager setDelegate:self];
+        [self.httpManager useSecuredConnection:USE_SECURE];
  
         // init the tracker without the customer token
         self.trackerManager = [GGTrackerManager tracker];
         [self.trackerManager setDeveloperToken:kBringgDeveloperToken];
         [self.trackerManager setRealTimeDelegate:self];
         [self.trackerManager setHTTPManager:self.httpManager];
+        
        
 
         _monitoredOrders = [NSMutableDictionary dictionary];
@@ -99,7 +111,7 @@
         
     } else if (self.trackerManager){
         NSLog(@"connecting to http/https");
-        [self.trackerManager connectUsingSecureConnection:YES];
+        [self.trackerManager connectUsingSecureConnection:USE_SECURE];
     
     }
 }
@@ -111,22 +123,34 @@
     // if the customer signed in  we can use the http manager to get more data about
     // the order before doing the actual monitoring
     if ([self.httpManager isSignedIn]) {
-        // get the order object and start monitoring it
-        [self.httpManager getOrderByID:orderid.integerValue extras:nil  withCompletionHandler:^(BOOL success, NSDictionary * response, GGOrder *order, NSError *error) {
-            //
-            if (success && order) {
-                
-                [self trackOrder:order];
-
-            }else{
-                if (error) {
-                    UIAlertView  *alertView = [[UIAlertView alloc] initWithTitle:@"General Service Error" message:error.localizedDescription delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-                    
-                    [alertView show];
-                }
-            }
+       
+        if (_currentMonitoredOrder && _currentMonitoredOrder.orderid == [orderid integerValue]) {
+            [_monitoredOrders setObject:[NSNull null] forKey:_currentMonitoredOrder.uuid];
             
-        }];
+            [self.trackerManager stopWatchingOrderWithUUID:_currentMonitoredOrder.uuid ];
+            [self.orderButton setTitle:@"Monitor Order" forState:UIControlStateNormal];
+            
+            _currentMonitoredOrder = nil;
+        }else{
+            // get the order object and start monitoring it
+            [self.httpManager getOrderByID:orderid.integerValue extras:nil  withCompletionHandler:^(BOOL success, NSDictionary * response, GGOrder *order, NSError *error) {
+                //
+                if (success && order) {
+                    
+                    [self trackOrder:order];
+                    
+                }else{
+                    if (error) {
+                        UIAlertView  *alertView = [[UIAlertView alloc] initWithTitle:@"General Service Error" message:error.localizedDescription delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+                        
+                        [alertView show];
+                    }
+                }
+                
+            }];
+
+        }
+        
         
     }else{
         // if customer not signed in  then it is our job to provide order uuid from the partner - api
