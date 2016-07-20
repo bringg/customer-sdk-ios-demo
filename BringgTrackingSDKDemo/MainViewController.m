@@ -8,7 +8,7 @@
 
 #import "MainViewController.h"
 
-#define kBringgDeveloperToken @"8a4r8XWwx18Uh8otY5LK" //@"xHDAaSnfBFcd9DRzJQpc"
+#define kBringgDeveloperToken @"xHDAaSnfBFcd9DRzJQpc"//@"8a4r8XWwx18Uh8otY5LK" //
 
 #define ARC4RANDOM_MAX      0x100000000
 
@@ -28,7 +28,7 @@
 @end
 
 @implementation MainViewController
-
+/*
 - (NSString *)hostDomainForClientManager:(GGHTTPClientManager *)clientManager{
     return @"10.0.1.148:3030";
 }
@@ -36,6 +36,7 @@
 - (NSString *)hostDomainForTrackerManager:(GGTrackerManager *)trackerManager{
     return @"10.0.1.148:3000";
 }
+*/
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
