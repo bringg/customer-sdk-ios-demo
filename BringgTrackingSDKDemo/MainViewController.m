@@ -8,11 +8,11 @@
 
 #import "MainViewController.h"
 
-#define kBringgDeveloperToken @"rvWLCySWSJFyP3kBbkZB"//@"xHDAaSnfBFcd9DRzJQpc"//@"8a4r8XWwx18Uh8otY5LK" //
+#define kBringgDeveloperToken @"YOUR_DEVELOPER_ACCESS_TOKEN"
 
 #define ARC4RANDOM_MAX      0x100000000
 
-#define USE_SECURE NO
+#define USE_SECURE YES
 
 @interface MainViewController ()<GGHTTPClientConnectionDelegate>
 
@@ -28,15 +28,6 @@
 @end
 
 @implementation MainViewController
-
-- (NSString *)hostDomainForClientManager:(GGHTTPClientManager *)clientManager{
-    return @"10.0.1.148:3030";
-}
-
-- (NSString *)hostDomainForTrackerManager:(GGTrackerManager *)trackerManager{
-    return @"10.0.1.148:3000";
-}
-
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
@@ -84,12 +75,6 @@
     
     [super viewWillAppear:animated];
     
-    self.customerNameField.text = @"Alex trost";
-    self.customerCodeField.text = @"6926";
-    self.customerPhoneField.text = @"+972526511950";
-    self.customerMerchantField.text = @"1";
-    
-    self.orderField.text = @"109";
 }
 
 - (void)didReceiveMemoryWarning {
