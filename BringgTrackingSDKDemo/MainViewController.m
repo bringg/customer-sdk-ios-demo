@@ -8,7 +8,7 @@
 
 #import "MainViewController.h"
 
-#define kBringgDeveloperToken @"zw-nUmMWHG5tEyPRL_Jk"//@"xHDAaSnfBFcd9DRzJQpc"//@"8a4r8XWwx18Uh8otY5LK" //
+#define kBringgDeveloperToken @"rvWLCySWSJFyP3kBbkZB"//@"xHDAaSnfBFcd9DRzJQpc"//@"8a4r8XWwx18Uh8otY5LK" //
 
 #define ARC4RANDOM_MAX      0x100000000
 
@@ -83,6 +83,13 @@
 - (void)viewWillAppear:(BOOL)animated{
     
     [super viewWillAppear:animated];
+    
+    self.customerNameField.text = @"Alex trost";
+    self.customerCodeField.text = @"6926";
+    self.customerPhoneField.text = @"+972526511950";
+    self.customerMerchantField.text = @"1";
+    
+    self.orderField.text = @"109";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -300,7 +307,7 @@
         __weak __typeof(&*self)weakSelf = self;
         dispatch_async(dispatch_get_main_queue(), ^{
             //
-             [weakSelf.btnFindme setEnabled:YES];
+            [weakSelf.btnFindme setEnabled:YES];
             
             NSString *title;
             NSString *msg;
@@ -513,6 +520,11 @@
     
     [self updateUIWithShared:monitoredOrder.sharedLocation.locationUUID ? monitoredOrder.sharedLocation.locationUUID : monitoredOrder.sharedLocationUUID andRatingURL:monitoredOrder.sharedLocation.ratingURL andDriver:driver.uuid andOrder:order];
     
+}
+
+- (void)order:(nonnull GGOrder *)order didUpdateLocation:(nullable GGSharedLocation *)sharedLocation findMeConfiguration:(nullable GGFindMe *)findMeConfiguration{
+    
+    NSLog(@"order with ID %ld did update shared location %@ find me configuration to %@", (long)order.orderid, sharedLocation.locationUUID , findMeConfiguration);
 }
 
 
