@@ -8,10 +8,13 @@
 
 #import "MainViewController.h"
 
-#define kBringgDeveloperToken @"YOUR_DEV_TOKEN"
+#define kBringgDeveloperToken @"YOUR_DEVELOPER_ACCESS_TOKEN"
 
+#define ARC4RANDOM_MAX      0x100000000
 
-@interface MainViewController ()
+#define USE_SECURE YES
+
+@interface MainViewController ()<GGHTTPClientConnectionDelegate>
 
 @property (nonatomic, strong) GGTrackerManager *trackerManager;
 @property (nonatomic, strong) GGHTTPClientManager *httpManager;
@@ -19,6 +22,9 @@
 @property (nonatomic, strong) NSMutableDictionary *monitoredOrders;
 @property (nonatomic, strong) NSMutableDictionary *monitoredDrivers;
 @property (nonatomic, strong) NSMutableDictionary *monitoredWaypoints;
+
+@property (nonatomic, strong) GGOrder *currentMonitoredOrder;
+
 @end
 
 @implementation MainViewController
@@ -29,12 +35,15 @@
         // at first we should just init the http client manager
         [GGHTTPClientManager managerWithDeveloperToken:kBringgDeveloperToken];
         self.httpManager = [GGHTTPClientManager manager];
+        [self.httpManager setDelegate:self];
+        [self.httpManager useSecuredConnection:USE_SECURE];
  
         // init the tracker without the customer token
         self.trackerManager = [GGTrackerManager tracker];
         [self.trackerManager setDeveloperToken:kBringgDeveloperToken];
         [self.trackerManager setRealTimeDelegate:self];
         [self.trackerManager setHTTPManager:self.httpManager];
+        
        
 
         _monitoredOrders = [NSMutableDictionary dictionary];
@@ -53,12 +62,19 @@
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyBoard)];
     [self.view addGestureRecognizer:singleTap];
     singleTap.cancelsTouchesInView = NO;
+    
+    self.btnFindme.layer.masksToBounds = YES;
+    self.btnFindme.layer.cornerRadius = 4.f;
+    
+    [self.btnFindme setEnabled:NO];
+    
 
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     
     [super viewWillAppear:animated];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -88,7 +104,7 @@
         
     } else if (self.trackerManager){
         NSLog(@"connecting to http/https");
-        [self.trackerManager connectUsingSecureConnection:YES];
+        [self.trackerManager connectUsingSecureConnection:USE_SECURE];
     
     }
 }
@@ -100,22 +116,34 @@
     // if the customer signed in  we can use the http manager to get more data about
     // the order before doing the actual monitoring
     if ([self.httpManager isSignedIn]) {
-        // get the order object and start monitoring it
-        [self.httpManager getOrderByID:orderid.integerValue extras:nil  withCompletionHandler:^(BOOL success, NSDictionary * response, GGOrder *order, NSError *error) {
-            //
-            if (success && order) {
-                
-                [self trackOrder:order];
-
-            }else{
-                if (error) {
-                    UIAlertView  *alertView = [[UIAlertView alloc] initWithTitle:@"General Service Error" message:error.localizedDescription delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-                    
-                    [alertView show];
-                }
-            }
+       
+        if (_currentMonitoredOrder && _currentMonitoredOrder.orderid == [orderid integerValue]) {
+            [_monitoredOrders setObject:[NSNull null] forKey:_currentMonitoredOrder.uuid];
             
-        }];
+            [self.trackerManager stopWatchingOrderWithUUID:_currentMonitoredOrder.uuid ];
+            [self.orderButton setTitle:@"Monitor Order" forState:UIControlStateNormal];
+            
+            _currentMonitoredOrder = nil;
+        }else{
+            // get the order object and start monitoring it
+            [self.httpManager getOrderByID:orderid.integerValue extras:nil  withCompletionHandler:^(BOOL success, NSDictionary * response, GGOrder *order, NSError *error) {
+                //
+                if (success && order) {
+                    
+                    [self trackOrder:order];
+                    
+                }else{
+                    if (error) {
+                        UIAlertView  *alertView = [[UIAlertView alloc] initWithTitle:@"General Service Error" message:error.localizedDescription delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+                        
+                        [alertView show];
+                    }
+                }
+                
+            }];
+
+        }
+        
         
     }else{
         // if customer not signed in  then it is our job to provide order uuid from the partner - api
@@ -181,13 +209,13 @@
         
         [_monitoredOrders setObject:[NSNull null] forKey:order.uuid];
         
-        [self.trackerManager stopWatchingOrderWithUUID:order.uuid];
+        [self.trackerManager stopWatchingOrderWithUUID:order.uuid ];
         [self.orderButton setTitle:@"Monitor Order" forState:UIControlStateNormal];
     }else{
         
         [_monitoredOrders setObject:order forKey:order.uuid];
         
-        [self.trackerManager startWatchingOrderWithUUID:order.uuid delegate:self];
+        [self.trackerManager startWatchingOrderWithUUID:order.uuid sharedUUID:order.sharedLocationUUID ?: order.sharedLocation.locationUUID delegate:self];
         [self.orderButton setTitle:@"Stop Monitor Order" forState:UIControlStateNormal];
     }
 }
@@ -243,6 +271,46 @@
         }
     }
     
+}
+
+- (IBAction)onFindMe:(UIButton *)sender {
+    
+    //TODO: add find me button functionality
+    // for the purpose of the demo we will randomize location instead of getting an actuall one
+    if (!_currentMonitoredOrder) {
+        return;
+    }
+    
+    [self.btnFindme setEnabled:NO];
+    
+    double lat = (((double)arc4random() / ARC4RANDOM_MAX)*180) - 90;
+    double lng = (((double)arc4random() / ARC4RANDOM_MAX)*360) - 180;
+    
+    [self.trackerManager sendFindMeRequestForOrder:_currentMonitoredOrder latitude:lat longitude:lng withCompletionHandler:^(BOOL success, NSError * _Nullable error) {
+        //
+        
+        __weak __typeof(&*self)weakSelf = self;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            //
+            [weakSelf.btnFindme setEnabled:YES];
+            
+            NSString *title;
+            NSString *msg;
+            
+            if (error) {
+                title = @"Find Me Error";
+                msg = error.userInfo[NSLocalizedDescriptionKey];
+            }else{
+                msg = @"Find Me request sent";
+            }
+            
+            UIAlertView  *alertView = [[UIAlertView alloc] initWithTitle:title message:msg delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            
+            [alertView show];
+            
+        });
+        
+    }];
 }
 
 
@@ -439,6 +507,11 @@
     
 }
 
+- (void)order:(nonnull GGOrder *)order didUpdateLocation:(nullable GGSharedLocation *)sharedLocation findMeConfiguration:(nullable GGFindMe *)findMeConfiguration{
+    
+    NSLog(@"order with ID %ld did update shared location %@ find me configuration to %@", (long)order.orderid, sharedLocation.locationUUID , findMeConfiguration);
+}
+
 
 - (void)updateUIWithShared:(NSString *)shared
               andRatingURL:(NSString *)ratingURL
@@ -461,6 +534,11 @@
         }
     }
     
+    [self.btnFindme setEnabled:order && order.sharedLocation && [order.sharedLocation canSendFindMe]];
+    
+    if (order) {
+        self.currentMonitoredOrder = order;
+    }
    
 }
 
