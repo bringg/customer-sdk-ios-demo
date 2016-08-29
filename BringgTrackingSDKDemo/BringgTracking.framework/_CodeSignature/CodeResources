@@ -6,11 +6,11 @@
 	<dict>
 		<key>Headers/BringgGlobals.h</key>
 		<data>
-		8oAHGZLbjfXdk4DcwLAIv7lL3io=
+		7bCdKuDtbXl2Yhj6sdRIKoiKmns=
 		</data>
 		<key>Headers/BringgTracking.h</key>
 		<data>
-		EfhApVkoFHtP9rnM3EGb27A5icY=
+		hlVw6WEWEGIdZZmjINYfLoUdzkY=
 		</data>
 		<key>Headers/GGBringgUtils.h</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Headers/GGHTTPClientManager.h</key>
 		<data>
-		yJ+vdDi778lf2KclfpL5nyjZ7iI=
+		WvY3qVLTofDqveVZNWs6uyHR/Xk=
 		</data>
 		<key>Headers/GGItem.h</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		In9vCzIpriq47XrlKqyfNzbaR9U=
+		ISDgD+uNj1Tv32xYzpxck4bDwfw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -75,22 +75,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			8oAHGZLbjfXdk4DcwLAIv7lL3io=
+			7bCdKuDtbXl2Yhj6sdRIKoiKmns=
 			</data>
 			<key>hash2</key>
 			<data>
-			7SE6o4/yMaSaP9JGw9XwRpXMZERYrbFaPSb3bLJyVy4=
+			a6YRHc5dIfJAKKGWZufj/+iHU5QYReMspEILdJGNmnA=
 			</data>
 		</dict>
 		<key>Headers/BringgTracking.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			EfhApVkoFHtP9rnM3EGb27A5icY=
+			hlVw6WEWEGIdZZmjINYfLoUdzkY=
 			</data>
 			<key>hash2</key>
 			<data>
-			eM45u6fSNzRUmoo574UBtg9Np8ohpwk3gw4HZYUxWeg=
+			I6IB8EG0tqCHNxPQRRdZcfyEHR1USX09mZqO6cg7JJU=
 			</data>
 		</dict>
 		<key>Headers/GGBringgUtils.h</key>
@@ -141,11 +141,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			yJ+vdDi778lf2KclfpL5nyjZ7iI=
+			WvY3qVLTofDqveVZNWs6uyHR/Xk=
 			</data>
 			<key>hash2</key>
 			<data>
-			0U3Ci0GOg60yd8Fy6PXWd2MQgXDMgkOOQJcUsGoLzVw=
+			MeCh9IIDOWxLSAgbQ9rSDVP5S3v9j0ZQeVnAWkvwBhI=
 			</data>
 		</dict>
 		<key>Headers/GGItem.h</key>

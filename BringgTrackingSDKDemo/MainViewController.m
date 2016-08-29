@@ -524,11 +524,11 @@
     
     GGWaypoint *activeWp = [[order.waypoints filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"waypointId==%@", @(order.activeWaypointId)]] firstObject];
     
-    self.orderLabel.text = [NSString stringWithFormat:@"STATUS : %ld", order.status];
+    self.orderLabel.text = [NSString stringWithFormat:@"STATUS : %ld", (long)order.status];
     
     
     if (activeWp) {
-        self.waypointIdField.text = [NSString stringWithFormat:@"%ld", activeWp.waypointId] ;
+        self.waypointIdField.text = [NSString stringWithFormat:@"%ld", (long)activeWp.waypointId] ;
         if ([activeWp ETA]) {
             self.txtETA.text = [NSString stringWithFormat:@"ETA: %@", [activeWp ETA]];
         }
