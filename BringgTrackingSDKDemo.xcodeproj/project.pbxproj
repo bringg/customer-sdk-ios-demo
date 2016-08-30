@@ -200,6 +200,7 @@
 				A91923C21A42E9DA004CBA0E /* Embed Frameworks */,
 				22E808F4FFB3CC813B4B4237 /* [CP] Embed Pods Frameworks */,
 				B335686477B728764F5916A0 /* [CP] Copy Pods Resources */,
+				13AD852F1D759B9200210D12 /* Trim BringgTracking Framework */,
 			);
 			buildRules = (
 			);
@@ -287,6 +288,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		13AD852F1D759B9200210D12 /* Trim BringgTracking Framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Trim BringgTracking Framework";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${SRCROOT}/trim.sh BringgTracking";
+		};
 		22E808F4FFB3CC813B4B4237 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
