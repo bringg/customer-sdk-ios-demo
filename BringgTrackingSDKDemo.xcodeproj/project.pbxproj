@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		132C006F32FEDD49ACFCF514 /* Pods_BringgTrackingSDKDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C34FFCD5B19CA7CB933C2B /* Pods_BringgTrackingSDKDemo.framework */; };
-		13E771B31D757416004A33A3 /* BringgTracking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E771B21D757416004A33A3 /* BringgTracking.framework */; };
-		13E771B51D75742B004A33A3 /* BringgTracking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 13E771B21D757416004A33A3 /* BringgTracking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A913A48C1A41CFF90002AE32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A913A48B1A41CFF90002AE32 /* main.m */; };
 		A913A48F1A41CFF90002AE32 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A913A48E1A41CFF90002AE32 /* AppDelegate.m */; };
 		A913A4921A41CFF90002AE32 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A913A4911A41CFF90002AE32 /* MainViewController.m */; };
@@ -23,6 +20,7 @@
 		A9E71BBD1A4304A8000BA846 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A94B881A42F284006C5A58 /* CFNetwork.framework */; };
 		A9E71BBE1A4304AA000BA846 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A94B861A42F279006C5A58 /* Security.framework */; };
 		A9E71BBF1A4304AE000BA846 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A94B841A42F272006C5A58 /* Foundation.framework */; };
+		E311EC12D5BF0258C8591E32 /* Pods_BringgTrackingSDKDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 640FD8091C0992955169A56F /* Pods_BringgTrackingSDKDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +40,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				13E771B51D75742B004A33A3 /* BringgTracking.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,8 +47,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		13E771B21D757416004A33A3 /* BringgTracking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BringgTracking.framework; path = BringgTrackingSDKDemo/BringgTracking.framework; sourceTree = "<group>"; };
-		98C34FFCD5B19CA7CB933C2B /* Pods_BringgTrackingSDKDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BringgTrackingSDKDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		006A4D19F84AA645E9B83B6B /* libPods-BringgTrackingSDKDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BringgTrackingSDKDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		640FD8091C0992955169A56F /* Pods_BringgTrackingSDKDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BringgTrackingSDKDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		69231F2E37ED7523C53484D8 /* Pods-BringgTrackingSDKDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BringgTrackingSDKDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-BringgTrackingSDKDemo/Pods-BringgTrackingSDKDemo.release.xcconfig"; sourceTree = "<group>"; };
+		795A32E81D7F1201005B5B55 /* SocketIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SocketIO.framework; path = "../../../Library/Developer/Xcode/DerivedData/BringgTrackingSDKDemo-ayonrybrptfqhzehtjvhokfwgqmm/Build/Products/Debug-iphonesimulator/Socket.IO-Client-Swift/SocketIO.framework"; sourceTree = "<group>"; };
+		798E99E01D7F219700ED8C0F /* BringgTracking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BringgTracking.framework; path = "../../../Library/Developer/Xcode/DerivedData/BringgTrackingSDKDemo-ayonrybrptfqhzehtjvhokfwgqmm/Build/Products/Debug-iphonesimulator/BringgTracking/BringgTracking.framework"; sourceTree = "<group>"; };
+		7D47F3243A4956B7E1547D4B /* Pods-BringgTrackingSDKDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BringgTrackingSDKDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BringgTrackingSDKDemo/Pods-BringgTrackingSDKDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		A913A4861A41CFF80002AE32 /* BringgTrackingSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BringgTrackingSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A913A48A1A41CFF80002AE32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A913A48B1A41CFF90002AE32 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -71,8 +72,6 @@
 		A9A94B861A42F279006C5A58 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		A9A94B881A42F284006C5A58 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		A9A94B8A1A42F295006C5A58 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
-		C19390AAF9BAFA23E8B5BCE1 /* Pods-BringgTrackingSDKDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BringgTrackingSDKDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-BringgTrackingSDKDemo/Pods-BringgTrackingSDKDemo.release.xcconfig"; sourceTree = "<group>"; };
-		E7FE76C953F12186BE344A14 /* Pods-BringgTrackingSDKDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BringgTrackingSDKDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BringgTrackingSDKDemo/Pods-BringgTrackingSDKDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,14 +79,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13E771B31D757416004A33A3 /* BringgTracking.framework in Frameworks */,
 				A9A2F7101AADB0F1003038E8 /* MobileCoreServices.framework in Frameworks */,
 				A99163F51A5165A5008BADCD /* SystemConfiguration.framework in Frameworks */,
 				A9E71BBC1A4304A3000BA846 /* libicucore.dylib in Frameworks */,
 				A9E71BBD1A4304A8000BA846 /* CFNetwork.framework in Frameworks */,
 				A9E71BBE1A4304AA000BA846 /* Security.framework in Frameworks */,
 				A9E71BBF1A4304AE000BA846 /* Foundation.framework in Frameworks */,
-				132C006F32FEDD49ACFCF514 /* Pods_BringgTrackingSDKDemo.framework in Frameworks */,
+				E311EC12D5BF0258C8591E32 /* Pods_BringgTrackingSDKDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,11 +99,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9625394B94F9C93A966A0627 /* Pods */ = {
+		A757313292D955F55FE76946 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E7FE76C953F12186BE344A14 /* Pods-BringgTrackingSDKDemo.debug.xcconfig */,
-				C19390AAF9BAFA23E8B5BCE1 /* Pods-BringgTrackingSDKDemo.release.xcconfig */,
+				7D47F3243A4956B7E1547D4B /* Pods-BringgTrackingSDKDemo.debug.xcconfig */,
+				69231F2E37ED7523C53484D8 /* Pods-BringgTrackingSDKDemo.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -113,18 +111,11 @@
 		A913A47D1A41CFF80002AE32 = {
 			isa = PBXGroup;
 			children = (
-				13E771B21D757416004A33A3 /* BringgTracking.framework */,
-				A9A2F70F1AADB0F1003038E8 /* MobileCoreServices.framework */,
-				A99163F41A5165A5008BADCD /* SystemConfiguration.framework */,
-				A9A94B8A1A42F295006C5A58 /* libicucore.dylib */,
-				A9A94B881A42F284006C5A58 /* CFNetwork.framework */,
-				A9A94B861A42F279006C5A58 /* Security.framework */,
-				A9A94B841A42F272006C5A58 /* Foundation.framework */,
 				A913A4881A41CFF80002AE32 /* BringgTrackingSDKDemo */,
 				A913A4A21A41CFF90002AE32 /* BringgTrackingSDKDemoTests */,
 				A913A4871A41CFF80002AE32 /* Products */,
-				9625394B94F9C93A966A0627 /* Pods */,
 				DD7129AC70077ABFD2EBF47F /* Frameworks */,
+				A757313292D955F55FE76946 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -181,7 +172,16 @@
 		DD7129AC70077ABFD2EBF47F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				98C34FFCD5B19CA7CB933C2B /* Pods_BringgTrackingSDKDemo.framework */,
+				A9A2F70F1AADB0F1003038E8 /* MobileCoreServices.framework */,
+				A99163F41A5165A5008BADCD /* SystemConfiguration.framework */,
+				A9A94B8A1A42F295006C5A58 /* libicucore.dylib */,
+				A9A94B881A42F284006C5A58 /* CFNetwork.framework */,
+				A9A94B861A42F279006C5A58 /* Security.framework */,
+				A9A94B841A42F272006C5A58 /* Foundation.framework */,
+				798E99E01D7F219700ED8C0F /* BringgTracking.framework */,
+				795A32E81D7F1201005B5B55 /* SocketIO.framework */,
+				006A4D19F84AA645E9B83B6B /* libPods-BringgTrackingSDKDemoTests.a */,
+				640FD8091C0992955169A56F /* Pods_BringgTrackingSDKDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -193,14 +193,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A913A4A91A41CFF90002AE32 /* Build configuration list for PBXNativeTarget "BringgTrackingSDKDemo" */;
 			buildPhases = (
-				66AA10682BC83C9B2B312851 /* [CP] Check Pods Manifest.lock */,
+				01D6C3CD10845A9C4D370BA7 /* [CP] Check Pods Manifest.lock */,
 				A913A4821A41CFF80002AE32 /* Sources */,
 				A913A4831A41CFF80002AE32 /* Frameworks */,
 				A913A4841A41CFF80002AE32 /* Resources */,
 				A91923C21A42E9DA004CBA0E /* Embed Frameworks */,
-				22E808F4FFB3CC813B4B4237 /* [CP] Embed Pods Frameworks */,
-				B335686477B728764F5916A0 /* [CP] Copy Pods Resources */,
-				13AD852F1D759B9200210D12 /* Trim BringgTracking Framework */,
+				93DDA4E4FD546ACA22CF41ED /* [CP] Embed Pods Frameworks */,
+				DE61826170182540C89429A8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -288,36 +287,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		13AD852F1D759B9200210D12 /* Trim BringgTracking Framework */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Trim BringgTracking Framework";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "${SRCROOT}/trim.sh BringgTracking";
-		};
-		22E808F4FFB3CC813B4B4237 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BringgTrackingSDKDemo/Pods-BringgTrackingSDKDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		66AA10682BC83C9B2B312851 /* [CP] Check Pods Manifest.lock */ = {
+		01D6C3CD10845A9C4D370BA7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -332,7 +302,22 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		B335686477B728764F5916A0 /* [CP] Copy Pods Resources */ = {
+		93DDA4E4FD546ACA22CF41ED /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BringgTrackingSDKDemo/Pods-BringgTrackingSDKDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE61826170182540C89429A8 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -477,7 +462,7 @@
 		};
 		A913A4AA1A41CFF90002AE32 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E7FE76C953F12186BE344A14 /* Pods-BringgTrackingSDKDemo.debug.xcconfig */;
+			baseConfigurationReference = 7D47F3243A4956B7E1547D4B /* Pods-BringgTrackingSDKDemo.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -508,7 +493,7 @@
 		};
 		A913A4AB1A41CFF90002AE32 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C19390AAF9BAFA23E8B5BCE1 /* Pods-BringgTrackingSDKDemo.release.xcconfig */;
+			baseConfigurationReference = 69231F2E37ED7523C53484D8 /* Pods-BringgTrackingSDKDemo.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

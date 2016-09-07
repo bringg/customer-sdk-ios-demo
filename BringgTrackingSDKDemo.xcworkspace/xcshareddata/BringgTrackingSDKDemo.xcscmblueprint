@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "09622430D3CD4D15F37F983860AE1B3C9CDEA390",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "09622430D3CD4D15F37F983860AE1B3C9CDEA390" : 0,
+    "2E71EF8001AC343FA5A8A0CE362ECC600DD1D18C" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "78A32336-13C0-4EB2-9EA6-A2B6A5413AE4",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "09622430D3CD4D15F37F983860AE1B3C9CDEA390" : "customer-sdk-ios-demo\/",
+    "2E71EF8001AC343FA5A8A0CE362ECC600DD1D18C" : "customer-sdk-ios\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "BringgTrackingSDKDemo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "BringgTrackingSDKDemo.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/bringg\/customer-sdk-ios-demo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "09622430D3CD4D15F37F983860AE1B3C9CDEA390"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/bringg\/customer-sdk-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2E71EF8001AC343FA5A8A0CE362ECC600DD1D18C"
+    }
+  ]
+}

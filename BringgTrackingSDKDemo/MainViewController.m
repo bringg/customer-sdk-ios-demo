@@ -8,7 +8,7 @@
 
 #import "MainViewController.h"
 
-#define kBringgDeveloperToken @"YOUR_DEVELOPER_ACCESS_TOKEN"
+#define kBringgDeveloperToken @"-_j1fy24RixMBF5ky6f_"
 
 #define ARC4RANDOM_MAX      0x100000000
 
@@ -112,6 +112,13 @@
 - (IBAction)monitorOrder:(id)sender {
 
     NSString *orderid = self.orderField.text;
+    
+    if (orderid == nil || orderid.length == 0) {
+        UIAlertView  *alertView = [[UIAlertView alloc] initWithTitle:@"General Service Error" message:@"Order Id cannot be empty" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        
+        [alertView show];
+        return;
+    }
     
     // if the customer signed in  we can use the http manager to get more data about
     // the order before doing the actual monitoring
