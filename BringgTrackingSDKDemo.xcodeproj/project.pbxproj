@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7938C1D61DB8BA07009DA7E0 /* BringgTracking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7938C1D51DB8BA07009DA7E0 /* BringgTracking.framework */; };
 		A913A48C1A41CFF90002AE32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A913A48B1A41CFF90002AE32 /* main.m */; };
 		A913A48F1A41CFF90002AE32 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A913A48E1A41CFF90002AE32 /* AppDelegate.m */; };
 		A913A4921A41CFF90002AE32 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A913A4911A41CFF90002AE32 /* MainViewController.m */; };
@@ -50,8 +51,8 @@
 		006A4D19F84AA645E9B83B6B /* libPods-BringgTrackingSDKDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BringgTrackingSDKDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		640FD8091C0992955169A56F /* Pods_BringgTrackingSDKDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BringgTrackingSDKDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69231F2E37ED7523C53484D8 /* Pods-BringgTrackingSDKDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BringgTrackingSDKDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-BringgTrackingSDKDemo/Pods-BringgTrackingSDKDemo.release.xcconfig"; sourceTree = "<group>"; };
+		7938C1D51DB8BA07009DA7E0 /* BringgTracking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BringgTracking.framework; path = "../../../Library/Developer/Xcode/DerivedData/BringgTrackingSDKDemo-ayonrybrptfqhzehtjvhokfwgqmm/Build/Products/Debug-iphonesimulator/BringgTracking/BringgTracking.framework"; sourceTree = "<group>"; };
 		795A32E81D7F1201005B5B55 /* SocketIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SocketIO.framework; path = "../../../Library/Developer/Xcode/DerivedData/BringgTrackingSDKDemo-ayonrybrptfqhzehtjvhokfwgqmm/Build/Products/Debug-iphonesimulator/Socket.IO-Client-Swift/SocketIO.framework"; sourceTree = "<group>"; };
-		798E99E01D7F219700ED8C0F /* BringgTracking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BringgTracking.framework; path = "../../../Library/Developer/Xcode/DerivedData/BringgTrackingSDKDemo-ayonrybrptfqhzehtjvhokfwgqmm/Build/Products/Debug-iphonesimulator/BringgTracking/BringgTracking.framework"; sourceTree = "<group>"; };
 		7D47F3243A4956B7E1547D4B /* Pods-BringgTrackingSDKDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BringgTrackingSDKDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BringgTrackingSDKDemo/Pods-BringgTrackingSDKDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		A913A4861A41CFF80002AE32 /* BringgTrackingSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BringgTrackingSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A913A48A1A41CFF80002AE32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7938C1D61DB8BA07009DA7E0 /* BringgTracking.framework in Frameworks */,
 				A9A2F7101AADB0F1003038E8 /* MobileCoreServices.framework in Frameworks */,
 				A99163F51A5165A5008BADCD /* SystemConfiguration.framework in Frameworks */,
 				A9E71BBC1A4304A3000BA846 /* libicucore.dylib in Frameworks */,
@@ -172,13 +174,13 @@
 		DD7129AC70077ABFD2EBF47F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7938C1D51DB8BA07009DA7E0 /* BringgTracking.framework */,
 				A9A2F70F1AADB0F1003038E8 /* MobileCoreServices.framework */,
 				A99163F41A5165A5008BADCD /* SystemConfiguration.framework */,
 				A9A94B8A1A42F295006C5A58 /* libicucore.dylib */,
 				A9A94B881A42F284006C5A58 /* CFNetwork.framework */,
 				A9A94B861A42F279006C5A58 /* Security.framework */,
 				A9A94B841A42F272006C5A58 /* Foundation.framework */,
-				798E99E01D7F219700ED8C0F /* BringgTracking.framework */,
 				795A32E81D7F1201005B5B55 /* SocketIO.framework */,
 				006A4D19F84AA645E9B83B6B /* libPods-BringgTrackingSDKDemoTests.a */,
 				640FD8091C0992955169A56F /* Pods_BringgTrackingSDKDemo.framework */,
@@ -299,7 +301,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		93DDA4E4FD546ACA22CF41ED /* [CP] Embed Pods Frameworks */ = {
@@ -486,6 +488,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bringg.customersdkdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
@@ -517,6 +520,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bringg.customersdkdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
@@ -538,6 +542,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bringg.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BringgTrackingSDKDemo.app/BringgTrackingSDKDemo";
 			};
 			name = Debug;
@@ -554,6 +559,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bringg.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BringgTrackingSDKDemo.app/BringgTrackingSDKDemo";
 			};
 			name = Release;
