@@ -8,7 +8,7 @@
 
 #import "MainViewController.h"
 
-#define kBringgDeveloperToken @"-_j1fy24RixMBF5ky6f_"
+#define kBringgDeveloperToken @"xHDAaSnfBFcd9DRzJQpc"
 
 #define ARC4RANDOM_MAX      0x100000000
 
@@ -582,16 +582,18 @@
 }
 
 -(void)waypointDidUpdatedWaypointId:(NSNumber *)waypointId eta:(NSDate *)eta{
-    self.lblWaypointStatus.text = @"Waypoint Updated ";
+    self.lblWaypointStatus.text = [NSString stringWithFormat:@"Waypoint (%ld) Updated", waypointId.integerValue];
     self.txtETA.text = [NSString stringWithFormat:@"ETA: %@", eta];
 }
 
 - (void)waypointDidArrivedWaypointId:(NSNumber *)waypointId{
-     self.lblWaypointStatus.text = @"Waypoint arrived ";
+    self.lblWaypointStatus.text = [NSString stringWithFormat:@"Waypoint (%ld) Arrived", waypointId.integerValue];
+
 }
 
 - (void)waypointDidFinishedWaypointId:(NSNumber *)waypointId{
-    self.lblWaypointStatus.text = @"Waypoint done ";
+    self.lblWaypointStatus.text = [NSString stringWithFormat:@"Waypoint (%ld) Done", (long)waypointId.integerValue];
+
 }
 
 
