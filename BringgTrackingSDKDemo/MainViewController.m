@@ -8,13 +8,13 @@
 
 #import "MainViewController.h"
 
-#define kBringgDeveloperToken @"xHDAaSnfBFcd9DRzJQpc"
+#define kBringgDeveloperToken @"QnSFGWAxe5AEyYW-1xBy"
 
 #define ARC4RANDOM_MAX      0x100000000
 
-#define USE_SECURE YES
+#define USE_SECURE NO
 
-@interface MainViewController ()<GGHTTPClientConnectionDelegate>
+@interface MainViewController ()<GGHTTPClientConnectionDelegate, RealTimeDelegate>
 
 @property (nonatomic, strong) GGTrackerManager *trackerManager;
 @property (nonatomic, strong) GGHTTPClientManager *httpManager;
@@ -28,6 +28,14 @@
 @end
 
 @implementation MainViewController
+
+-(NSString * _Nullable)hostDomainForClientManager:(GGHTTPClientManager *_Nonnull)clientManager{
+    return @"http://10.0.1.104:3000";
+}
+
+-(NSString * _Nullable)hostDomainForTrackerManager:(GGTrackerManager *_Nonnull)trackerManager{
+    return @"http://10.0.1.104:3030";
+}
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
