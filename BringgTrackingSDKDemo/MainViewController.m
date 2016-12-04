@@ -8,8 +8,8 @@
 
 #import "MainViewController.h"
 
-//#define kBringgDeveloperToken @"QnSFGWAxe5AEyYW-1xBy"
-#define kBringgDeveloperToken @"xHDAaSnfBFcd9DRzJQpc" //@"Cp8KdcVciC9CUqyZFdmT"//
+
+#define kBringgDeveloperToken @"YOUR_DEV_TOKEN_HERE"
 
 #define ARC4RANDOM_MAX      0x100000000
 
@@ -29,15 +29,7 @@
 @end
 
 @implementation MainViewController
-/*
--(NSString * _Nullable)hostDomainForClientManager:(GGHTTPClientManager *_Nonnull)clientManager{
-    return @"https://staging-api.bringg.com:443/api";
-}
 
--(NSString * _Nullable)hostDomainForTrackerManager:(GGTrackerManager *_Nonnull)trackerManager{
-    return @"https://staging-realtime.bringg.com";
-}
-*/
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
     
