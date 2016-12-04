@@ -8,11 +8,12 @@
 
 #import "MainViewController.h"
 
-#define kBringgDeveloperToken @"QnSFGWAxe5AEyYW-1xBy"
+//#define kBringgDeveloperToken @"QnSFGWAxe5AEyYW-1xBy"
+#define kBringgDeveloperToken @"xHDAaSnfBFcd9DRzJQpc" //@"Cp8KdcVciC9CUqyZFdmT"//
 
 #define ARC4RANDOM_MAX      0x100000000
 
-#define USE_SECURE NO
+#define USE_SECURE YES
 
 @interface MainViewController ()<GGHTTPClientConnectionDelegate, RealTimeDelegate>
 
@@ -28,15 +29,15 @@
 @end
 
 @implementation MainViewController
-
+/*
 -(NSString * _Nullable)hostDomainForClientManager:(GGHTTPClientManager *_Nonnull)clientManager{
-    return @"http://10.0.1.104:3000";
+    return @"https://staging-api.bringg.com:443/api";
 }
 
 -(NSString * _Nullable)hostDomainForTrackerManager:(GGTrackerManager *_Nonnull)trackerManager{
-    return @"http://10.0.1.104:3030";
+    return @"https://staging-realtime.bringg.com";
 }
-
+*/
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
     
@@ -604,6 +605,8 @@
 
 }
 
-
+- (void)waypoint:(NSNumber *)waypointId didUpdatedCoordinatesToLat:(NSNumber *)lat lng:(NSNumber *)lng{
+    NSLog(@"waypoint %@ did update too coordinate %@/%@", waypointId, lat, lng);
+}
 
 @end
