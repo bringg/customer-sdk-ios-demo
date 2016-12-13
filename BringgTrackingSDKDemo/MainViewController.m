@@ -8,11 +8,11 @@
 
 #import "MainViewController.h"
 
-#define kBringgDeveloperToken @"-_j1fy24RixMBF5ky6f_"
+#define kBringgDeveloperToken @"QnSFGWAxe5AEyYW-1xBy"
 
 #define ARC4RANDOM_MAX      0x100000000
 
-#define USE_SECURE YES
+#define USE_SECURE NO
 
 @interface MainViewController ()<GGHTTPClientConnectionDelegate>
 
@@ -28,6 +28,17 @@
 @end
 
 @implementation MainViewController
+
+
+-(NSString * _Nullable)hostDomainForClientManager:(GGHTTPClientManager *_Nonnull)clientManager{
+    return @"http://10.0.1.104:3000";
+}
+
+-(NSString * _Nullable)hostDomainForTrackerManager:(GGTrackerManager *_Nonnull)trackerManager{
+    return @"http://10.0.1.104:3030";
+}
+
+
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
@@ -594,6 +605,9 @@
     self.lblWaypointStatus.text = @"Waypoint done ";
 }
 
+- (void)watchWaypointSucceededForWaypointId:(NSNumber *)waypointId waypoint:(GGWaypoint *)waypoint{
+    NSLog(@"success watching %@", waypoint);
+}
 
 
 @end
