@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/BringgGlobals.h</key>
 		<data>
-		JzqXZhade6h59lO7rHWnJa0ctYY=
+		l9kHxBmrZZnyukPfUT2efyS7LBQ=
 		</data>
 		<key>Headers/BringgTracking.h</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Headers/GGRealTimeMontior.h</key>
 		<data>
-		Tma2dC6nhmRBgFrvhHbp7OTraL4=
+		qU9OUvdGOeKyBBUVpOGx7FygHls=
 		</data>
 		<key>Headers/GGSharedLocation.h</key>
 		<data>
@@ -58,11 +58,11 @@
 		</data>
 		<key>Headers/GGWaypoint.h</key>
 		<data>
-		xwgp3ywhsRk8PPyc2dX5ftcC6XM=
+		Dw/1KX63Hf4Dq/rRZ9GQkml5YIU=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		+GUGtXebJXs5+2hoSpJGMbxA5vM=
+		mTEwjMJH0+dkSj4Dr2sbtrPZ6hA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -75,11 +75,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			JzqXZhade6h59lO7rHWnJa0ctYY=
+			l9kHxBmrZZnyukPfUT2efyS7LBQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			bd6qzqWcC3AWwmNkP9aeYrkOfVUIZDMt4QkO4Mp5G68=
+			7SwZsK0/emU7f8MOjcRfb+MpAytEKKN/muextLGrlQ4=
 			</data>
 		</dict>
 		<key>Headers/BringgTracking.h</key>
@@ -185,11 +185,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Tma2dC6nhmRBgFrvhHbp7OTraL4=
+			qU9OUvdGOeKyBBUVpOGx7FygHls=
 			</data>
 			<key>hash2</key>
 			<data>
-			KDtz/CE4LT7/fUSdg9lfCNEdwq7p7/zpJ3RnpByuIWE=
+			0BcybAGwNomMwMclwVTuiG+7KlHkTn8793L+Vyp4aJU=
 			</data>
 		</dict>
 		<key>Headers/GGSharedLocation.h</key>
@@ -218,11 +218,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			xwgp3ywhsRk8PPyc2dX5ftcC6XM=
+			Dw/1KX63Hf4Dq/rRZ9GQkml5YIU=
 			</data>
 			<key>hash2</key>
 			<data>
-			Qhm+znh+r57H6ga2MKCk3J2fl5TOBddRXAfVrom/bNE=
+			du9p2luV6CSbWD2O98lh+w10MisAE+pw34mi3DgiBw4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -254,6 +254,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^version.plist$</key>
 		<true/>
@@ -299,6 +304,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^Info\.plist$</key>
 		<dict>

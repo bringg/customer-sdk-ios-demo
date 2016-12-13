@@ -601,4 +601,8 @@
     NSLog(@"waypoint %@ did update too coordinate %@/%@", waypointId, lat, lng);
 }
 
+- (void)watchWaypointSucceededForWaypointId:(NSNumber *)waypointId waypoint:(GGWaypoint *)waypoint {
+    NSLog(@"Watch success on waypoint id: %@", waypointId);
+}
+
 @end
