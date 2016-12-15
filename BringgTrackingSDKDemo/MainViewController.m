@@ -20,7 +20,6 @@
 @property (nonatomic, strong) GGHTTPClientManager *httpManager;
 
 @property (nonatomic, strong) NSMutableDictionary *monitoredOrders;
-@property (nonatomic, strong) NSMutableDictionary *monitoredDrivers;
 @property (nonatomic, strong) NSMutableDictionary *monitoredWaypoints;
 
 @property (nonatomic, strong) GGOrder *currentMonitoredOrder;
@@ -44,11 +43,8 @@
         [self.trackerManager setRealTimeDelegate:self];
         [self.trackerManager setHTTPManager:self.httpManager];
         
-       
-
         _monitoredOrders = [NSMutableDictionary dictionary];
-        _monitoredDrivers = [NSMutableDictionary dictionary];
-         _monitoredWaypoints = [NSMutableDictionary dictionary];
+        _monitoredWaypoints = [NSMutableDictionary dictionary];
     }
     
     return self;
@@ -232,8 +228,6 @@
     NSString *shareuuid = self.shareUUIDField.text;
     if (uuid && [uuid length]) {
         if ([self.trackerManager isWatchingDriverWithUUID:uuid andShareUUID:shareuuid]) {
-            
-            [_monitoredDrivers setObject:[NSNull null] forKey:uuid];
             
             [self.trackerManager stopWatchingDriverWithUUID:uuid shareUUID:shareuuid];
             [self.driverButton setTitle:@"Monitor Driver" forState:UIControlStateNormal];
@@ -455,6 +449,11 @@
 
 #pragma mark - OrderDelegate
 
+- (void)watchOrderSucceedForOrder:(GGOrder *)order {
+    GGOrder *monitoredOrder = [self updateMonitoredOrderWithOrder:order];
+    [self updateUIWithShared:monitoredOrder.sharedLocation.locationUUID ? monitoredOrder.sharedLocation.locationUUID : monitoredOrder.sharedLocationUUID andRatingURL:monitoredOrder.sharedLocation.ratingURL andDriver:nil andOrder:order];
+}
+
 - (void)watchOrderFailForOrder:(GGOrder *)order error:(NSError *)error{
     
     NSString *errorMessage = [NSString stringWithFormat:@"%@.\nDid you enter the correct Order UUID?", error.localizedDescription.capitalizedString];
@@ -551,8 +550,11 @@
 
 #pragma mark - DriverDelegate
 
+- (void)watchDriverSucceedForDriver:(GGDriver *)driver {
+    NSLog(@"Watch driver succeeded for driver: %@", driver);
+}
+
 - (void)watchDriverFailedForDriver:(GGDriver *)driver error:(NSError *)error{
-    
     
     NSString *errorMessage = [NSString stringWithFormat:@"%@.\nDid you enter the correct Driver UUID & Share UUID?", error.localizedDescription.capitalizedString];
     
@@ -570,10 +572,7 @@
 
 - (void)driverLocationDidChangedWithDriverUUID:(NSString *)driverUUID lat:(NSNumber *)lat lng:(NSNumber *)lng {
     self.driverLabel.text = [NSString stringWithFormat:@"lat %@, lng %@", lat, lng];
-    
 }
-
-
 
 #pragma mark Waypoint Delegate
 
@@ -594,6 +593,8 @@
     self.lblWaypointStatus.text = @"Waypoint done ";
 }
 
-
+- (void)watchWaypointSucceededForWaypointId:(NSNumber *)waypointId waypoint:(GGWaypoint *)waypoint {
+    NSLog(@"Watch waypoint succeeded for waypoint: %@", waypoint);
+}
 
 @end
