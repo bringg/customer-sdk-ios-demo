@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/BringgGlobals.h</key>
 		<data>
-		rZDSXzoOzUeZIlgdGtVp4qlMHuQ=
+		X9O5iHyAWn/8EZ6UsHmEtgMtDtc=
 		</data>
 		<key>Headers/BringgTracking.h</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		0SEQPg0HiX3mbO4JN28iB/g40Tk=
+		9FI04RS/4ZfhFoCJSWM85TNVaKo=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -75,11 +75,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			rZDSXzoOzUeZIlgdGtVp4qlMHuQ=
+			X9O5iHyAWn/8EZ6UsHmEtgMtDtc=
 			</data>
 			<key>hash2</key>
 			<data>
-			9FNrwa5LD3gqEanmkdkjNrGXQuViRWrBW4dNJIgHCws=
+			p42nWPwtKCcMKAewj7xsAZnxqVfkIrFD4IA9+AYtNts=
 			</data>
 		</dict>
 		<key>Headers/BringgTracking.h</key>
