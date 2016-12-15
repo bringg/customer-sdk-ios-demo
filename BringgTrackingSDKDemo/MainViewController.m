@@ -8,20 +8,18 @@
 
 #import "MainViewController.h"
 
-
-#define kBringgDeveloperToken @"YOUR_DEV_TOKEN_HERE"
+#define kBringgDeveloperToken @"-_j1fy24RixMBF5ky6f_"
 
 #define ARC4RANDOM_MAX      0x100000000
 
 #define USE_SECURE YES
 
-@interface MainViewController ()<GGHTTPClientConnectionDelegate, RealTimeDelegate>
+@interface MainViewController ()<GGHTTPClientConnectionDelegate>
 
 @property (nonatomic, strong) GGTrackerManager *trackerManager;
 @property (nonatomic, strong) GGHTTPClientManager *httpManager;
 
 @property (nonatomic, strong) NSMutableDictionary *monitoredOrders;
-@property (nonatomic, strong) NSMutableDictionary *monitoredDrivers;
 @property (nonatomic, strong) NSMutableDictionary *monitoredWaypoints;
 
 @property (nonatomic, strong) GGOrder *currentMonitoredOrder;
@@ -32,24 +30,21 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
-    
+        
         // at first we should just init the http client manager
         [GGHTTPClientManager managerWithDeveloperToken:kBringgDeveloperToken];
         self.httpManager = [GGHTTPClientManager manager];
         [self.httpManager setDelegate:self];
         [self.httpManager useSecuredConnection:USE_SECURE];
- 
+        
         // init the tracker without the customer token
         self.trackerManager = [GGTrackerManager tracker];
         [self.trackerManager setDeveloperToken:kBringgDeveloperToken];
         [self.trackerManager setRealTimeDelegate:self];
         [self.trackerManager setHTTPManager:self.httpManager];
         
-       
-
         _monitoredOrders = [NSMutableDictionary dictionary];
-        _monitoredDrivers = [NSMutableDictionary dictionary];
-         _monitoredWaypoints = [NSMutableDictionary dictionary];
+        _monitoredWaypoints = [NSMutableDictionary dictionary];
     }
     
     return self;
@@ -69,7 +64,7 @@
     
     [self.btnFindme setEnabled:NO];
     
-
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -80,7 +75,7 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-
+    
 }
 
 - (void)hideKeyBoard {
@@ -106,12 +101,12 @@
     } else if (self.trackerManager){
         NSLog(@"connecting to http/https");
         [self.trackerManager connectUsingSecureConnection:USE_SECURE];
-    
+        
     }
 }
 
 - (IBAction)monitorOrder:(id)sender {
-
+    
     NSString *orderid = self.orderField.text;
     
     if (orderid == nil || orderid.length == 0) {
@@ -124,7 +119,7 @@
     // if the customer signed in  we can use the http manager to get more data about
     // the order before doing the actual monitoring
     if ([self.httpManager isSignedIn]) {
-       
+        
         if (_currentMonitoredOrder && _currentMonitoredOrder.orderid == [orderid integerValue]) {
             [_monitoredOrders setObject:[NSNull null] forKey:_currentMonitoredOrder.uuid];
             
@@ -149,7 +144,7 @@
                 }
                 
             }];
-
+            
         }
         
         
@@ -169,7 +164,7 @@
             
             [self trackOrder:order];
         }
-
+        
     }
     
     
@@ -182,7 +177,7 @@
     NSString *orderUUID;
     NSString *sharedUUID;
     NSError *error;
-
+    
     [GGBringgUtils parseOrderCompoundUUID:compoundUUID toOrderUUID:&orderUUID andSharedUUID:&sharedUUID error:&error];
     
     if (error) {
@@ -234,8 +229,6 @@
     if (uuid && [uuid length]) {
         if ([self.trackerManager isWatchingDriverWithUUID:uuid andShareUUID:shareuuid]) {
             
-            [_monitoredDrivers setObject:[NSNull null] forKey:uuid];
-            
             [self.trackerManager stopWatchingDriverWithUUID:uuid shareUUID:shareuuid];
             [self.driverButton setTitle:@"Monitor Driver" forState:UIControlStateNormal];
             
@@ -270,7 +263,7 @@
         }
         
         if ([self.trackerManager isWatchingWaypointWithWaypointId:wpid andOrderUUID:orderUUID]) {
-           [ _monitoredWaypoints setObject:[NSNull null] forKey:wpid];
+            [ _monitoredWaypoints setObject:[NSNull null] forKey:wpid];
             [self.trackerManager stopWatchingWaypointWithWaypointId:wpid andOrderUUID:orderUUID];
             [self.monitorWPButton setTitle:@"Monitor Waypoint" forState:UIControlStateNormal];
         }else{
@@ -327,55 +320,55 @@
 - (IBAction)signin:(id)sender {
     //signin to get customer token
     
-   
+    
     
     [self.httpManager signInWithName:self.customerNameField.text
-                            phone:self.customerPhoneField.text
-                            email:nil
+                               phone:self.customerPhoneField.text
+                               email:nil
                             password:nil
-                confirmationCode:self.customerCodeField.text
-                      merchantId:self.customerMerchantField.text
+                    confirmationCode:self.customerCodeField.text
+                          merchantId:self.customerMerchantField.text
                               extras:nil
-
-     completionHandler:^(BOOL success, NSDictionary *response, GGCustomer *customer, NSError *error) {
-         //
-         
-         
-         UIAlertView *alertView;
-         
-         if (customer) {
-             
-             alertView = [[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"%@ Signed in", customer.name] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-             
-             [alertView show];
-             
-             if (!self.trackerManager) {
-                 // once we have a customer token we can activate the tracking manager
-                 [GGTrackerManager trackerWithCustomerToken:customer.customerToken
-                                          andDeveloperToken:kBringgDeveloperToken
-                                                andDelegate:self
-                                             andHTTPManager:self.httpManager];
-                 // then we can access the tracker singelton via his conveninence initialiser
-                 self.trackerManager = [GGTrackerManager tracker];
-                
-             }else{
-                 [self.trackerManager setHTTPManager:self.httpManager];
-                 [self.trackerManager setRealTimeDelegate:self];
-             }
-             
-             self.customerTokenField.text = customer.customerToken;
-             
-             // set the customer in the tracker manager
-             [self.trackerManager setCustomer:customer];
-             
-             
-             
-         }else if (error){
-            alertView = [[UIAlertView alloc] initWithTitle:@"Sign in Error" message:error.localizedDescription delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-             
-             [alertView show];
-         }
-     }];
+     
+                   completionHandler:^(BOOL success, NSDictionary *response, GGCustomer *customer, NSError *error) {
+                       //
+                       
+                       
+                       UIAlertView *alertView;
+                       
+                       if (customer) {
+                           
+                           alertView = [[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"%@ Signed in", customer.name] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+                           
+                           [alertView show];
+                           
+                           if (!self.trackerManager) {
+                               // once we have a customer token we can activate the tracking manager
+                               [GGTrackerManager trackerWithCustomerToken:customer.customerToken
+                                                        andDeveloperToken:kBringgDeveloperToken
+                                                              andDelegate:self
+                                                           andHTTPManager:self.httpManager];
+                               // then we can access the tracker singelton via his conveninence initialiser
+                               self.trackerManager = [GGTrackerManager tracker];
+                               
+                           }else{
+                               [self.trackerManager setHTTPManager:self.httpManager];
+                               [self.trackerManager setRealTimeDelegate:self];
+                           }
+                           
+                           self.customerTokenField.text = customer.customerToken;
+                           
+                           // set the customer in the tracker manager
+                           [self.trackerManager setCustomer:customer];
+                           
+                           
+                           
+                       }else if (error){
+                           alertView = [[UIAlertView alloc] initWithTitle:@"Sign in Error" message:error.localizedDescription delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+                           
+                           [alertView show];
+                       }
+                   }];
 }
 
 - (IBAction)rate:(id)sender {
@@ -385,7 +378,7 @@
         //
         
         if (success && sharedLocation) {
-           
+            
             // before calling the rate with the rating url we should strip the scheme (the http manager will add the correct scheme according to ssl configurations
             
             NSString *trueRatingURL = self.ratingURLField.text;
@@ -397,22 +390,22 @@
                          ratingURL:trueRatingURL
                             extras:nil
              withCompletionHandler:^(BOOL success,NSDictionary *response,  GGRating *rating, NSError *error) {
-                //
-                UIAlertView *alertView;
-                if (rating && rating.ratingMessage) {
-                    alertView = [[UIAlertView alloc] initWithTitle:nil message:rating.ratingMessage delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-                    
-                    [alertView show];
-                }else if (error){
-                    alertView = [[UIAlertView alloc] initWithTitle:@"Rating Error"  message:error.localizedDescription delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-                    
-                    [alertView show];
-                }
-                
-                
-                NSLog(@"%@, error %@", success ? @"success" : @"failed", error);
-                
-            }];
+                 //
+                 UIAlertView *alertView;
+                 if (rating && rating.ratingMessage) {
+                     alertView = [[UIAlertView alloc] initWithTitle:nil message:rating.ratingMessage delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+                     
+                     [alertView show];
+                 }else if (error){
+                     alertView = [[UIAlertView alloc] initWithTitle:@"Rating Error"  message:error.localizedDescription delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+                     
+                     [alertView show];
+                 }
+                 
+                 
+                 NSLog(@"%@, error %@", success ? @"success" : @"failed", error);
+                 
+             }];
         }
     }];
     
@@ -426,7 +419,7 @@
     NSLog(@"connected");
     self.connectionLabel.text = @"BringgTracker: connected";
     [self.connectionButton setTitle:@"Disconnect" forState:UIControlStateNormal];
-
+    
     
 }
 
@@ -435,7 +428,7 @@
     self.connectionLabel.text = [NSString stringWithFormat:@"BringgTracker: disconnected %@", error];
     [self.connectionButton setTitle:@"Connect" forState:UIControlStateNormal];
     
-   
+    
 }
 
 
@@ -450,17 +443,22 @@
     }else{
         [monitoredOrder update:order];
     }
-
+    
     return monitoredOrder;
 }
 
 #pragma mark - OrderDelegate
 
+- (void)watchOrderSucceedForOrder:(GGOrder *)order {
+    GGOrder *monitoredOrder = [self updateMonitoredOrderWithOrder:order];
+    [self updateUIWithShared:monitoredOrder.sharedLocation.locationUUID ? monitoredOrder.sharedLocation.locationUUID : monitoredOrder.sharedLocationUUID andRatingURL:monitoredOrder.sharedLocation.ratingURL andDriver:nil andOrder:order];
+}
+
 - (void)watchOrderFailForOrder:(GGOrder *)order error:(NSError *)error{
     
     NSString *errorMessage = [NSString stringWithFormat:@"%@.\nDid you enter the correct Order UUID?", error.localizedDescription.capitalizedString];
     
-   UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Watch Order Error" message:errorMessage delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Watch Order Error" message:errorMessage delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     
     [alertView show];
     
@@ -488,7 +486,7 @@
     
     GGOrder *monitoredOrder = [self updateMonitoredOrderWithOrder:order];
     self.orderLabel.text = [NSString stringWithFormat:@"Order started %@ for driver %@", order.uuid, driver.uuid];
-     [self updateUIWithShared:monitoredOrder.sharedLocation.locationUUID ? monitoredOrder.sharedLocation.locationUUID : monitoredOrder.sharedLocationUUID andRatingURL:monitoredOrder.sharedLocation.ratingURL andDriver:driver.uuid andOrder:order];
+    [self updateUIWithShared:monitoredOrder.sharedLocation.locationUUID ? monitoredOrder.sharedLocation.locationUUID : monitoredOrder.sharedLocationUUID andRatingURL:monitoredOrder.sharedLocation.ratingURL andDriver:driver.uuid andOrder:order];
 }
 
 - (void)orderDidArrive:(GGOrder *)order withDriver:(GGDriver *)driver{
@@ -547,13 +545,16 @@
     if (order) {
         self.currentMonitoredOrder = order;
     }
-   
+    
 }
 
 #pragma mark - DriverDelegate
 
+- (void)watchDriverSucceedForDriver:(GGDriver *)driver {
+    NSLog(@"Watch driver succeeded for driver: %@", driver);
+}
+
 - (void)watchDriverFailedForDriver:(GGDriver *)driver error:(NSError *)error{
-    
     
     NSString *errorMessage = [NSString stringWithFormat:@"%@.\nDid you enter the correct Driver UUID & Share UUID?", error.localizedDescription.capitalizedString];
     
@@ -571,10 +572,7 @@
 
 - (void)driverLocationDidChangedWithDriverUUID:(NSString *)driverUUID lat:(NSNumber *)lat lng:(NSNumber *)lng {
     self.driverLabel.text = [NSString stringWithFormat:@"lat %@, lng %@", lat, lng];
-    
 }
-
-
 
 #pragma mark Waypoint Delegate
 
@@ -583,26 +581,20 @@
 }
 
 -(void)waypointDidUpdatedWaypointId:(NSNumber *)waypointId eta:(NSDate *)eta{
-    self.lblWaypointStatus.text = [NSString stringWithFormat:@"Waypoint (%ld) Updated", waypointId.integerValue];
+    self.lblWaypointStatus.text = @"Waypoint Updated ";
     self.txtETA.text = [NSString stringWithFormat:@"ETA: %@", eta];
 }
 
 - (void)waypointDidArrivedWaypointId:(NSNumber *)waypointId{
-    self.lblWaypointStatus.text = [NSString stringWithFormat:@"Waypoint (%ld) Arrived", waypointId.integerValue];
-
+    self.lblWaypointStatus.text = @"Waypoint arrived ";
 }
 
 - (void)waypointDidFinishedWaypointId:(NSNumber *)waypointId{
-    self.lblWaypointStatus.text = [NSString stringWithFormat:@"Waypoint (%ld) Done", (long)waypointId.integerValue];
-
-}
-
-- (void)waypoint:(NSNumber *)waypointId didUpdatedCoordinatesToLat:(NSNumber *)lat lng:(NSNumber *)lng{
-    NSLog(@"waypoint %@ did update too coordinate %@/%@", waypointId, lat, lng);
+    self.lblWaypointStatus.text = @"Waypoint done ";
 }
 
 - (void)watchWaypointSucceededForWaypointId:(NSNumber *)waypointId waypoint:(GGWaypoint *)waypoint {
-    NSLog(@"Watch success on waypoint id: %@", waypointId);
+    NSLog(@"Watch waypoint succeeded for waypoint: %@", waypoint);
 }
 
 @end

@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/BringgGlobals.h</key>
 		<data>
-		l9kHxBmrZZnyukPfUT2efyS7LBQ=
+		rZDSXzoOzUeZIlgdGtVp4qlMHuQ=
 		</data>
 		<key>Headers/BringgTracking.h</key>
 		<data>
@@ -58,11 +58,11 @@
 		</data>
 		<key>Headers/GGWaypoint.h</key>
 		<data>
-		Dw/1KX63Hf4Dq/rRZ9GQkml5YIU=
+		UoG4FeCfkoTD9BvpDHMMdPcKrb8=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		mTEwjMJH0+dkSj4Dr2sbtrPZ6hA=
+		0SEQPg0HiX3mbO4JN28iB/g40Tk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -75,11 +75,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			l9kHxBmrZZnyukPfUT2efyS7LBQ=
+			rZDSXzoOzUeZIlgdGtVp4qlMHuQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			7SwZsK0/emU7f8MOjcRfb+MpAytEKKN/muextLGrlQ4=
+			9FNrwa5LD3gqEanmkdkjNrGXQuViRWrBW4dNJIgHCws=
 			</data>
 		</dict>
 		<key>Headers/BringgTracking.h</key>
@@ -218,11 +218,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Dw/1KX63Hf4Dq/rRZ9GQkml5YIU=
+			UoG4FeCfkoTD9BvpDHMMdPcKrb8=
 			</data>
 			<key>hash2</key>
 			<data>
-			du9p2luV6CSbWD2O98lh+w10MisAE+pw34mi3DgiBw4=
+			3h6gNpiBBdPvkwsMw6e2jM/SSvuQU9GVSGK8f9LXIfw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
