@@ -4,5 +4,5 @@ use_frameworks!
 inhibit_all_warnings!
 
 target 'BringgTrackingSDKDemo' do
-    pod 'Socket.IO-Client-Swift', '~> 7.0.3'  
-   end
+    pod 'BringgTracking', :git => 'https://github.com/bringg/customer-sdk-ios.git', :branch => 'swift_2_2'
+end

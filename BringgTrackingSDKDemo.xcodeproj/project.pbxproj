@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		13681D0D1DDC5B4D00D46235 /* BringgTracking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 13681D0A1DDC5B3200D46235 /* BringgTracking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6A8A1600C937D29BEFC0E4EB /* Pods_BringgTrackingSDKDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE77A9A2108FC8FCEE64DC90 /* Pods_BringgTrackingSDKDemo.framework */; };
 		A913A48C1A41CFF90002AE32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A913A48B1A41CFF90002AE32 /* main.m */; };
 		A913A48F1A41CFF90002AE32 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A913A48E1A41CFF90002AE32 /* AppDelegate.m */; };
@@ -40,7 +39,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				13681D0D1DDC5B4D00D46235 /* BringgTracking.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -48,7 +46,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		13681D0A1DDC5B3200D46235 /* BringgTracking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BringgTracking.framework; sourceTree = "<group>"; };
 		778D55113CFC294F60A9C747 /* Pods-BringgTrackingSDKDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BringgTrackingSDKDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-BringgTrackingSDKDemo/Pods-BringgTrackingSDKDemo.release.xcconfig"; sourceTree = "<group>"; };
 		830F2683CFB6FD218E7C1049 /* Pods-BringgTrackingSDKDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BringgTrackingSDKDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BringgTrackingSDKDemo/Pods-BringgTrackingSDKDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		A913A4861A41CFF80002AE32 /* BringgTrackingSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BringgTrackingSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				A913A48D1A41CFF90002AE32 /* AppDelegate.h */,
-				13681D0A1DDC5B3200D46235 /* BringgTracking.framework */,
 				A913A48E1A41CFF90002AE32 /* AppDelegate.m */,
 				A913A4901A41CFF90002AE32 /* MainViewController.h */,
 				A913A4911A41CFF90002AE32 /* MainViewController.m */,
