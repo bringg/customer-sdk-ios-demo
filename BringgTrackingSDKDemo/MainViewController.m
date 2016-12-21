@@ -42,6 +42,7 @@
         [self.trackerManager setDeveloperToken:kBringgDeveloperToken];
         [self.trackerManager setRealTimeDelegate:self];
         [self.trackerManager setHTTPManager:self.httpManager];
+        self.trackerManager.logsEnabled = YES;
         
         _monitoredOrders = [NSMutableDictionary dictionary];
         _monitoredWaypoints = [NSMutableDictionary dictionary];

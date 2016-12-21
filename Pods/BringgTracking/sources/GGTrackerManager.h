@@ -27,13 +27,21 @@
 @property (nonatomic, readonly) GGRealTimeMontior * _Nullable liveMonitor;
 @property (nonatomic, getter=customer) GGCustomer * _Nullable appCustomer;
 
+/**
+ *  The developer token
+ */
+@property (nullable, nonatomic, strong) NSString *developerToken;
+
+/**
+ *  Enables sdk level logs
+ */
+@property (nonatomic) BOOL logsEnabled;
 
 /**
  *  creates if needed and returns an initialized tracker singelton
  *  @return the tracker singelton
  */
 + (nonnull id)tracker;
-
 
 /**
  *  creates if needed an singelton Bringg Tracker object
@@ -47,11 +55,7 @@
  */
 + (nonnull id)trackerWithCustomerToken:(NSString * _Nullable)customerToken andDeveloperToken:(NSString *_Nullable)devToken andDelegate:(id <RealTimeDelegate> _Nullable)delegate andHTTPManager:(GGHTTPClientManager * _Nullable)httpManager;
 
-/**
- *  set the developer token for the singelton
- *  @param devToken
- */
-- (void)setDeveloperToken:(NSString * _Nullable)devToken;
+
 
 /**
  *  set the httpManager that will be used to poll data for the tracker

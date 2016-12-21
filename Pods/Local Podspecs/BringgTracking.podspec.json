@@ -1,6 +1,6 @@
 {
   "name": "BringgTracking",
-  "version": "1.10.4",
+  "version": "1.10.5",
   "summary": "BringgTracking SDK",
   "homepage": "http://www.bringg.com",
   "authors": "Bringg Ltd.",
@@ -9,7 +9,7 @@
   },
   "source": {
     "git": "https://github.com/bringg/customer-sdk-ios.git",
-    "tag": "1.10.4"
+    "tag": "1.10.5"
   },
   "source_files": [
     "sources",
