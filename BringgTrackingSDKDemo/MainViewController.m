@@ -14,11 +14,10 @@
 
 #define USE_SECURE YES
 
-@interface MainViewController ()<GGHTTPClientConnectionDelegate>
+@interface MainViewController ()
 
-@property (nonatomic, strong) GGTrackerManager *trackerManager;
-@property (nonatomic, strong) GGHTTPClientManager *httpManager;
 
+@property (nonatomic, strong) BringgTrackingClient *trackingClient;
 @property (nonatomic, strong) NSMutableDictionary *monitoredOrders;
 @property (nonatomic, strong) NSMutableDictionary *monitoredWaypoints;
 
@@ -31,18 +30,7 @@
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
     
-        // at first we should just init the http client manager
-        [GGHTTPClientManager managerWithDeveloperToken:kBringgDeveloperToken];
-        self.httpManager = [GGHTTPClientManager manager];
-        [self.httpManager setDelegate:self];
-        [self.httpManager useSecuredConnection:USE_SECURE];
- 
-        // init the tracker without the customer token
-        self.trackerManager = [GGTrackerManager tracker];
-        [self.trackerManager setDeveloperToken:kBringgDeveloperToken];
-        [self.trackerManager setRealTimeDelegate:self];
-        [self.trackerManager setHTTPManager:self.httpManager];
-        self.trackerManager.logsEnabled = YES;
+        self.trackingClient = [BringgTrackingClient clientWithDeveloperToken:kBringgDeveloperToken connectionDelegate:self];
         
         _monitoredOrders = [NSMutableDictionary dictionary];
         _monitoredWaypoints = [NSMutableDictionary dictionary];
@@ -93,17 +81,18 @@
 }
 
 - (IBAction)connect:(id)sender {
-    if ([self.trackerManager isConnected]) {
-        NSLog(@"disconnecting");
-        if (self.trackerManager) {
-            [self.trackerManager disconnect];
-        }
-        
-    } else if (self.trackerManager){
-        NSLog(@"connecting to http/https");
-        [self.trackerManager connectUsingSecureConnection:USE_SECURE];
     
+   
+    
+    if ([self.trackingClient isConnected]) {
+        NSLog(@"disconnecting");
+        [self.trackingClient disconnect];
+    }else{
+        NSLog(@"connecting to http/https");
+        [self.trackingClient connect];
     }
+    
+    
 }
 
 - (IBAction)monitorOrder:(id)sender {
@@ -117,109 +106,34 @@
         return;
     }
     
-    // if the customer signed in  we can use the http manager to get more data about
-    // the order before doing the actual monitoring
-    if ([self.httpManager isSignedIn]) {
-       
-        if (_currentMonitoredOrder && _currentMonitoredOrder.orderid == [orderid integerValue]) {
-            [_monitoredOrders setObject:[NSNull null] forKey:_currentMonitoredOrder.uuid];
-            
-            [self.trackerManager stopWatchingOrderWithUUID:_currentMonitoredOrder.uuid ];
-            [self.orderButton setTitle:@"Monitor Order" forState:UIControlStateNormal];
-            
-            _currentMonitoredOrder = nil;
-        }else{
-            // get the order object and start monitoring it
-            [self.httpManager getOrderByID:orderid.integerValue extras:nil  withCompletionHandler:^(BOOL success, NSDictionary * response, GGOrder *order, NSError *error) {
-                //
-                if (success && order) {
-                    
-                    [self trackOrder:order];
-                    
-                }else{
-                    if (error) {
-                        UIAlertView  *alertView = [[UIAlertView alloc] initWithTitle:@"General Service Error" message:error.localizedDescription delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-                        
-                        [alertView show];
-                    }
-                }
-                
-            }];
-
-        }
-        
-        
-    }else{
-        // if customer not signed in  then it is our job to provide order uuid from the partner - api
-        // make sure the orderfield now hold uuid
-        NSString *orderuuid = self.orderField.text;
-        NSString *sharedUUID;
-        NSString *orderCompound = self.orderCompoundField.text;
-        
-        if (orderCompound && orderCompound.length > 0) {
-            [self monitorOrderWithCompoundUUID:orderCompound];
-        }else{
-            // if no order object we create one with the uuid we got from the partner api and the 'Created' status
-            GGOrder *order = [[GGOrder alloc] initOrderWithUUID:orderuuid atStatus:OrderStatusCreated];
-            order.sharedLocationUUID = sharedUUID;
-            
-            [self trackOrder:order];
-        }
-
-    }
-    
-    
-    
-    
-}
-
-- (void)monitorOrderWithCompoundUUID:(NSString *)compoundUUID{
-    
-    NSString *orderUUID;
+    // if customer not signed in  then it is our job to provide order uuid from the partner - api
+    // make sure the orderfield now hold uuid
+    NSString *orderuuid = self.orderField.text;
     NSString *sharedUUID;
-    NSError *error;
-
-    [GGBringgUtils parseOrderCompoundUUID:compoundUUID toOrderUUID:&orderUUID andSharedUUID:&sharedUUID error:&error];
     
-    if (error) {
-        NSLog(@"cant monitor order :%@", error);
-    }else{
-        if ([self.trackerManager isWatchingOrderWithCompoundUUID:compoundUUID]) {
-            [_monitoredOrders setObject:[NSNull null] forKey:orderUUID];
-            [self.trackerManager stopWatchingOrderWithCompoundUUID:compoundUUID];
-            [self.orderButton setTitle:@"Monitor Order" forState:UIControlStateNormal];
-        }else{
-            GGOrder *order = [[GGOrder alloc] initOrderWithUUID:orderUUID atStatus:OrderStatusCreated];
-            order.sharedLocationUUID = sharedUUID;
-            
-            [_monitoredOrders setObject:order forKey:orderUUID];
-            
-            @try {
-                [self.trackerManager startWatchingOrderWithCompoundUUID:compoundUUID delegate:self];
-                [self.orderButton setTitle:@"Stop Monitor Order" forState:UIControlStateNormal];
-            } @catch (NSException *exception) {
-                NSLog(@"failed watching order %@", exception);
-                
-                [_monitoredOrders removeObjectForKey:orderUUID];
-            }
-            
-        }
-    }
+    // if no order object we create one with the uuid we got from the partner api and the 'Created' status
+    GGOrder *order = [[GGOrder alloc] initOrderWithUUID:orderuuid atStatus:OrderStatusCreated];
+    order.sharedLocationUUID = sharedUUID;
+    
+    [self trackOrder:order];
+    
+ 
 }
+
 
 - (void)trackOrder:(GGOrder *)order{
     
-    if ([self.trackerManager isWatchingOrderWithUUID:order.uuid]) {
+    if ([self.trackingClient isWatchingOrderWithUUID:order.uuid]) {
         
         [_monitoredOrders setObject:[NSNull null] forKey:order.uuid];
         
-        [self.trackerManager stopWatchingOrderWithUUID:order.uuid ];
+        [self.trackingClient stopWatchingOrderWithUUID:order.uuid ];
         [self.orderButton setTitle:@"Monitor Order" forState:UIControlStateNormal];
     }else{
         
         [_monitoredOrders setObject:order forKey:order.uuid];
         
-        [self.trackerManager startWatchingOrderWithUUID:order.uuid sharedUUID:order.sharedLocationUUID ?: order.sharedLocation.locationUUID delegate:self];
+        [self.trackingClient startWatchingOrderWithUUID:order.uuid sharedUUID:order.sharedLocationUUID ?: order.sharedLocation.locationUUID delegate:self];
         [self.orderButton setTitle:@"Stop Monitor Order" forState:UIControlStateNormal];
     }
 }
@@ -228,13 +142,13 @@
     NSString *uuid = self.driverField.text;
     NSString *shareuuid = self.shareUUIDField.text;
     if (uuid && [uuid length]) {
-        if ([self.trackerManager isWatchingDriverWithUUID:uuid andShareUUID:shareuuid]) {
+        if ([self.trackingClient isWatchingDriverWithUUID:uuid andShareUUID:shareuuid]) {
             
-            [self.trackerManager stopWatchingDriverWithUUID:uuid shareUUID:shareuuid];
+            [self.trackingClient stopWatchingDriverWithUUID:uuid shareUUID:shareuuid];
             [self.driverButton setTitle:@"Monitor Driver" forState:UIControlStateNormal];
             
         } else {
-            [self.trackerManager startWatchingDriverWithUUID:uuid shareUUID:shareuuid delegate:self];
+            [self.trackingClient startWatchingDriverWithUUID:uuid shareUUID:shareuuid delegate:self];
             [self.driverButton setTitle:@"Stop Monitor Driver" forState:UIControlStateNormal];
             
         }
@@ -263,12 +177,12 @@
             return;
         }
         
-        if ([self.trackerManager isWatchingWaypointWithWaypointId:wpid andOrderUUID:orderUUID]) {
+        if ([self.trackingClient isWatchingWaypointWithWaypointId:wpid andOrderUUID:orderUUID]) {
            [ _monitoredWaypoints setObject:[NSNull null] forKey:wpid];
-            [self.trackerManager stopWatchingWaypointWithWaypointId:wpid andOrderUUID:orderUUID];
+            [self.trackingClient stopWatchingWaypointWithWaypointId:wpid andOrderUUID:orderUUID];
             [self.monitorWPButton setTitle:@"Monitor Waypoint" forState:UIControlStateNormal];
         }else{
-            [self.trackerManager startWatchingWaypointWithWaypointId:wpid andOrderUUID:orderUUID delegate:self];
+            [self.trackingClient startWatchingWaypointWithWaypointId:wpid andOrderUUID:orderUUID delegate:self];
             [self.monitorWPButton setTitle:@"Stop Monitor Waypoint" forState:UIControlStateNormal];
         }
     }
@@ -288,9 +202,9 @@
     double lat = (((double)arc4random() / ARC4RANDOM_MAX)*180) - 90;
     double lng = (((double)arc4random() / ARC4RANDOM_MAX)*360) - 180;
     
-    [self.trackerManager sendFindMeRequestForOrder:_currentMonitoredOrder latitude:lat longitude:lng withCompletionHandler:^(BOOL success, NSError * _Nullable error) {
+    [self.trackingClient sendFindMeRequestForOrderWithUUID:_currentMonitoredOrder.uuid latitude:lat longitude:lng withCompletionHandler:^(BOOL success, NSError * _Nullable error) {
+    
         //
-        
         __weak __typeof(&*self)weakSelf = self;
         dispatch_async(dispatch_get_main_queue(), ^{
             //
@@ -323,7 +237,7 @@
     
    
     
-    [self.httpManager signInWithName:self.customerNameField.text
+    [self.trackingClient signInWithName:self.customerNameField.text
                             phone:self.customerPhoneField.text
                             email:nil
                             password:nil
@@ -343,26 +257,8 @@
              
              [alertView show];
              
-             if (!self.trackerManager) {
-                 // once we have a customer token we can activate the tracking manager
-                 [GGTrackerManager trackerWithCustomerToken:customer.customerToken
-                                          andDeveloperToken:kBringgDeveloperToken
-                                                andDelegate:self
-                                             andHTTPManager:self.httpManager];
-                 // then we can access the tracker singelton via his conveninence initialiser
-                 self.trackerManager = [GGTrackerManager tracker];
-                
-             }else{
-                 [self.trackerManager setHTTPManager:self.httpManager];
-                 [self.trackerManager setRealTimeDelegate:self];
-             }
-             
              self.customerTokenField.text = customer.customerToken;
-             
-             // set the customer in the tracker manager
-             [self.trackerManager setCustomer:customer];
-             
-             
+            
              
          }else if (error){
             alertView = [[UIAlertView alloc] initWithTitle:@"Sign in Error" message:error.localizedDescription delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
@@ -374,41 +270,28 @@
 
 - (IBAction)rate:(id)sender {
     
-    // first we should gate the shared location object - only then can we rate
-    [self.httpManager getSharedLocationByUUID:self.shareUUIDField.text extras:nil withCompletionHandler:^(BOOL success, NSDictionary * response, GGSharedLocation *sharedLocation, NSError *error) {
-        //
+    int ratingValue = [self.customerRatingField.text intValue];
+    if (_currentMonitoredOrder && ratingValue > 0) {
         
-        if (success && sharedLocation) {
-           
-            // before calling the rate with the rating url we should strip the scheme (the http manager will add the correct scheme according to ssl configurations
+        [self.trackingClient rateOrder:_currentMonitoredOrder withRating:ratingValue completionHandler:^(BOOL success, NSDictionary * _Nullable response, GGRating * _Nullable rating, NSError * _Nullable error) {
+            //
+            UIAlertView *alertView;
+            if (rating && rating.ratingMessage) {
+                alertView = [[UIAlertView alloc] initWithTitle:nil message:rating.ratingMessage delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+                
+                [alertView show];
+            }else if (error){
+                alertView = [[UIAlertView alloc] initWithTitle:@"Rating Error"  message:error.localizedDescription delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+                
+                [alertView show];
+            }
             
-            NSString *trueRatingURL = self.ratingURLField.text;
-            trueRatingURL = [trueRatingURL stringByReplacingOccurrencesOfString:@"https://" withString:@""];
-            trueRatingURL = [trueRatingURL stringByReplacingOccurrencesOfString:@"http://" withString:@""];
             
-            [self.httpManager rate:[self.customerRatingField.text intValue]
-                         withToken:sharedLocation.rating.token
-                         ratingURL:trueRatingURL
-                            extras:nil
-             withCompletionHandler:^(BOOL success,NSDictionary *response,  GGRating *rating, NSError *error) {
-                //
-                UIAlertView *alertView;
-                if (rating && rating.ratingMessage) {
-                    alertView = [[UIAlertView alloc] initWithTitle:nil message:rating.ratingMessage delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-                    
-                    [alertView show];
-                }else if (error){
-                    alertView = [[UIAlertView alloc] initWithTitle:@"Rating Error"  message:error.localizedDescription delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-                    
-                    [alertView show];
-                }
-                
-                
-                NSLog(@"%@, error %@", success ? @"success" : @"failed", error);
-                
-            }];
-        }
-    }];
+            NSLog(@"%@, error %@", success ? @"success" : @"failed", error);
+        }];
+    }else{
+        NSLog(@"rating must include a valid order and rating of 1-5");
+    }
     
     
 }
@@ -452,7 +335,11 @@
 
 - (void)watchOrderSucceedForOrder:(GGOrder *)order {
     GGOrder *monitoredOrder = [self updateMonitoredOrderWithOrder:order];
-    [self updateUIWithShared:monitoredOrder.sharedLocation.locationUUID ? monitoredOrder.sharedLocation.locationUUID : monitoredOrder.sharedLocationUUID andRatingURL:monitoredOrder.sharedLocation.ratingURL andDriver:nil andOrder:order];
+    
+    [self updateUIWithShared:monitoredOrder.sharedLocation.locationUUID ? monitoredOrder.sharedLocation.locationUUID : monitoredOrder.sharedLocationUUID
+                andRatingURL:monitoredOrder.sharedLocation.ratingURL
+                   andDriver:order.driverUUID
+                    andOrder:order];
 }
 
 - (void)watchOrderFailForOrder:(GGOrder *)order error:(NSError *)error{

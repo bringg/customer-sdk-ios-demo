@@ -11,15 +11,11 @@
 #endif
 
 #import "BringgTracking.h"
-#import "GGHTTPClientManager.h"
-#import "GGHTTPClientManager_Private.h"
-#import "GGNetworkUtils.h"
-#import "GGTrackerManager.h"
-#import "GGTrackerManager_Private.h"
+#import "BringgTrackingClient.h"
 #import "NSObject+Observer.h"
 #import "Reachability.h"
 #import "BringgGlobals.h"
-#import "GGBringgUtils.h"
+#import "BringgPrivates.h"
 #import "GGCustomer.h"
 #import "GGDriver.h"
 #import "GGFindMe.h"
@@ -33,6 +29,12 @@
 #import "GGRealTimeMontior.h"
 #import "GGSharedLocation.h"
 #import "GGWaypoint.h"
+#import "GGHTTPClientManager.h"
+#import "GGHTTPClientManager_Private.h"
+#import "GGTrackerManager.h"
+#import "GGTrackerManager_Private.h"
+#import "GGBringgUtils.h"
+#import "GGNetworkUtils.h"
 
 FOUNDATION_EXPORT double BringgTrackingVersionNumber;
 FOUNDATION_EXPORT const unsigned char BringgTrackingVersionString[];
