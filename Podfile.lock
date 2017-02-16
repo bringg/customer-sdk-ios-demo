@@ -4,16 +4,12 @@ PODS:
   - Socket.IO-Client-Swift (8.1.2)
 
 DEPENDENCIES:
-  - BringgTracking (from `../../sdk/customer-sdk-ios`)
-
-EXTERNAL SOURCES:
-  BringgTracking:
-    :path: "../../sdk/customer-sdk-ios"
+  - BringgTracking
 
 SPEC CHECKSUMS:
-  BringgTracking: 27c1d48339d28661655a6f9a27745da1b0d8e7a5
+  BringgTracking: 51fe7efd974336ed9955931255e97db6685f11a5
   Socket.IO-Client-Swift: 542d82e6708f9901b3f6c1d134fb60fa0d09d4d1
 
-PODFILE CHECKSUM: 105ff30946c7022047a3b070e68df0abc9d3ff7b
+PODFILE CHECKSUM: 70ddb6489a5ea1e8132b824690d72ca552f75533
 
 COCOAPODS: 1.2.0.beta.1

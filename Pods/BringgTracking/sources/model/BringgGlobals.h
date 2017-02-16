@@ -14,7 +14,7 @@
 #define kSDKDomainResponse @"GGSDKResponseDomain"
 #define kSDKDomainRealTime @"GGSDKRealTimeDomain"
 
-#define SDK_VERSION @"1.10.4"
+#define SDK_VERSION @"1.12.0"
 //-----------------------------------------------------------------------------
 
 #define PARAM_STATUS @"status"
@@ -113,20 +113,8 @@ typedef void (^SocketResponseBlock)(BOOL success, id __nullable socketResponse, 
  */
 - (void)trackerDidDisconnectWithError:(NSError * _Nullable)error;
 
+
 @optional
-
-/**
- *  asks the delegate for a custom domain host for the tracker manager.
- *  if no domain is provided the tracker manager will resolve to its default
- *
- *  @param trackerManager the tracker manager request
- *
- *  @return the domain to connect the tracker manager
- */
--(NSString * _Nullable)hostDomainForTrackerManager:(GGTrackerManager *_Nonnull)trackerManager;
-
-
-
 /**
  *  delegate method to track the last date the tracker manager recieved data
  *
@@ -268,7 +256,7 @@ typedef void (^SocketResponseBlock)(BOOL success, id __nullable socketResponse, 
  *  @param error      error
  */
 - (void)watchWaypointFailedForWaypointId:(nonnull NSNumber *)waypointId error:(nonnull NSError *)error;
-@optional
+
 
 
 
@@ -289,6 +277,16 @@ typedef void (^SocketResponseBlock)(BOOL success, id __nullable socketResponse, 
  */
 - (void)waypointDidUpdatedWaypointId:(nonnull NSNumber *)waypointId eta:(nullable NSDate *)eta;
 
+@optional
+
+/**
+ *  notifies waypoint changed location
+ *
+ *  @param lat lat
+ *  @param lng lng
+ */
+- (void)waypoint:(nonnull NSNumber *)waypointId didUpdatedCoordinatesToLat:(nonnull NSNumber *)lat lng:(nonnull NSNumber *)lng;
+
 
 /**
  *  notifies a driver has arrvied a waypoint
@@ -303,18 +301,6 @@ typedef void (^SocketResponseBlock)(BOOL success, id __nullable socketResponse, 
  *  @param waypointId id of waypoint
  */
 - (void)waypointDidFinishedWaypointId:(nonnull NSNumber *)waypointId;
-
-
-/**
- *  notifies waypoint changed location
- *
- *  @param lat lat
- *  @param lng lng
- */
-- (void)waypoint:(nonnull NSNumber *)waypointId didUpdatedCoordinatesToLat:(nonnull NSNumber *)lat lng:(nonnull NSNumber *)lng;
-
-
-
 
 
 /**
