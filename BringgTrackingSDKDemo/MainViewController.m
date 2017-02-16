@@ -8,7 +8,7 @@
 
 #import "MainViewController.h"
 
-#define kBringgDeveloperToken @"-_j1fy24RixMBF5ky6f_"
+#define kBringgDeveloperToken @"YOUR_DEV_TOKEN_HERE"
 
 #define ARC4RANDOM_MAX      0x100000000
 
