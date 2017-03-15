@@ -360,35 +360,35 @@
     
     GGOrder *monitoredOrder = [self updateMonitoredOrderWithOrder:order];
     self.orderLabel.text = [NSString stringWithFormat:@"Order assigned %@ for driver %@", order.uuid, driver.uuid];
-    [self updateUIWithShared:monitoredOrder.sharedLocation.locationUUID ? monitoredOrder.sharedLocation.locationUUID : monitoredOrder.sharedLocationUUID andRatingURL:monitoredOrder.sharedLocation.ratingURL andDriver:driver.uuid andOrder:order];
+    [self updateUIWithShared:monitoredOrder.sharedLocation.locationUUID ? monitoredOrder.sharedLocation.locationUUID : monitoredOrder.sharedLocationUUID andRatingURL:monitoredOrder.sharedLocation.ratingURL andDriver:driver.uuid ?: order.driverUUID andOrder:order];
 }
 
 - (void)orderDidAcceptWithOrder:(GGOrder *)order withDriver:(GGDriver *)driver{
     
     GGOrder *monitoredOrder = [self updateMonitoredOrderWithOrder:order];
     self.orderLabel.text = [NSString stringWithFormat:@"Order accepted %@ for driver %@", order.uuid, driver.uuid];
-    [self updateUIWithShared:monitoredOrder.sharedLocation.locationUUID ? monitoredOrder.sharedLocation.locationUUID : monitoredOrder.sharedLocationUUID andRatingURL:monitoredOrder.sharedLocation.ratingURL andDriver:driver.uuid andOrder:order];
+    [self updateUIWithShared:monitoredOrder.sharedLocation.locationUUID ? monitoredOrder.sharedLocation.locationUUID : monitoredOrder.sharedLocationUUID andRatingURL:monitoredOrder.sharedLocation.ratingURL andDriver:driver.uuid ?: order.driverUUID andOrder:order];
 }
 
 - (void)orderDidStartWithOrder:(GGOrder *)order withDriver:(GGDriver *)driver{
     
     GGOrder *monitoredOrder = [self updateMonitoredOrderWithOrder:order];
     self.orderLabel.text = [NSString stringWithFormat:@"Order started %@ for driver %@", order.uuid, driver.uuid];
-     [self updateUIWithShared:monitoredOrder.sharedLocation.locationUUID ? monitoredOrder.sharedLocation.locationUUID : monitoredOrder.sharedLocationUUID andRatingURL:monitoredOrder.sharedLocation.ratingURL andDriver:driver.uuid andOrder:order];
+    [self updateUIWithShared:monitoredOrder.sharedLocation.locationUUID ? monitoredOrder.sharedLocation.locationUUID : monitoredOrder.sharedLocationUUID andRatingURL:monitoredOrder.sharedLocation.ratingURL andDriver:driver.uuid ?: order.driverUUID andOrder:order];
 }
 
 - (void)orderDidArrive:(GGOrder *)order withDriver:(GGDriver *)driver{
     
     GGOrder *monitoredOrder = [self updateMonitoredOrderWithOrder:order];
     self.orderLabel.text = [NSString stringWithFormat:@"Order arrived %@", order.uuid];
-    [self updateUIWithShared:monitoredOrder.sharedLocation.locationUUID ? monitoredOrder.sharedLocation.locationUUID : monitoredOrder.sharedLocationUUID andRatingURL:monitoredOrder.sharedLocation.ratingURL andDriver:driver.uuid andOrder:order];
+    [self updateUIWithShared:monitoredOrder.sharedLocation.locationUUID ? monitoredOrder.sharedLocation.locationUUID : monitoredOrder.sharedLocationUUID andRatingURL:monitoredOrder.sharedLocation.ratingURL andDriver:driver.uuid ?: order.driverUUID andOrder:order];
 }
 
 -(void)orderDidFinish:(GGOrder *)order withDriver:(GGDriver *)driver{
     
     GGOrder *monitoredOrder = [self updateMonitoredOrderWithOrder:order];
     self.orderLabel.text = [NSString stringWithFormat:@"Order finished %@", order.uuid];
-    [self updateUIWithShared:monitoredOrder.sharedLocation.locationUUID ? monitoredOrder.sharedLocation.locationUUID : monitoredOrder.sharedLocationUUID andRatingURL:monitoredOrder.sharedLocation.ratingURL andDriver:driver.uuid andOrder:order];
+    [self updateUIWithShared:monitoredOrder.sharedLocation.locationUUID ? monitoredOrder.sharedLocation.locationUUID : monitoredOrder.sharedLocationUUID andRatingURL:monitoredOrder.sharedLocation.ratingURL andDriver:driver.uuid ?: order.driverUUID andOrder:order];
 }
 
 - (void)orderDidCancel:(GGOrder *)order withDriver:(GGDriver *)driver{
@@ -397,7 +397,7 @@
     
     self.orderLabel.text = [NSString stringWithFormat:@"Order canceled %@", order.uuid];
     
-    [self updateUIWithShared:monitoredOrder.sharedLocation.locationUUID ? monitoredOrder.sharedLocation.locationUUID : monitoredOrder.sharedLocationUUID andRatingURL:monitoredOrder.sharedLocation.ratingURL andDriver:driver.uuid andOrder:order];
+    [self updateUIWithShared:monitoredOrder.sharedLocation.locationUUID ? monitoredOrder.sharedLocation.locationUUID : monitoredOrder.sharedLocationUUID andRatingURL:monitoredOrder.sharedLocation.ratingURL andDriver:driver.uuid ?: order.driverUUID andOrder:order];
     
 }
 
