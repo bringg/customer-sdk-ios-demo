@@ -8,7 +8,7 @@
 
 #import "MainViewController.h"
 
-#define kBringgDeveloperToken @"YOUR_DEV_TOKEN_HERE"
+#define kBringgDeveloperToken @"n2pX_MJMsuaLP9wvQGPS"
 
 #define ARC4RANDOM_MAX      0x100000000
 
@@ -110,6 +110,11 @@
     // make sure the orderfield now hold uuid
     NSString *orderuuid = self.orderField.text;
     NSString *sharedUUID;
+    
+    if ([orderuuid isEqualToString:@"0f693931-cded-4d5b-a580-a2bfc79740ba"]) {
+        sharedUUID = @"855ec4d1";
+    }
+    
     
     // if no order object we create one with the uuid we got from the partner api and the 'Created' status
     GGOrder *order = [[GGOrder alloc] initOrderWithUUID:orderuuid atStatus:OrderStatusCreated];
