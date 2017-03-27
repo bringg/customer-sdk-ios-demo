@@ -154,8 +154,14 @@
     }else{
         
         [_monitoredOrders setObject:order forKey:order.uuid];
+        GGCustomer *customer = [self.trackingClient signedInCustomer];
+       
+        if (customer) {
+            [self.trackingClient startWatchingOrderWithUUID:order.uuid customerAccessToken:customer.customerToken delegate:self];
+        }else{
+            [self.trackingClient startWatchingOrderWithUUID:order.uuid sharedUUID:order.sharedLocationUUID ?: order.sharedLocation.locationUUID delegate:self];
+        }
         
-        [self.trackingClient startWatchingOrderWithUUID:order.uuid sharedUUID:order.sharedLocationUUID ?: order.sharedLocation.locationUUID delegate:self];
         [self.orderButton setTitle:@"Stop Monitor Order" forState:UIControlStateNormal];
     }
 }
@@ -163,14 +169,23 @@
 - (IBAction)monitorDriver:(id)sender {
     NSString *uuid = self.driverField.text;
     NSString *shareuuid = self.shareUUIDField.text;
+    
     if (uuid && [uuid length]) {
-        if ([self.trackingClient isWatchingDriverWithUUID:uuid andShareUUID:shareuuid]) {
+        if ([self.trackingClient isWatchingDriverWithUUID:uuid]) {
             
-            [self.trackingClient stopWatchingDriverWithUUID:uuid shareUUID:shareuuid];
+            [self.trackingClient stopWatchingDriverWithUUID:uuid];
             [self.driverButton setTitle:@"Monitor Driver" forState:UIControlStateNormal];
             
         } else {
-            [self.trackingClient startWatchingDriverWithUUID:uuid shareUUID:shareuuid delegate:self];
+            
+            GGCustomer *customer = [self.trackingClient signedInCustomer];
+            
+            if (customer) {
+                [self.trackingClient startWatchingCustomerDriverWithUUID:uuid delegate:self];
+            }else{
+                [self.trackingClient startWatchingDriverWithUUID:uuid shareUUID:shareuuid delegate:self];
+            }
+            
             [self.driverButton setTitle:@"Stop Monitor Driver" forState:UIControlStateNormal];
             
         }
@@ -489,20 +504,22 @@
 }
 
 -(void)waypointDidUpdatedWaypointId:(NSNumber *)waypointId eta:(NSDate *)eta{
-    self.lblWaypointStatus.text = @"Waypoint Updated ";
+    self.lblWaypointStatus.text = @"Waypoint Updated";
     self.txtETA.text = [NSString stringWithFormat:@"ETA: %@", eta];
 }
 
 - (void)waypointDidArrivedWaypointId:(NSNumber *)waypointId{
-     self.lblWaypointStatus.text = @"Waypoint arrived ";
+     self.lblWaypointStatus.text = @"Waypoint arrived";
 }
 
 - (void)waypointDidFinishedWaypointId:(NSNumber *)waypointId{
-    self.lblWaypointStatus.text = @"Waypoint done ";
+    self.lblWaypointStatus.text = @"Waypoint done";
 }
 
 - (void)watchWaypointSucceededForWaypointId:(NSNumber *)waypointId waypoint:(GGWaypoint *)waypoint {
     NSLog(@"Watch waypoint succeeded for waypoint: %@", waypoint);
+    
+    self.lblWaypointStatus.text = [NSString stringWithFormat:@"watching waypoint %@", waypointId];
 }
 
 @end
