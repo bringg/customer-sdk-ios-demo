@@ -8,42 +8,17 @@
 
 #import "MainViewController.h"
 
-#define kBringgDeveloperToken @"vwLHazfVSwkEiszUVJLU"
+#define kBringgDeveloperToken @"{YOUR_DEV_ACCESS_TOKEN}"
 
 #define ARC4RANDOM_MAX      0x100000000
 
-#define USE_SECURE YES
 
-#define LOCAL_DEMO_URL @"http://192.168.1.24"
-
-@class GGHTTPClientManager, GGTrackerManager;
-
-
-@interface LocalBringgTrackingClient : BringgTrackingClient
-
-@end
-
-@implementation LocalBringgTrackingClient
-
-- (BOOL)useSecuredConnection{
-    return NO;
-}
-
-- (NSString *)hostDomainForClientManager:(GGHTTPClientManager *)clientManager {
-     return [NSString stringWithFormat:@"%@:3000", LOCAL_DEMO_URL];
-}
-
-- (NSString *)hostDomainForTrackerManager:(GGTrackerManager *)trackerManager {
-    return [NSString stringWithFormat:@"%@:3030", LOCAL_DEMO_URL];
-}
-
-@end
 
 
 @interface MainViewController ()
 
 
-@property (nonatomic, strong) LocalBringgTrackingClient *trackingClient;
+@property (nonatomic, strong) BringgTrackingClient *trackingClient;
 @property (nonatomic, strong) NSMutableDictionary *monitoredOrders;
 @property (nonatomic, strong) NSMutableDictionary *monitoredWaypoints;
 
@@ -56,7 +31,7 @@
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
     
-        self.trackingClient = [LocalBringgTrackingClient clientWithDeveloperToken:kBringgDeveloperToken connectionDelegate:self];
+        self.trackingClient = [BringgTrackingClient clientWithDeveloperToken:kBringgDeveloperToken connectionDelegate:self];
     
         _monitoredOrders = [NSMutableDictionary dictionary];
         _monitoredWaypoints = [NSMutableDictionary dictionary];
