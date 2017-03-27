@@ -8,16 +8,42 @@
 
 #import "MainViewController.h"
 
-#define kBringgDeveloperToken @"n2pX_MJMsuaLP9wvQGPS"
+#define kBringgDeveloperToken @"vwLHazfVSwkEiszUVJLU"
 
 #define ARC4RANDOM_MAX      0x100000000
 
 #define USE_SECURE YES
 
+#define LOCAL_DEMO_URL @"http://192.168.1.24"
+
+@class GGHTTPClientManager, GGTrackerManager;
+
+
+@interface LocalBringgTrackingClient : BringgTrackingClient
+
+@end
+
+@implementation LocalBringgTrackingClient
+
+- (BOOL)useSecuredConnection{
+    return NO;
+}
+
+- (NSString *)hostDomainForClientManager:(GGHTTPClientManager *)clientManager {
+     return [NSString stringWithFormat:@"%@:3000", LOCAL_DEMO_URL];
+}
+
+- (NSString *)hostDomainForTrackerManager:(GGTrackerManager *)trackerManager {
+    return [NSString stringWithFormat:@"%@:3030", LOCAL_DEMO_URL];
+}
+
+@end
+
+
 @interface MainViewController ()
 
 
-@property (nonatomic, strong) BringgTrackingClient *trackingClient;
+@property (nonatomic, strong) LocalBringgTrackingClient *trackingClient;
 @property (nonatomic, strong) NSMutableDictionary *monitoredOrders;
 @property (nonatomic, strong) NSMutableDictionary *monitoredWaypoints;
 
@@ -30,8 +56,8 @@
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
     
-        self.trackingClient = [BringgTrackingClient clientWithDeveloperToken:kBringgDeveloperToken connectionDelegate:self];
-        
+        self.trackingClient = [LocalBringgTrackingClient clientWithDeveloperToken:kBringgDeveloperToken connectionDelegate:self];
+    
         _monitoredOrders = [NSMutableDictionary dictionary];
         _monitoredWaypoints = [NSMutableDictionary dictionary];
     }
@@ -97,24 +123,15 @@
 
 - (IBAction)monitorOrder:(id)sender {
 
-    NSString *orderid = self.orderField.text;
+    NSString *orderuuid     = self.orderField.text;
+    NSString *sharedUUID    = self.shareUUIDField.text;
     
-    if (orderid == nil || orderid.length == 0) {
-        UIAlertView  *alertView = [[UIAlertView alloc] initWithTitle:@"General Service Error" message:@"Order Id cannot be empty" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    if (orderuuid == nil || orderuuid.length == 0 || sharedUUID == nil || sharedUUID.length == 0) {
+        UIAlertView  *alertView = [[UIAlertView alloc] initWithTitle:@"General Service Error" message:@"Order UUID and Shared UUID cannot be empty" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         
         [alertView show];
         return;
     }
-    
-    // if customer not signed in  then it is our job to provide order uuid from the partner - api
-    // make sure the orderfield now hold uuid
-    NSString *orderuuid = self.orderField.text;
-    NSString *sharedUUID;
-    
-    if ([orderuuid isEqualToString:@"0f693931-cded-4d5b-a580-a2bfc79740ba"]) {
-        sharedUUID = @"855ec4d1";
-    }
-    
     
     // if no order object we create one with the uuid we got from the partner api and the 'Created' status
     GGOrder *order = [[GGOrder alloc] initOrderWithUUID:orderuuid atStatus:OrderStatusCreated];
@@ -357,7 +374,6 @@
     
     self.orderLabel.text = [NSString stringWithFormat:@"Failed %@, error %@", order.uuid, error];
     [self.orderButton setTitle:@"Monitor Order" forState:UIControlStateNormal];
-    self.shareUUIDField.text = order.sharedLocation.locationUUID;
     self.ratingURLField.text = order.sharedLocation.ratingURL;
 }
 
@@ -418,7 +434,6 @@
                   andOrder:(GGOrder *)order{
     
     self.driverField.text = driverUUID;
-    self.shareUUIDField.text = shared;
     self.ratingURLField.text = ratingURL;
     
     GGWaypoint *activeWp = [[order.waypoints filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"waypointId==%@", @(order.activeWaypointId)]] firstObject];
