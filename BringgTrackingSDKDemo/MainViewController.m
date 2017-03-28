@@ -159,7 +159,7 @@
         if (customer) {
             [self.trackingClient startWatchingOrderWithUUID:order.uuid customerAccessToken:customer.customerToken delegate:self];
         }else{
-            [self.trackingClient startWatchingOrderWithUUID:order.uuid sharedUUID:order.sharedLocationUUID ?: order.sharedLocation.locationUUID delegate:self];
+            [self.trackingClient startWatchingOrderWithUUID:order.uuid shareUUID:order.sharedLocationUUID ?: order.sharedLocation.locationUUID delegate:self];
         }
         
         [self.orderButton setTitle:@"Stop Monitor Order" forState:UIControlStateNormal];
