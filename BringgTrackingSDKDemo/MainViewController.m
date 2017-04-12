@@ -8,7 +8,7 @@
 
 #import "MainViewController.h"
 
-#define kBringgDeveloperToken @"vwLHazfVSwkEiszUVJLU"
+#define kBringgDeveloperToken @"QnSFGWAxe5AEyYW-1xBy"
 
 #define ARC4RANDOM_MAX      0x100000000
 
@@ -264,6 +264,23 @@
         });
         
     }];
+}
+
+- (IBAction)onMonitorByShareAndCustomer:(id)sender {
+    
+    NSString *customerToken    = self.customerTokenField.text;
+    NSString *sharedUUID    = self.shareUUIDField.text;
+    
+    if (customerToken == nil || customerToken.length == 0 || sharedUUID == nil || sharedUUID.length == 0) {
+        UIAlertView  *alertView = [[UIAlertView alloc] initWithTitle:@"General Service Error" message:@"Customer Token and Shared UUID cannot be empty" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        
+        [alertView show];
+        return;
+    }
+    
+    
+    [self.trackingClient startWatchingOrderWithShareUUID:sharedUUID customerAccessToken:customerToken delegate:self];
+   
 }
 
 
