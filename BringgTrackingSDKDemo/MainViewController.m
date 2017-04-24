@@ -126,18 +126,33 @@
     NSString *orderuuid     = self.orderField.text;
     NSString *sharedUUID    = self.shareUUIDField.text;
     
-    if (orderuuid == nil || orderuuid.length == 0 || sharedUUID == nil || sharedUUID.length == 0) {
+    GGCustomer *customer = [self.trackingClient signedInCustomer];
+    
+    if (orderuuid == nil || orderuuid.length == 0) {
         UIAlertView  *alertView = [[UIAlertView alloc] initWithTitle:@"General Service Error" message:@"Order UUID and Shared UUID cannot be empty" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         
         [alertView show];
         return;
     }
-    
+
     // if no order object we create one with the uuid we got from the partner api and the 'Created' status
     GGOrder *order = [[GGOrder alloc] initOrderWithUUID:orderuuid atStatus:OrderStatusCreated];
-    order.sharedLocationUUID = sharedUUID;
     
-    [self trackOrder:order];
+    if (customer) {
+        [self trackOrder:order];
+    }else{
+        if (sharedUUID == nil || sharedUUID.length == 0) {
+            UIAlertView  *alertView = [[UIAlertView alloc] initWithTitle:@"General Service Error" message:@"Order UUID and Shared UUID cannot be empty" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            
+            [alertView show];
+            return;
+        }
+        
+        
+        order.sharedLocationUUID = sharedUUID;
+        
+        [self trackOrder:order];
+    }
     
  
 }
@@ -394,6 +409,8 @@
                 andRatingURL:monitoredOrder.sharedLocation.ratingURL
                    andDriver:order.driverUUID
                     andOrder:order];
+    
+    self.orderField.text = monitoredOrder.uuid;
 }
 
 - (void)watchOrderFailForOrder:(GGOrder *)order error:(NSError *)error{
