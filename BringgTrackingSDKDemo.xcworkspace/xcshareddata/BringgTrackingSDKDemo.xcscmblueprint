@@ -10,7 +10,7 @@
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A6105B1A-E259-42CC-BD4C-C3B12F81C3A8",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "09622430D3CD4D15F37F983860AE1B3C9CDEA390" : "customer-sdk-ios-demo\/",
-    "2E71EF8001AC343FA5A8A0CE362ECC600DD1D18C" : "..\/sdk\/customer-sdk-ios"
+    "2E71EF8001AC343FA5A8A0CE362ECC600DD1D18C" : "customer-sdk-ios\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "BringgTrackingSDKDemo",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
