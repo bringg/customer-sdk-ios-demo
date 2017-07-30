@@ -115,13 +115,9 @@
 
 - (IBAction)connect:(id)sender {
     
-   
-    
     if ([self.trackingClient isConnected]) {
-        NSLog(@"disconnecting");
         [self.trackingClient disconnect];
     }else{
-        NSLog(@"connecting to http/https");
         [self.trackingClient connect];
     }
     
@@ -310,9 +306,6 @@
 
 - (IBAction)signin:(id)sender {
     //signin to get customer token
-    
-   
-    
     [self.trackingClient signInWithName:self.customerNameField.text
                             phone:self.customerPhoneField.text
                             email:nil
@@ -323,8 +316,6 @@
 
      completionHandler:^(BOOL success, NSDictionary *response, GGCustomer *customer, NSError *error) {
          //
-         
-         
          UIAlertView *alertView;
          
          if (customer) {
