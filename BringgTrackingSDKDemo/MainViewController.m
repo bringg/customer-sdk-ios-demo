@@ -7,12 +7,38 @@
 //
 
 #import "MainViewController.h"
+
 #define kBringgDeveloperToken @"{YOUR_DEV_ACCESS_TOKEN}"
+
 #define ARC4RANDOM_MAX      0x100000000
 
+#define USE_SECURE YES
+
+#define LOCAL_DEMO_URL @"http://192.168.1.24"
+//#define LOCAL_DEMO_URL @"https://driver-api.bringg.com"
+#define MY_PHONE_NUMBER @"+972547888999"
+@class GGHTTPClientManager, GGTrackerManager;
 
 
+@interface LocalBringgTrackingClient : BringgTrackingClient
 
+@end
+
+@implementation LocalBringgTrackingClient
+
+- (BOOL)useSecuredConnection{
+    return NO;
+}
+
+//- (NSString *)hostDomainForClientManager:(GGHTTPClientManager *)clientManager {
+//     return [NSString stringWithFormat:@"%@:3000", LOCAL_DEMO_URL];
+//}
+//
+//- (NSString *)hostDomainForTrackerManager:(GGTrackerManager *)trackerManager {
+//    return [NSString stringWithFormat:@"%@:3030", LOCAL_DEMO_URL];
+//}
+
+@end
 @interface MainViewController ()
 
 
@@ -81,13 +107,9 @@
 
 - (IBAction)connect:(id)sender {
     
-   
-    
     if ([self.trackingClient isConnected]) {
-        NSLog(@"disconnecting");
         [self.trackingClient disconnect];
     }else{
-        NSLog(@"connecting to http/https");
         [self.trackingClient connect];
     }
     
@@ -276,9 +298,6 @@
 
 - (IBAction)signin:(id)sender {
     //signin to get customer token
-    
-   
-    
     [self.trackingClient signInWithName:self.customerNameField.text
                             phone:self.customerPhoneField.text
                             email:nil
@@ -289,8 +308,6 @@
 
      completionHandler:^(BOOL success, NSDictionary *response, GGCustomer *customer, NSError *error) {
          //
-         
-         
          UIAlertView *alertView;
          
          if (customer) {
@@ -507,6 +524,7 @@
 #pragma mark Waypoint Delegate
 
 -(void)watchWaypointFailedForWaypointId:(NSNumber *)waypointId error:(NSError *)error{
+    NSLog(@"Watch waypoint failed with error :\n %@",error.localizedDescription);
     self.lblWaypointStatus.text = error.localizedDescription;
 }
 
