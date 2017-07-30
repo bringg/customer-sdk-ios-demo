@@ -3,9 +3,9 @@ platform :ios, '8.0'
 use_frameworks!
 inhibit_all_warnings!
 
-customer_sdk_local_path = '../customer-sdk-ios'
 
 target 'BringgTrackingSDKDemo' do
-    pod 'BringgTracking', :path => customer_sdk_local_path
+    
+    pod 'BringgTracking'
 
 end
