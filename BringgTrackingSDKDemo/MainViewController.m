@@ -7,9 +7,7 @@
 //
 
 #import "MainViewController.h"
-
 #define kBringgDeveloperToken @"{YOUR_DEV_ACCESS_TOKEN}"
-
 #define ARC4RANDOM_MAX      0x100000000
 
 
@@ -101,18 +99,33 @@
     NSString *orderuuid     = self.orderField.text;
     NSString *sharedUUID    = self.shareUUIDField.text;
     
-    if (orderuuid == nil || orderuuid.length == 0 || sharedUUID == nil || sharedUUID.length == 0) {
+    GGCustomer *customer = [self.trackingClient signedInCustomer];
+    
+    if (orderuuid == nil || orderuuid.length == 0) {
         UIAlertView  *alertView = [[UIAlertView alloc] initWithTitle:@"General Service Error" message:@"Order UUID and Shared UUID cannot be empty" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         
         [alertView show];
         return;
     }
-    
+
     // if no order object we create one with the uuid we got from the partner api and the 'Created' status
     GGOrder *order = [[GGOrder alloc] initOrderWithUUID:orderuuid atStatus:OrderStatusCreated];
-    order.sharedLocationUUID = sharedUUID;
     
-    [self trackOrder:order];
+    if (customer) {
+        [self trackOrder:order];
+    }else{
+        if (sharedUUID == nil || sharedUUID.length == 0) {
+            UIAlertView  *alertView = [[UIAlertView alloc] initWithTitle:@"General Service Error" message:@"Order UUID and Shared UUID cannot be empty" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            
+            [alertView show];
+            return;
+        }
+        
+        
+        order.sharedLocationUUID = sharedUUID;
+        
+        [self trackOrder:order];
+    }
     
  
 }
@@ -129,8 +142,14 @@
     }else{
         
         [_monitoredOrders setObject:order forKey:order.uuid];
+        GGCustomer *customer = [self.trackingClient signedInCustomer];
+       
+        if (customer) {
+            [self.trackingClient startWatchingOrderWithUUID:order.uuid customerAccessToken:customer.customerToken delegate:self];
+        }else{
+            [self.trackingClient startWatchingOrderWithUUID:order.uuid shareUUID:order.sharedLocationUUID ?: order.sharedLocation.locationUUID delegate:self];
+        }
         
-        [self.trackingClient startWatchingOrderWithUUID:order.uuid sharedUUID:order.sharedLocationUUID ?: order.sharedLocation.locationUUID delegate:self];
         [self.orderButton setTitle:@"Stop Monitor Order" forState:UIControlStateNormal];
     }
 }
@@ -138,14 +157,23 @@
 - (IBAction)monitorDriver:(id)sender {
     NSString *uuid = self.driverField.text;
     NSString *shareuuid = self.shareUUIDField.text;
+    
     if (uuid && [uuid length]) {
-        if ([self.trackingClient isWatchingDriverWithUUID:uuid andShareUUID:shareuuid]) {
+        if ([self.trackingClient isWatchingDriverWithUUID:uuid]) {
             
-            [self.trackingClient stopWatchingDriverWithUUID:uuid shareUUID:shareuuid];
+            [self.trackingClient stopWatchingDriverWithUUID:uuid];
             [self.driverButton setTitle:@"Monitor Driver" forState:UIControlStateNormal];
             
         } else {
-            [self.trackingClient startWatchingDriverWithUUID:uuid shareUUID:shareuuid delegate:self];
+            
+            GGCustomer *customer = [self.trackingClient signedInCustomer];
+            
+            if (customer) {
+                [self.trackingClient startWatchingCustomerDriverWithUUID:uuid delegate:self];
+            }else{
+                [self.trackingClient startWatchingDriverWithUUID:uuid shareUUID:shareuuid delegate:self];
+            }
+            
             [self.driverButton setTitle:@"Stop Monitor Driver" forState:UIControlStateNormal];
             
         }
@@ -224,6 +252,23 @@
         });
         
     }];
+}
+
+- (IBAction)onMonitorByShareAndCustomer:(id)sender {
+    
+    NSString *customerToken    = self.customerTokenField.text;
+    NSString *sharedUUID    = self.shareUUIDField.text;
+    
+    if (customerToken == nil || customerToken.length == 0 || sharedUUID == nil || sharedUUID.length == 0) {
+        UIAlertView  *alertView = [[UIAlertView alloc] initWithTitle:@"General Service Error" message:@"Customer Token and Shared UUID cannot be empty" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        
+        [alertView show];
+        return;
+    }
+    
+    
+    [self.trackingClient startWatchingOrderWithShareUUID:sharedUUID customerAccessToken:customerToken delegate:self];
+   
 }
 
 
@@ -337,6 +382,8 @@
                 andRatingURL:monitoredOrder.sharedLocation.ratingURL
                    andDriver:order.driverUUID
                     andOrder:order];
+    
+    self.orderField.text = monitoredOrder.uuid;
 }
 
 - (void)watchOrderFailForOrder:(GGOrder *)order error:(NSError *)error{
@@ -464,20 +511,22 @@
 }
 
 -(void)waypointDidUpdatedWaypointId:(NSNumber *)waypointId eta:(NSDate *)eta{
-    self.lblWaypointStatus.text = @"Waypoint Updated ";
+    self.lblWaypointStatus.text = @"Waypoint Updated";
     self.txtETA.text = [NSString stringWithFormat:@"ETA: %@", eta];
 }
 
 - (void)waypointDidArrivedWaypointId:(NSNumber *)waypointId{
-     self.lblWaypointStatus.text = @"Waypoint arrived ";
+     self.lblWaypointStatus.text = @"Waypoint arrived";
 }
 
 - (void)waypointDidFinishedWaypointId:(NSNumber *)waypointId{
-    self.lblWaypointStatus.text = @"Waypoint done ";
+    self.lblWaypointStatus.text = @"Waypoint done";
 }
 
 - (void)watchWaypointSucceededForWaypointId:(NSNumber *)waypointId waypoint:(GGWaypoint *)waypoint {
     NSLog(@"Watch waypoint succeeded for waypoint: %@", waypoint);
+    
+    self.lblWaypointStatus.text = [NSString stringWithFormat:@"watching waypoint %@", waypointId];
 }
 
 @end

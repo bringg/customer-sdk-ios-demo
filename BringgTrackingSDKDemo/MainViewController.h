@@ -36,6 +36,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *monitorWPButton;
 @property (weak, nonatomic) IBOutlet UITextField *txtETA;
 @property (weak, nonatomic) IBOutlet UIButton *btnFindme;
+@property (weak, nonatomic) IBOutlet UIButton *monitorOrder2Button;
 
 
 
@@ -46,6 +47,7 @@
 - (IBAction)rate:(id)sender;
 - (IBAction)monitorWaypoint:(id)sender;
 - (IBAction)onFindMe:(UIButton *)sender;
+- (IBAction)onMonitorByShareAndCustomer:(id)sender;
 
 @end
 
