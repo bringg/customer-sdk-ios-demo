@@ -7,9 +7,43 @@
 //
 
 #import "MainViewController.h"
+<<<<<<< Updated upstream
 #define kBringgDeveloperToken @"{YOUR_DEV_ACCESS_TOKEN}"
 #define ARC4RANDOM_MAX      0x100000000
 
+=======
+
+//#define kBringgDeveloperToken @"QnSFGWAxe5AEyYW-1xBy"
+#define kBringgDeveloperToken @"WiVBTpwezhVh3Cxys8--"
+
+#define ARC4RANDOM_MAX      0x100000000
+
+#define USE_SECURE YES
+
+#define LOCAL_DEMO_URL @"http://192.168.1.24"
+//#define LOCAL_DEMO_URL @"https://driver-api.bringg.com"
+#define MY_PHONE_NUMBER @"+972547888999"
+@class GGHTTPClientManager, GGTrackerManager;
+
+
+@interface LocalBringgTrackingClient : BringgTrackingClient
+
+@end
+
+@implementation LocalBringgTrackingClient
+
+- (BOOL)useSecuredConnection{
+    return NO;
+}
+
+//- (NSString *)hostDomainForClientManager:(GGHTTPClientManager *)clientManager {
+//     return [NSString stringWithFormat:@"%@:3000", LOCAL_DEMO_URL];
+//}
+//
+//- (NSString *)hostDomainForTrackerManager:(GGTrackerManager *)trackerManager {
+//    return [NSString stringWithFormat:@"%@:3030", LOCAL_DEMO_URL];
+//}
+>>>>>>> Stashed changes
 
 
 
