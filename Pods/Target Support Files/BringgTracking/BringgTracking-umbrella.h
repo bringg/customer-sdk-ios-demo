@@ -12,7 +12,9 @@
 
 #import "BringgTracking.h"
 #import "BringgTrackingClient.h"
+#import "BringgTrackingClient_Private.h"
 #import "NSObject+Observer.h"
+#import "NSString+Extensions.h"
 #import "Reachability.h"
 #import "BringgGlobals.h"
 #import "BringgPrivates.h"
