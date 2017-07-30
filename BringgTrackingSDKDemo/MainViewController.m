@@ -7,14 +7,8 @@
 //
 
 #import "MainViewController.h"
-<<<<<<< Updated upstream
+
 #define kBringgDeveloperToken @"{YOUR_DEV_ACCESS_TOKEN}"
-#define ARC4RANDOM_MAX      0x100000000
-
-=======
-
-//#define kBringgDeveloperToken @"QnSFGWAxe5AEyYW-1xBy"
-#define kBringgDeveloperToken @"WiVBTpwezhVh3Cxys8--"
 
 #define ARC4RANDOM_MAX      0x100000000
 
@@ -43,10 +37,8 @@
 //- (NSString *)hostDomainForTrackerManager:(GGTrackerManager *)trackerManager {
 //    return [NSString stringWithFormat:@"%@:3030", LOCAL_DEMO_URL];
 //}
->>>>>>> Stashed changes
 
-
-
+@end
 @interface MainViewController ()
 
 
