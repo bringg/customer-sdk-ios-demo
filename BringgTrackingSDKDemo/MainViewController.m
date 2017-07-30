@@ -507,6 +507,7 @@
 #pragma mark Waypoint Delegate
 
 -(void)watchWaypointFailedForWaypointId:(NSNumber *)waypointId error:(NSError *)error{
+    NSLog(@"Watch waypoint failed with error :\n %@",error.localizedDescription);
     self.lblWaypointStatus.text = error.localizedDescription;
 }
 
