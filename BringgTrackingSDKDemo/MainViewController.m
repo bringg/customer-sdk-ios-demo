@@ -8,8 +8,8 @@
 
 #import "MainViewController.h"
 
-#define kBringgDeveloperToken @"{YOUR_DEV_ACCESS_TOKEN}"
-
+//#define kBringgDeveloperToken @"{YOUR_DEV_ACCESS_TOKEN}"
+#define kBringgDeveloperToken @"ue1_vDpcNqHP5exYJiArS2o9"
 #define ARC4RANDOM_MAX      0x100000000
 
 #define USE_SECURE YES
@@ -150,6 +150,18 @@
     }
     
  
+}
+
+- (IBAction)didPressCall:(id)sender {
+    if (!_currentMonitoredOrder || !_currentMonitoredOrder.sharedLocationUUID){
+        NSLog(@"please watch order before calling to a driver");
+        return;
+    }
+    else {
+        [self.trackingClient getMaskedNumberWithShareUUID:_currentMonitoredOrder.sharedLocationUUID forPhoneNumber:MY_PHONE_NUMBER withCompletionHandler:^(BOOL success, NSString * _Nullable phoneNumber, NSError * _Nullable error) {
+            NSLog(@"MaskedNumber:%@, error: %@ ,phoneNumber: %@", success ? @"success" : @"failed", error, phoneNumber);
+        }];
+    }
 }
 
 
