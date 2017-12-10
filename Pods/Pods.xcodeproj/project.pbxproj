@@ -7,86 +7,86 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04322D60FF9916ECA581CC0245D691FA /* SocketEnginePacketType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F0BEBFC24363C1C12BFED1C52E09A /* SocketEnginePacketType.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		08ED82BE7DF9BB4199FF510ED98B4769 /* GGTrackerManager_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = E4074D34023AC01BAC80BB65BEE6F2F6 /* GGTrackerManager_Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0D17F29A107B42D791E9BCCAC3D605A3 /* GGCustomer.m in Sources */ = {isa = PBXBuildFile; fileRef = 499A0F71F7E232B41195340A86E939DA /* GGCustomer.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		04322D60FF9916ECA581CC0245D691FA /* SocketEnginePacketType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F54685A87439EB95E7E81FE3C497CA /* SocketEnginePacketType.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		046C3056794E8455F68D334FA4B3A8B2 /* GGSharedLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 2728A8E32C490C5A1185A52667EDE0CB /* GGSharedLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0806E15B4645EB8F83347EC6D5BCF556 /* GGBringgUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 762511E35E6DDBAEA595F59771969B24 /* GGBringgUtils.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		0D6D4008E92DF03A51CCCD9BF740F6E0 /* GGRealTimeMontior+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CCFC863336395846F00E7B35737F836 /* GGRealTimeMontior+Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0F2E0FE2EDB271ED664B12F4A8E09F47 /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0EC1D9829829792D25E97DC54DF4E3 /* NSString+Extensions.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		0F46640A4474BBA68F396F141659A434 /* Pods-BringgTrackingSDKDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 76C83ED4DEB9FFDC41229745C7EF1EB5 /* Pods-BringgTrackingSDKDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0F61A76436222621F8403E4D1C14811B /* SocketEnginePollable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E330F9F321E4350813202BD51BC3F67A /* SocketEnginePollable.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		0FC7BE5F97DF544625A24F9AF24E6577 /* NSString+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = FE598E9A36A21850CAB7EAF6D8CC67E9 /* NSString+Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		129E7CFCE0C339DE897BAFE5C619DE6E /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F6652863175FDE16D90EF0BEF19B7 /* WebSocket.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		14C449C294BB1AE7DDCAB9487EA9B741 /* SocketEngineClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D342D3CD8230E8928AFA54BF2F79D0 /* SocketEngineClient.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		179649D35244C13B6E163AE0C25C8E8C /* SocketExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83D48B450D21095FBEC2185F938BE67 /* SocketExtensions.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		1AA8DB270CB188129BE4D1506CDCECA9 /* GGOrderBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = B7BD0766007AF62B8D77138A5884440F /* GGOrderBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		26B806C9AE6D94C4D8E31A345643C0C2 /* SSLSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996BB3B147D524EF800F2194B91709F1 /* SSLSecurity.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		2849955E22AC557EFA91BF2D54233DC3 /* SocketAckManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F244CCBBA45069AA8A524715B8E5966 /* SocketAckManager.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		0F61A76436222621F8403E4D1C14811B /* SocketEnginePollable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D8EE3B42621092F4BDB15ACCCFD41C /* SocketEnginePollable.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		129E7CFCE0C339DE897BAFE5C619DE6E /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3E07647C79B52CF67FE3FDEC06BBA6 /* WebSocket.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		14C449C294BB1AE7DDCAB9487EA9B741 /* SocketEngineClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F88554C8967996FB77B7C6FFA95352 /* SocketEngineClient.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		179649D35244C13B6E163AE0C25C8E8C /* SocketExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C35B988FF05E3F5FB910B5D773BB693 /* SocketExtensions.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		1C10E9BEABA7ADC68F69D5FCFAD2B3B6 /* GGItem.h in Headers */ = {isa = PBXBuildFile; fileRef = B23FD119E8266D75C1D0BB68AC4305DD /* GGItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C535E0210A538C5504F2D5D19289C16 /* BringgTrackingClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C038A42AF963A78CBB0C9B427A1F140 /* BringgTrackingClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		26B806C9AE6D94C4D8E31A345643C0C2 /* SSLSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17FF3CE95972940B539D37D4FBFE574 /* SSLSecurity.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		2849955E22AC557EFA91BF2D54233DC3 /* SocketAckManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF48BB138A44B3F7E0A3F164A5583222 /* SocketAckManager.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		2A280B07B58F0F5BF1D3C07344923C6E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B858A0A0AA4BA41AB9902E35BDB9F58 /* Foundation.framework */; };
-		2A7014A8193CF8990DAE56A5392ADBC4 /* GGTrackerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE05AEC6A14DA7DBCB1F4D9E7B997F6 /* GGTrackerManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		31EAC7900CC0283748CAB031E190D8C7 /* GGOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F5C695A447A997A51A9927443C9B426 /* GGOrder.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		39C090CD6EB4975152769FAEF90E16B5 /* GGWaypoint.h in Headers */ = {isa = PBXBuildFile; fileRef = D7F086A723542AC5428A861F5134E4A3 /* GGWaypoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3D502C92A6379C0DC8AD9A03EF8407ED /* BringgTrackingClient.h in Headers */ = {isa = PBXBuildFile; fileRef = C9CE25991615F9E0D37C5F0070A02CD7 /* BringgTrackingClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3FBC8E1F6310E59028663E3F9BDE6DA0 /* BringgTracking.h in Headers */ = {isa = PBXBuildFile; fileRef = BA42230C98D4CC26A2B93EE64EB63F32 /* BringgTracking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		435FEA269B98BFA6CC4688F1C43C214A /* GGNetworkUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C6B2105D19188700AF777C8EA839366 /* GGNetworkUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		438A325C375AAD13E3D572FEABC039E6 /* NSObject+Observer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FAE135DF6E1DB2C579C6DA1C8631D68 /* NSObject+Observer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		460453F14E5FE070B85B6B8FB8547BF3 /* GGRealTimeMontior.m in Sources */ = {isa = PBXBuildFile; fileRef = A63ADD979F6608B43CD5A063F77CF01B /* GGRealTimeMontior.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		47817F461A803F103F7B1AAD8E004AF5 /* GGSharedLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C525A0BB09D94373D53710A963E1AD /* GGSharedLocation.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		4806EED10D5244AFACA7241FDF619466 /* GGDriver.h in Headers */ = {isa = PBXBuildFile; fileRef = C72D3BC7ED15AE72C0F77BAA962049FE /* GGDriver.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5105FA4DC21692743A7E55D16F0DB294 /* GGSharedLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 29264DC9359BF765639C3DDA62562676 /* GGSharedLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		527A4F9E010A42277505AC8EF6A1805D /* GGCustomer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C606807C4449B609519D3B6B548E231 /* GGCustomer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		57372FABA2A2D93F871E158F539A8A51 /* SocketPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117F685036DDF69767FA0894A36AFD79 /* SocketPacket.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		2DE26185B1819A33F60AFC2DE7B83C85 /* GGFindMe.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFA5D44F9541A5A08FC3BDB6A15799 /* GGFindMe.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		300ADBE0F0DBAE3DCF168BD8DB424AD6 /* GGHTTPClientManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 75939AD624F6D9A1BEB4CC20BD177EC9 /* GGHTTPClientManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		32F77A6BC7CB978CD4098D12835C5631 /* GGOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 13E2058846F1BA4CE0097AA8515FB4BB /* GGOrder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3379BF3791C0FAF456F3253C68ADE402 /* GGRealTimeMontior.m in Sources */ = {isa = PBXBuildFile; fileRef = AB348A0F0AAF2C4A4A9C3291B53D43D4 /* GGRealTimeMontior.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		37F1596EE63BC01C3B3F6E7C21BF94FD /* GGRating.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9D76DB0B2CD1C9E702BCA3E23120FD /* GGRating.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		42E28FD5A73FBF2A86E5B4734C576FC8 /* NSObject+Observer.h in Headers */ = {isa = PBXBuildFile; fileRef = EA4E03E4C3F561AE0E09417DAAD635C3 /* NSObject+Observer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4514B778D07007F6387619876A44AC06 /* GGWaypoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 9209036973D232ECFC9DA436404D5626 /* GGWaypoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4808C04C861978EF8507C1A7A76D3A7B /* GGOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = B68C0E6AE0836429516B92A7D71855EC /* GGOrder.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		50E20DE10C041F98425115F3C9EE87D4 /* GGNetworkUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = D9E2E9EF9AD1768472AC9AB55317C0A0 /* GGNetworkUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		57372FABA2A2D93F871E158F539A8A51 /* SocketPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37991FBF309E4FFA4525A0C0B474A7E5 /* SocketPacket.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		57FBBBC91A426D643CDA0B2A90FADF36 /* GGCustomer.h in Headers */ = {isa = PBXBuildFile; fileRef = C3BD291C80AD98324E5DFE8CBF609A28 /* GGCustomer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5A1CC17EEABD9107E7919E3A038B4440 /* SocketIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B25D5DEAB933FDCFCEC7AA313F7797 /* SocketIO.framework */; };
-		5A5519C160B65DCE52DD89EC2008AB3A /* GGRealTimeAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 938C2D5A1A28CE6647C77CDB5209EC4F /* GGRealTimeAdapter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5BEFB2C420E59CE597DC78E26F4F0D5C /* GGItem.h in Headers */ = {isa = PBXBuildFile; fileRef = AA6453692F4559DDBF12C5BCE3E40E99 /* GGItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5CFEA5A0835126F5CE22F445CFB6179B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B858A0A0AA4BA41AB9902E35BDB9F58 /* Foundation.framework */; };
-		5EAF849B5D19231B790AF2ECD6F67006 /* GGWaypoint.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3654BF78C8AB61B31E455CD812B496 /* GGWaypoint.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		5FDC1F09DECF0BD40099AB08492ECAAF /* GGFindMe.m in Sources */ = {isa = PBXBuildFile; fileRef = 4184B2093F7706196B42ECE19B7C1E4D /* GGFindMe.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		600207C1E2214C5117150539C043A81B /* Socket.IO-Client-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 87905EC17B5665096942646DB7542569 /* Socket.IO-Client-Swift-dummy.m */; };
-		61ABF65132CCCDF9808CFAC3625D81C6 /* SocketAckEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B59BDFD692606D25A027C43E6C89A5C /* SocketAckEmitter.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		6359E485C55CBDBA708AED72A126FEF1 /* SocketEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F0F03BBE73D643AD0486ADFE0A8AC5 /* SocketEngine.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		66753ECED007F1A2C09106C293375064 /* GGHTTPClientManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A68531E35D93D1819936DFC6F59BEA06 /* GGHTTPClientManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F26D007EF96EA8B167833693A3BDC99 /* GGDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A67F73B5E34D51A67F777D3A53E1A3 /* GGDriver.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		5F927B69B547B81D08698FEC464F05A3 /* GGTrackerManager_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = A0EC96B43746A1F0C2D0DB03D059A019 /* GGTrackerManager_Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		600207C1E2214C5117150539C043A81B /* Socket.IO-Client-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F8CEA04DAAD016D1785152533356BF91 /* Socket.IO-Client-Swift-dummy.m */; };
+		61ABF65132CCCDF9808CFAC3625D81C6 /* SocketAckEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F91932D4362AE97BF77BA3F93A0103 /* SocketAckEmitter.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		6359E485C55CBDBA708AED72A126FEF1 /* SocketEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D432C8BC61E87AEE5C6CEDCCB06523B3 /* SocketEngine.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		64A241E67A5A95B0D8E485B0C8F578E5 /* GGRating.h in Headers */ = {isa = PBXBuildFile; fileRef = C317B2AD0E6CF3EC5C95BB00E7CB819B /* GGRating.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		694EEE74A105AF9768167641394F769A /* GGRealTimeInternals.h in Headers */ = {isa = PBXBuildFile; fileRef = 73642BAD6E7573CA93E35A2DED3FF5B4 /* GGRealTimeInternals.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		69AC06C44CCC0415BD8FD97D27257E44 /* Pods-BringgTrackingSDKDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3BAF4368EC7D3BC9D17ADB0607777F /* Pods-BringgTrackingSDKDemo-dummy.m */; };
-		6B9BAC5FCEC4CD991FEEB74969FF0426 /* GGFindMe.h in Headers */ = {isa = PBXBuildFile; fileRef = A1C1F6F5F69554AC8C8784DEA851A2A4 /* GGFindMe.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		705A8E479B73F1B9D77803F0C5F84E60 /* SocketEngineSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1670BB5EB79304C745E1AE522C2461EE /* SocketEngineSpec.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		7234CD62D69910833CCF6AE2A70DFA92 /* BringgTrackingClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 179EC8D1C73EA142CF02812E078A8763 /* BringgTrackingClient.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		730B3CB1822862775EE382B47829F8AA /* BringgPrivates.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F1CC50E8D9D666E5AEF80F3615069F1 /* BringgPrivates.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		741D6E7360C1B15A3A588B3C477B680F /* SocketParsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE9ACCB4FBAE731DCA98FD8DB00CF2B /* SocketParsable.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		7B75032E3D4E8833DCC5C2AE9A48064F /* SocketIOClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320E64E91F0F5C8DABC045FC2BF66DF1 /* SocketIOClientSpec.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		7EAB742DEE6AE02B81FC214DBCC4FE40 /* GGDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = E12351858CEE968439D4C9CA0085CD4B /* GGDriver.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		8C4BDFF052EE8FD3327F80795C86530E /* GGRealTimeAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7212A5B8D8251B24099D1F03161DD633 /* GGRealTimeAdapter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		8D464C9E31B0DD610CFAB67E18F4B005 /* SocketClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1526DC8C1273F235789BF159D7714F /* SocketClientManager.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		8D67F72911DEF2B80D6F130BE368690D /* GGRealTimeMontior+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 13B10A08D045C37864831C19336A9A55 /* GGRealTimeMontior+Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		90683C9FC993BADDD047E252EE9B95D2 /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A30EF228DE15619E3DD925C6CE3A87 /* NSString+Extensions.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		91D0FA7914FF108E87785CC63EC4F43F /* BringgGlobals.h in Headers */ = {isa = PBXBuildFile; fileRef = C2C9F49C3345C906CBF3B5C1F62D723D /* BringgGlobals.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		941F202E896C39CFE4CE28D54244F6C0 /* SocketEngineWebsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5603ECF44D6231ED2C54E8BC2F385A37 /* SocketEngineWebsocket.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		96296F1AD869B5B4146BB70F9261EAEB /* GGOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = D1933EBB3901EEBF4F3A595F0F042F38 /* GGOrder.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		98A55C927DD5975720CF99B15B8A7A9E /* SocketIOClientStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F306E01D91D86C36440F2FAD6F23C988 /* SocketIOClientStatus.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		9E395F01E504A93DC5FCAF47C15734A0 /* SocketEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D782257DB50BC7B57630A5BD577C6 /* SocketEventHandler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		A634D15EFF72C381C3C7190439FABB01 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE2E85071861B994EED43F36742A8BB /* Reachability.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		ADE5BF184D1E625F2F9B9B0C9951D06C /* SocketAnyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9571AF94B7FB655E7868AEF99404CB /* SocketAnyEvent.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		AF7F3B28D2CBE6F11963717B632F2E67 /* BringgTrackingClient_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 49F88AAB0E04C604A9B9B1AE2810E739 /* BringgTrackingClient_Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		705A8E479B73F1B9D77803F0C5F84E60 /* SocketEngineSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452A9BB2D28BB7A72E72E1AC48511F07 /* SocketEngineSpec.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		741D6E7360C1B15A3A588B3C477B680F /* SocketParsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B800011C68D3F93864EFD1E9DE8BEE /* SocketParsable.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		75AF932F09B31A45F6193E192F28DF72 /* BringgPrivates.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E68DDA34F1608E5C54D20F19EEC83EE /* BringgPrivates.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		773AF0B1DBCD3F019C84AE783F11259B /* NSObject+Observer.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F51C75EAD1C5BB41F232C7E31614F5 /* NSObject+Observer.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		7B75032E3D4E8833DCC5C2AE9A48064F /* SocketIOClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6B6F8B4175D0BF611B6F95655A38D8 /* SocketIOClientSpec.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		7E4653E7AEF2B856E9DE7C566E5E8E81 /* BringgTracking.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C5BE1C520AD5B0BAEF0A96FABD17BF1 /* BringgTracking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		805F3346AF04234FA965D1B270EB7256 /* GGRealTimeAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE5D6894ECDC5920F660359BE6658AD /* GGRealTimeAdapter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		866799C898C3951578512C2F780EDF97 /* GGOrderBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = C386FE8DE927CF180514B490B39C56F5 /* GGOrderBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8CB163C07AA945A746FE8B3DFA1AFC3E /* BringgTracking-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 76A8D53FD517181D61BA36EF1BF655C4 /* BringgTracking-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8D464C9E31B0DD610CFAB67E18F4B005 /* SocketClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C7A9CCB750ADEF88ED38D661D9A058 /* SocketClientManager.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		92F0357E1A98FFAF4871FD6AD7C70264 /* GGNetworkUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E39A1A4A5658441540AC8662547ED71E /* GGNetworkUtils.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		941F202E896C39CFE4CE28D54244F6C0 /* SocketEngineWebsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0610AC7C16FDB20F8DA2DFAD53C4ED72 /* SocketEngineWebsocket.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		95A15A31C367697AB036E85FFA2F16FF /* GGRealTimeAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A2A6134CD4B4A333F8A20C42BC71ECF /* GGRealTimeAdapter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95C0BB3B1EF3B84CEC6D54E82587F5DA /* BringgGlobals.h in Headers */ = {isa = PBXBuildFile; fileRef = 4843C94026CB84CFF301B4C0DA055794 /* BringgGlobals.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		98A55C927DD5975720CF99B15B8A7A9E /* SocketIOClientStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729FE072D046B0C2966F6BB5FDDDDDC9 /* SocketIOClientStatus.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		9A61DDBF3044DC9BA5E4AF676FCF7C18 /* GGDriver.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A6B56001BB207A2527655E428F4F8B1 /* GGDriver.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9BE2A7048A9B5FAAEA70792F4E6BC859 /* GGItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBD7D6D1E9AE9B2A514707511AE3D00 /* GGItem.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		9D93C7BAB549F3FA29849C7F7AC63917 /* GGHTTPClientManager_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = EBA6B28833D746940A52C7D5494012EC /* GGHTTPClientManager_Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E395F01E504A93DC5FCAF47C15734A0 /* SocketEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1B2069027764ABFDFFB749111294B8 /* SocketEventHandler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		9F986D9DC82AF41E010CF704017D25FE /* GGTrackerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D995FCCC0657E97CA6908EC7DC1616D8 /* GGTrackerManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		A5503F81BDD8D79090FF2F57A9E35634 /* GGTrackerManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 08A5779B02A44128C78B40956B996B3F /* GGTrackerManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A6F649F5C0946E09A8DA1CF32103A1E3 /* GGBringgUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = CA6B30411950C8F4CA997B307B555BD8 /* GGBringgUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ADE5BF184D1E625F2F9B9B0C9951D06C /* SocketAnyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E57F963641E0E6A23C0CBBE68ED49A /* SocketAnyEvent.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		B04AF5925FEC67CB84CF0838FDAB856F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B858A0A0AA4BA41AB9902E35BDB9F58 /* Foundation.framework */; };
-		B26F4BD15CB5AC2B8760FEC535C205E4 /* BringgTracking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA4D892C946405ED56A98D0A9B2A729 /* BringgTracking-dummy.m */; };
-		B4C0EEE84E571CDC129063D6D0E80AD4 /* GGTrackerManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 82818F611304AFC9E5BD6A403BB440C7 /* GGTrackerManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B53F5661E9AE5FF6AA84AD4A0CACADEC /* SocketIOClientOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6DB44BEB912798F945A7288622BC11 /* SocketIOClientOption.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		B6E291D045764BC77B321494240BF74A /* GGBringgUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C3074E6ED68DF2298CDCFD6AC24B78B0 /* GGBringgUtils.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		B96ABCDF393D51A156504EA60943BBE9 /* GGRating.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A6EA8AA013C6A707C81F87AB57A2FF /* GGRating.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		BD81CD41E2BD76932A1EC44AB7756F73 /* SocketTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD80A7ADAB722173423A36E7463C4AFB /* SocketTypes.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		BEE634682B1A5191826F11A20C551F92 /* BringgTracking-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D60E75C21A6C98C0DCA8E560343C8E4 /* BringgTracking-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CADEFC27D841AFDE6EE18B3E0FE154C2 /* GGItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D345208F54DC65848D3740258C6424F /* GGItem.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		CBD3723A95FC0DA2FE6F6387D1F707CE /* GGHTTPClientManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A522C7DFC57184530A9DB2171631C36 /* GGHTTPClientManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		CF9F320657E7A3F89399625D56CD7E5F /* SocketLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A3BB339105AF5BC77EB85BD3CB18E6 /* SocketLogger.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		D0081ED72A6518BDDCBC951A19D1025E /* SocketIOClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EAE89FD26A461FD18EFD671BC2A669 /* SocketIOClient.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		D5FC5A41B86D68D8A668F7645A0C199B /* GGHTTPClientManager_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 84E9B1E36165F110EF3C765F83158B91 /* GGHTTPClientManager_Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DD189E1792CA70FDA80C2541A715C769 /* Socket.IO-Client-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F57EC4469168DB9A573C09EAF2AEF49 /* Socket.IO-Client-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E068C8FF1EDC4CE36FFDEE4BB0EB3FAE /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 784C4B740746CF4324E4C9D1AA2C29D6 /* Reachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E452F32060D0F935CC3784678A68B572 /* GGBringgUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 2602C08010578E4788DF57B8620EF74E /* GGBringgUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E69B04E6A9D899E7C9DC39EE01DB8C90 /* SocketIOClientConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9693A3F4FEDC4DE12781103EE82CB97D /* SocketIOClientConfiguration.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		EA188D8E09EE4C826FB7E212DCA588DA /* SocketStringReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670BE73CF5968D8D6D6C8AAC526F90E2 /* SocketStringReader.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		EF5A982ED7F74E6B18B2755C5E64C9B2 /* GGRealTimeInternals.h in Headers */ = {isa = PBXBuildFile; fileRef = 92B85B9E4B149692E82F0D9CA86FC142 /* GGRealTimeInternals.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F194B40D38C40504650DFC20B5F54675 /* GGNetworkUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0246E8742CC434297C2E345046002F /* GGNetworkUtils.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		F3C8FA502C620441DFD1F4147CEF24F1 /* NSObject+Observer.m in Sources */ = {isa = PBXBuildFile; fileRef = 991A53AADFCEE9D7E84EA0204BA6CD86 /* NSObject+Observer.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		F8D2E71E45944ED95064DEAA807373A7 /* GGRating.h in Headers */ = {isa = PBXBuildFile; fileRef = 9754A0FD1EF5C743775E137E994604E1 /* GGRating.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F9FB932E0BE61B4E2CF089BA3FBA962C /* GGRealTimeMontior.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7D45DA272159A994ABEF53879DB331 /* GGRealTimeMontior.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FD4D2865109A81FF71FBCB202568CEDC /* GGOrderBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADF1967BF10FC779FBD78B2D3E8183E /* GGOrderBuilder.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		B0B2047FF2C93125FC97435B37F85AE3 /* GGWaypoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 9740572CA8303440CA045B45B9226FCC /* GGWaypoint.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		B226D4B05901E585DCED0A6C2C081E76 /* BringgTrackingClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F66F769E0129A8EB0A54CA7859B72C /* BringgTrackingClient.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		B53F5661E9AE5FF6AA84AD4A0CACADEC /* SocketIOClientOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4666444F0EAEBE4381CBFABA34BA47C /* SocketIOClientOption.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		B6D55BD12222B6A2F4455C0A585B4507 /* GGRealTimeMontior.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BFB48007F84D5EE5B8DA1139CFCE9E3 /* GGRealTimeMontior.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B9CA6D3378D7A800430F4CB9F1494E7B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C80436EBD2F9B640D9FC1A7D60BFA444 /* Reachability.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		BD81CD41E2BD76932A1EC44AB7756F73 /* SocketTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95C5D6852117A8E1AC32938E369D48E /* SocketTypes.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		C0C90AF2D11CD70BE7E122FABCD49A50 /* BringgTrackingClient_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = C736940D9D92351FE1D14CA4563CAB1C /* BringgTrackingClient_Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C2CFCCD51211EF167D9A676FAB126977 /* GGOrderBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 795E6AC97C0D0985A6D5531AFC4347CE /* GGOrderBuilder.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		C9BF1B71917AB5279F71920B4469C109 /* GGCustomer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2306AE68DD06613E1EFAF35DB2C22760 /* GGCustomer.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		CF9F320657E7A3F89399625D56CD7E5F /* SocketLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16E4F92E835E77AB59D4185D4BAF3D2 /* SocketLogger.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		D0081ED72A6518BDDCBC951A19D1025E /* SocketIOClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD82758B359BE8A749468E39F8400232 /* SocketIOClient.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		D0381C300FE337E114698AC3F604FB91 /* BringgTracking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A472AC402F47E4D2862F5C98D998ED /* BringgTracking-dummy.m */; };
+		D7B037D6224590DDE294587A7EF38786 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 17238ADAE3FF5D6156CB4035B95A238F /* Reachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD189E1792CA70FDA80C2541A715C769 /* Socket.IO-Client-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D32FC1E99FF0AE91F26AA50A35866E11 /* Socket.IO-Client-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E69B04E6A9D899E7C9DC39EE01DB8C90 /* SocketIOClientConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB62C9491274C0D3554C7EF1EB6EED9 /* SocketIOClientConfiguration.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		E6BEA31A9426D912A257B5228F72B9D8 /* GGHTTPClientManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E97DDCF79DCC5511F9E78927C8A0103 /* GGHTTPClientManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E949F57771FC44E6B48C9F391C803D81 /* NSString+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C1D5F5282E83F514A45ECBA6DD3254D /* NSString+Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA188D8E09EE4C826FB7E212DCA588DA /* SocketStringReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B0CE8BD0015B86523D06A4F26EA7F1 /* SocketStringReader.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		EEAABD48D37EA55C95E0F45B7C08F57E /* GGFindMe.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AF8DB19E8274ABC583CE15680B5AC11 /* GGFindMe.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F4BD1678F8AC722BCDA3AD641C83D4F5 /* GGSharedLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4B7D033EE85259051EC038B374921 /* GGSharedLocation.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,104 +114,104 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		039D64AB79478C8F7D9196FFB8ADF795 /* BringgTracking.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = BringgTracking.modulemap; sourceTree = "<group>"; };
-		043D782257DB50BC7B57630A5BD577C6 /* SocketEventHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketEventHandler.swift; path = Source/SocketEventHandler.swift; sourceTree = "<group>"; };
-		05DD98DF656FDC7D8E64CD40CC3F4047 /* Socket.IO-Client-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Socket.IO-Client-Swift.modulemap"; sourceTree = "<group>"; };
-		0ADF1967BF10FC779FBD78B2D3E8183E /* GGOrderBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = GGOrderBuilder.m; sourceTree = "<group>"; };
+		0610AC7C16FDB20F8DA2DFAD53C4ED72 /* SocketEngineWebsocket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketEngineWebsocket.swift; path = Source/SocketEngineWebsocket.swift; sourceTree = "<group>"; };
+		08A5779B02A44128C78B40956B996B3F /* GGTrackerManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGTrackerManager.h; path = sources/model/managars/GGTrackerManager.h; sourceTree = "<group>"; };
+		0AF8DB19E8274ABC583CE15680B5AC11 /* GGFindMe.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGFindMe.h; path = sources/model/GGFindMe.h; sourceTree = "<group>"; };
 		0B858A0A0AA4BA41AB9902E35BDB9F58 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		0F244CCBBA45069AA8A524715B8E5966 /* SocketAckManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketAckManager.swift; path = Source/SocketAckManager.swift; sourceTree = "<group>"; };
 		11506C6585F1F0C8C9CDD6704821D9E6 /* Pods-BringgTrackingSDKDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BringgTrackingSDKDemo-acknowledgements.plist"; sourceTree = "<group>"; };
-		117F685036DDF69767FA0894A36AFD79 /* SocketPacket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketPacket.swift; path = Source/SocketPacket.swift; sourceTree = "<group>"; };
-		13B10A08D045C37864831C19336A9A55 /* GGRealTimeMontior+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GGRealTimeMontior+Private.h"; sourceTree = "<group>"; };
-		1499F874D5B028CBA61685B611895A27 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1670BB5EB79304C745E1AE522C2461EE /* SocketEngineSpec.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketEngineSpec.swift; path = Source/SocketEngineSpec.swift; sourceTree = "<group>"; };
-		179EC8D1C73EA142CF02812E078A8763 /* BringgTrackingClient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BringgTrackingClient.m; sourceTree = "<group>"; };
-		1C6B2105D19188700AF777C8EA839366 /* GGNetworkUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GGNetworkUtils.h; sourceTree = "<group>"; };
-		1D0246E8742CC434297C2E345046002F /* GGNetworkUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = GGNetworkUtils.m; sourceTree = "<group>"; };
+		13E2058846F1BA4CE0097AA8515FB4BB /* GGOrder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGOrder.h; path = sources/model/GGOrder.h; sourceTree = "<group>"; };
+		14F88554C8967996FB77B7C6FFA95352 /* SocketEngineClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketEngineClient.swift; path = Source/SocketEngineClient.swift; sourceTree = "<group>"; };
+		17238ADAE3FF5D6156CB4035B95A238F /* Reachability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = sources/libs/Reachibility/Reachability.h; sourceTree = "<group>"; };
+		1CCFC863336395846F00E7B35737F836 /* GGRealTimeMontior+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GGRealTimeMontior+Private.h"; path = "sources/model/GGRealTimeMontior+Private.h"; sourceTree = "<group>"; };
+		1FEECE9730F5B1E18ACE0A12D7FBF24B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20BE332286DE14C50479BACB848D759C /* BringgTracking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BringgTracking.framework; path = BringgTracking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		21B0CE8BD0015B86523D06A4F26EA7F1 /* SocketStringReader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketStringReader.swift; path = Source/SocketStringReader.swift; sourceTree = "<group>"; };
+		2306AE68DD06613E1EFAF35DB2C22760 /* GGCustomer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GGCustomer.m; path = sources/model/GGCustomer.m; sourceTree = "<group>"; };
 		25A1C91A519909EFDF7B3425BA9C4FB9 /* Pods-BringgTrackingSDKDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BringgTrackingSDKDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
-		2602C08010578E4788DF57B8620EF74E /* GGBringgUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GGBringgUtils.h; sourceTree = "<group>"; };
 		26E25139D0543B3E3824247F3EDF28B1 /* Pods-BringgTrackingSDKDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-BringgTrackingSDKDemo.modulemap"; sourceTree = "<group>"; };
-		29264DC9359BF765639C3DDA62562676 /* GGSharedLocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GGSharedLocation.h; sourceTree = "<group>"; };
-		29A3BB339105AF5BC77EB85BD3CB18E6 /* SocketLogger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketLogger.swift; path = Source/SocketLogger.swift; sourceTree = "<group>"; };
-		2B1526DC8C1273F235789BF159D7714F /* SocketClientManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketClientManager.swift; path = Source/SocketClientManager.swift; sourceTree = "<group>"; };
-		2FAE135DF6E1DB2C579C6DA1C8631D68 /* NSObject+Observer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSObject+Observer.h"; sourceTree = "<group>"; };
+		2728A8E32C490C5A1185A52667EDE0CB /* GGSharedLocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGSharedLocation.h; path = sources/model/GGSharedLocation.h; sourceTree = "<group>"; };
+		2C1D5F5282E83F514A45ECBA6DD3254D /* NSString+Extensions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+Extensions.h"; path = "sources/extensions/NSString+Extensions.h"; sourceTree = "<group>"; };
+		2E68DDA34F1608E5C54D20F19EEC83EE /* BringgPrivates.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BringgPrivates.h; path = sources/model/BringgPrivates.h; sourceTree = "<group>"; };
+		2E97DDCF79DCC5511F9E78927C8A0103 /* GGHTTPClientManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGHTTPClientManager.h; path = sources/model/managars/GGHTTPClientManager.h; sourceTree = "<group>"; };
 		311A909FF9E32343C32434DC127A3407 /* Pods-BringgTrackingSDKDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BringgTrackingSDKDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		31F0F03BBE73D643AD0486ADFE0A8AC5 /* SocketEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketEngine.swift; path = Source/SocketEngine.swift; sourceTree = "<group>"; };
-		320E64E91F0F5C8DABC045FC2BF66DF1 /* SocketIOClientSpec.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketIOClientSpec.swift; path = Source/SocketIOClientSpec.swift; sourceTree = "<group>"; };
-		32C525A0BB09D94373D53710A963E1AD /* GGSharedLocation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = GGSharedLocation.m; sourceTree = "<group>"; };
-		36A30EF228DE15619E3DD925C6CE3A87 /* NSString+Extensions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extensions.m"; sourceTree = "<group>"; };
-		38EAE89FD26A461FD18EFD671BC2A669 /* SocketIOClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketIOClient.swift; path = Source/SocketIOClient.swift; sourceTree = "<group>"; };
-		3F57EC4469168DB9A573C09EAF2AEF49 /* Socket.IO-Client-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Socket.IO-Client-Swift-umbrella.h"; sourceTree = "<group>"; };
+		32E57F963641E0E6A23C0CBBE68ED49A /* SocketAnyEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketAnyEvent.swift; path = Source/SocketAnyEvent.swift; sourceTree = "<group>"; };
+		32F54685A87439EB95E7E81FE3C497CA /* SocketEnginePacketType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketEnginePacketType.swift; path = Source/SocketEnginePacketType.swift; sourceTree = "<group>"; };
+		37991FBF309E4FFA4525A0C0B474A7E5 /* SocketPacket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketPacket.swift; path = Source/SocketPacket.swift; sourceTree = "<group>"; };
+		3835BDE9839227441124408D303F1CD6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F92AF8CE8AEE3141540D5A19F51006F /* Pods-BringgTrackingSDKDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BringgTrackingSDKDemo.release.xcconfig"; sourceTree = "<group>"; };
-		4184B2093F7706196B42ECE19B7C1E4D /* GGFindMe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = GGFindMe.m; sourceTree = "<group>"; };
+		40D8EE3B42621092F4BDB15ACCCFD41C /* SocketEnginePollable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketEnginePollable.swift; path = Source/SocketEnginePollable.swift; sourceTree = "<group>"; };
+		452A9BB2D28BB7A72E72E1AC48511F07 /* SocketEngineSpec.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketEngineSpec.swift; path = Source/SocketEngineSpec.swift; sourceTree = "<group>"; };
 		457216687CE4D60A2E63386C7510F475 /* Pods_BringgTrackingSDKDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BringgTrackingSDKDemo.framework; path = "Pods-BringgTrackingSDKDemo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		499A0F71F7E232B41195340A86E939DA /* GGCustomer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = GGCustomer.m; sourceTree = "<group>"; };
-		49F88AAB0E04C604A9B9B1AE2810E739 /* BringgTrackingClient_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BringgTrackingClient_Private.h; sourceTree = "<group>"; };
-		4A522C7DFC57184530A9DB2171631C36 /* GGHTTPClientManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = GGHTTPClientManager.m; sourceTree = "<group>"; };
-		4BE05AEC6A14DA7DBCB1F4D9E7B997F6 /* GGTrackerManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = GGTrackerManager.m; sourceTree = "<group>"; };
-		4D60E75C21A6C98C0DCA8E560343C8E4 /* BringgTracking-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BringgTracking-umbrella.h"; sourceTree = "<group>"; };
-		4E852147BB8CA11C60363B97C1193E41 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4F5C695A447A997A51A9927443C9B426 /* GGOrder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GGOrder.h; sourceTree = "<group>"; };
-		51D342D3CD8230E8928AFA54BF2F79D0 /* SocketEngineClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketEngineClient.swift; path = Source/SocketEngineClient.swift; sourceTree = "<group>"; };
-		525F0BEBFC24363C1C12BFED1C52E09A /* SocketEnginePacketType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketEnginePacketType.swift; path = Source/SocketEnginePacketType.swift; sourceTree = "<group>"; };
-		5603ECF44D6231ED2C54E8BC2F385A37 /* SocketEngineWebsocket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketEngineWebsocket.swift; path = Source/SocketEngineWebsocket.swift; sourceTree = "<group>"; };
+		4843C94026CB84CFF301B4C0DA055794 /* BringgGlobals.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BringgGlobals.h; path = sources/model/BringgGlobals.h; sourceTree = "<group>"; };
+		4BBD7D6D1E9AE9B2A514707511AE3D00 /* GGItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GGItem.m; path = sources/model/GGItem.m; sourceTree = "<group>"; };
+		52B800011C68D3F93864EFD1E9DE8BEE /* SocketParsable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketParsable.swift; path = Source/SocketParsable.swift; sourceTree = "<group>"; };
+		53FFA5D44F9541A5A08FC3BDB6A15799 /* GGFindMe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GGFindMe.m; path = sources/model/GGFindMe.m; sourceTree = "<group>"; };
 		57B25D5DEAB933FDCFCEC7AA313F7797 /* SocketIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SocketIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		62A6EA8AA013C6A707C81F87AB57A2FF /* GGRating.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = GGRating.m; sourceTree = "<group>"; };
-		670BE73CF5968D8D6D6C8AAC526F90E2 /* SocketStringReader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketStringReader.swift; path = Source/SocketStringReader.swift; sourceTree = "<group>"; };
+		59299EC96987671A1B36D52D75E32424 /* Socket.IO-Client-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Socket.IO-Client-Swift.modulemap"; sourceTree = "<group>"; };
 		67F9D18AE1955310E19A285761694887 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6AE9ACCB4FBAE731DCA98FD8DB00CF2B /* SocketParsable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketParsable.swift; path = Source/SocketParsable.swift; sourceTree = "<group>"; };
+		6A2A6134CD4B4A333F8A20C42BC71ECF /* GGRealTimeAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGRealTimeAdapter.h; path = sources/model/GGRealTimeAdapter.h; sourceTree = "<group>"; };
 		6B3BAF4368EC7D3BC9D17ADB0607777F /* Pods-BringgTrackingSDKDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BringgTrackingSDKDemo-dummy.m"; sourceTree = "<group>"; };
-		6C606807C4449B609519D3B6B548E231 /* GGCustomer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GGCustomer.h; sourceTree = "<group>"; };
-		6D345208F54DC65848D3740258C6424F /* GGItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = GGItem.m; sourceTree = "<group>"; };
-		6D9571AF94B7FB655E7868AEF99404CB /* SocketAnyEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketAnyEvent.swift; path = Source/SocketAnyEvent.swift; sourceTree = "<group>"; };
-		6EA4D892C946405ED56A98D0A9B2A729 /* BringgTracking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BringgTracking-dummy.m"; sourceTree = "<group>"; };
-		7212A5B8D8251B24099D1F03161DD633 /* GGRealTimeAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = GGRealTimeAdapter.m; sourceTree = "<group>"; };
+		6C35B988FF05E3F5FB910B5D773BB693 /* SocketExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketExtensions.swift; path = Source/SocketExtensions.swift; sourceTree = "<group>"; };
+		729FE072D046B0C2966F6BB5FDDDDDC9 /* SocketIOClientStatus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketIOClientStatus.swift; path = Source/SocketIOClientStatus.swift; sourceTree = "<group>"; };
+		73642BAD6E7573CA93E35A2DED3FF5B4 /* GGRealTimeInternals.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGRealTimeInternals.h; path = sources/model/GGRealTimeInternals.h; sourceTree = "<group>"; };
+		73F51C75EAD1C5BB41F232C7E31614F5 /* NSObject+Observer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Observer.m"; path = "sources/extensions/NSObject+Observer.m"; sourceTree = "<group>"; };
+		75939AD624F6D9A1BEB4CC20BD177EC9 /* GGHTTPClientManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GGHTTPClientManager.m; path = sources/model/managars/GGHTTPClientManager.m; sourceTree = "<group>"; };
+		762511E35E6DDBAEA595F59771969B24 /* GGBringgUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GGBringgUtils.m; path = sources/model/utils/GGBringgUtils.m; sourceTree = "<group>"; };
+		76A8D53FD517181D61BA36EF1BF655C4 /* BringgTracking-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BringgTracking-umbrella.h"; sourceTree = "<group>"; };
 		76C83ED4DEB9FFDC41229745C7EF1EB5 /* Pods-BringgTrackingSDKDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BringgTrackingSDKDemo-umbrella.h"; sourceTree = "<group>"; };
-		784C4B740746CF4324E4C9D1AA2C29D6 /* Reachability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		7F7D45DA272159A994ABEF53879DB331 /* GGRealTimeMontior.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GGRealTimeMontior.h; sourceTree = "<group>"; };
-		82818F611304AFC9E5BD6A403BB440C7 /* GGTrackerManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GGTrackerManager.h; sourceTree = "<group>"; };
-		84E9B1E36165F110EF3C765F83158B91 /* GGHTTPClientManager_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GGHTTPClientManager_Private.h; sourceTree = "<group>"; };
-		87905EC17B5665096942646DB7542569 /* Socket.IO-Client-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Socket.IO-Client-Swift-dummy.m"; sourceTree = "<group>"; };
-		92B85B9E4B149692E82F0D9CA86FC142 /* GGRealTimeInternals.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GGRealTimeInternals.h; sourceTree = "<group>"; };
-		938C2D5A1A28CE6647C77CDB5209EC4F /* GGRealTimeAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GGRealTimeAdapter.h; sourceTree = "<group>"; };
+		78F954BF1664D0C925C538F1489CFAB9 /* BringgTracking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BringgTracking-prefix.pch"; sourceTree = "<group>"; };
+		795E6AC97C0D0985A6D5531AFC4347CE /* GGOrderBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GGOrderBuilder.m; path = sources/model/GGOrderBuilder.m; sourceTree = "<group>"; };
+		7A6B56001BB207A2527655E428F4F8B1 /* GGDriver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGDriver.h; path = sources/model/GGDriver.h; sourceTree = "<group>"; };
+		7BFB48007F84D5EE5B8DA1139CFCE9E3 /* GGRealTimeMontior.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGRealTimeMontior.h; path = sources/model/GGRealTimeMontior.h; sourceTree = "<group>"; };
+		7C038A42AF963A78CBB0C9B427A1F140 /* BringgTrackingClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BringgTrackingClient.h; path = sources/BringgTrackingClient.h; sourceTree = "<group>"; };
+		7C1B2069027764ABFDFFB749111294B8 /* SocketEventHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketEventHandler.swift; path = Source/SocketEventHandler.swift; sourceTree = "<group>"; };
+		7CE5D6894ECDC5920F660359BE6658AD /* GGRealTimeAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GGRealTimeAdapter.m; path = sources/model/GGRealTimeAdapter.m; sourceTree = "<group>"; };
+		84A67F73B5E34D51A67F777D3A53E1A3 /* GGDriver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GGDriver.m; path = sources/model/GGDriver.m; sourceTree = "<group>"; };
+		87354C4448B035CAF563FE94206D8FDD /* BringgTracking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BringgTracking.xcconfig; sourceTree = "<group>"; };
+		8FB9FFE87DBF995FAB1A62F295E2580C /* Socket.IO-Client-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Socket.IO-Client-Swift-prefix.pch"; sourceTree = "<group>"; };
+		9209036973D232ECFC9DA436404D5626 /* GGWaypoint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGWaypoint.h; path = sources/model/GGWaypoint.h; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		94A472AC402F47E4D2862F5C98D998ED /* BringgTracking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BringgTracking-dummy.m"; sourceTree = "<group>"; };
+		957476E793EECF804936D2F4FF2A9C13 /* Socket.IO-Client-Swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Socket.IO-Client-Swift.xcconfig"; sourceTree = "<group>"; };
 		958A5A0B4EEB07712D08B59786DAF5A2 /* Pods-BringgTrackingSDKDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BringgTrackingSDKDemo-resources.sh"; sourceTree = "<group>"; };
-		9693A3F4FEDC4DE12781103EE82CB97D /* SocketIOClientConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketIOClientConfiguration.swift; path = Source/SocketIOClientConfiguration.swift; sourceTree = "<group>"; };
-		9754A0FD1EF5C743775E137E994604E1 /* GGRating.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GGRating.h; sourceTree = "<group>"; };
-		991A53AADFCEE9D7E84EA0204BA6CD86 /* NSObject+Observer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Observer.m"; sourceTree = "<group>"; };
-		996BB3B147D524EF800F2194B91709F1 /* SSLSecurity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SSLSecurity.swift; path = Source/SSLSecurity.swift; sourceTree = "<group>"; };
-		9B59BDFD692606D25A027C43E6C89A5C /* SocketAckEmitter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketAckEmitter.swift; path = Source/SocketAckEmitter.swift; sourceTree = "<group>"; };
-		9F1CC50E8D9D666E5AEF80F3615069F1 /* BringgPrivates.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BringgPrivates.h; sourceTree = "<group>"; };
-		9F9012D1CF800972BED941165B70893F /* Socket.IO-Client-Swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Socket.IO-Client-Swift.xcconfig"; sourceTree = "<group>"; };
-		A1C1F6F5F69554AC8C8784DEA851A2A4 /* GGFindMe.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GGFindMe.h; sourceTree = "<group>"; };
-		A63ADD979F6608B43CD5A063F77CF01B /* GGRealTimeMontior.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = GGRealTimeMontior.m; sourceTree = "<group>"; };
-		A68531E35D93D1819936DFC6F59BEA06 /* GGHTTPClientManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GGHTTPClientManager.h; sourceTree = "<group>"; };
-		AA6453692F4559DDBF12C5BCE3E40E99 /* GGItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GGItem.h; sourceTree = "<group>"; };
-		AC6DB44BEB912798F945A7288622BC11 /* SocketIOClientOption.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketIOClientOption.swift; path = Source/SocketIOClientOption.swift; sourceTree = "<group>"; };
-		B7BD0766007AF62B8D77138A5884440F /* GGOrderBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GGOrderBuilder.h; sourceTree = "<group>"; };
-		BA42230C98D4CC26A2B93EE64EB63F32 /* BringgTracking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BringgTracking.h; sourceTree = "<group>"; };
-		C2C9F49C3345C906CBF3B5C1F62D723D /* BringgGlobals.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BringgGlobals.h; sourceTree = "<group>"; };
-		C3074E6ED68DF2298CDCFD6AC24B78B0 /* GGBringgUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = GGBringgUtils.m; sourceTree = "<group>"; };
-		C72D3BC7ED15AE72C0F77BAA962049FE /* GGDriver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GGDriver.h; sourceTree = "<group>"; };
-		C9CE25991615F9E0D37C5F0070A02CD7 /* BringgTrackingClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BringgTrackingClient.h; sourceTree = "<group>"; };
-		CBE2E85071861B994EED43F36742A8BB /* Reachability.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		CC3654BF78C8AB61B31E455CD812B496 /* GGWaypoint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = GGWaypoint.m; sourceTree = "<group>"; };
-		D1933EBB3901EEBF4F3A595F0F042F38 /* GGOrder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = GGOrder.m; sourceTree = "<group>"; };
-		D723A3F7B1B76F384C15C07847049BCB /* BringgTracking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BringgTracking-prefix.pch"; sourceTree = "<group>"; };
-		D7F086A723542AC5428A861F5134E4A3 /* GGWaypoint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GGWaypoint.h; sourceTree = "<group>"; };
-		E12351858CEE968439D4C9CA0085CD4B /* GGDriver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = GGDriver.m; sourceTree = "<group>"; };
-		E330F9F321E4350813202BD51BC3F67A /* SocketEnginePollable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketEnginePollable.swift; path = Source/SocketEnginePollable.swift; sourceTree = "<group>"; };
-		E4074D34023AC01BAC80BB65BEE6F2F6 /* GGTrackerManager_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GGTrackerManager_Private.h; sourceTree = "<group>"; };
+		9740572CA8303440CA045B45B9226FCC /* GGWaypoint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GGWaypoint.m; path = sources/model/GGWaypoint.m; sourceTree = "<group>"; };
+		9C5BE1C520AD5B0BAEF0A96FABD17BF1 /* BringgTracking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BringgTracking.h; path = sources/BringgTracking.h; sourceTree = "<group>"; };
+		A0EC96B43746A1F0C2D0DB03D059A019 /* GGTrackerManager_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGTrackerManager_Private.h; path = sources/model/managars/GGTrackerManager_Private.h; sourceTree = "<group>"; };
+		A4F66F769E0129A8EB0A54CA7859B72C /* BringgTrackingClient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BringgTrackingClient.m; path = sources/BringgTrackingClient.m; sourceTree = "<group>"; };
+		A8F91932D4362AE97BF77BA3F93A0103 /* SocketAckEmitter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketAckEmitter.swift; path = Source/SocketAckEmitter.swift; sourceTree = "<group>"; };
+		A95C5D6852117A8E1AC32938E369D48E /* SocketTypes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketTypes.swift; path = Source/SocketTypes.swift; sourceTree = "<group>"; };
+		AB348A0F0AAF2C4A4A9C3291B53D43D4 /* GGRealTimeMontior.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GGRealTimeMontior.m; path = sources/model/GGRealTimeMontior.m; sourceTree = "<group>"; };
+		ADB62C9491274C0D3554C7EF1EB6EED9 /* SocketIOClientConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketIOClientConfiguration.swift; path = Source/SocketIOClientConfiguration.swift; sourceTree = "<group>"; };
+		B23FD119E8266D75C1D0BB68AC4305DD /* GGItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGItem.h; path = sources/model/GGItem.h; sourceTree = "<group>"; };
+		B68C0E6AE0836429516B92A7D71855EC /* GGOrder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GGOrder.m; path = sources/model/GGOrder.m; sourceTree = "<group>"; };
+		B9C7A9CCB750ADEF88ED38D661D9A058 /* SocketClientManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketClientManager.swift; path = Source/SocketClientManager.swift; sourceTree = "<group>"; };
+		BA6B6F8B4175D0BF611B6F95655A38D8 /* SocketIOClientSpec.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketIOClientSpec.swift; path = Source/SocketIOClientSpec.swift; sourceTree = "<group>"; };
+		BFD4B7D033EE85259051EC038B374921 /* GGSharedLocation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GGSharedLocation.m; path = sources/model/GGSharedLocation.m; sourceTree = "<group>"; };
+		C317B2AD0E6CF3EC5C95BB00E7CB819B /* GGRating.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGRating.h; path = sources/model/GGRating.h; sourceTree = "<group>"; };
+		C386FE8DE927CF180514B490B39C56F5 /* GGOrderBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGOrderBuilder.h; path = sources/model/GGOrderBuilder.h; sourceTree = "<group>"; };
+		C3BD291C80AD98324E5DFE8CBF609A28 /* GGCustomer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGCustomer.h; path = sources/model/GGCustomer.h; sourceTree = "<group>"; };
+		C4666444F0EAEBE4381CBFABA34BA47C /* SocketIOClientOption.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketIOClientOption.swift; path = Source/SocketIOClientOption.swift; sourceTree = "<group>"; };
+		C736940D9D92351FE1D14CA4563CAB1C /* BringgTrackingClient_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BringgTrackingClient_Private.h; path = sources/BringgTrackingClient_Private.h; sourceTree = "<group>"; };
+		C80436EBD2F9B640D9FC1A7D60BFA444 /* Reachability.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = sources/libs/Reachibility/Reachability.m; sourceTree = "<group>"; };
+		CA6B30411950C8F4CA997B307B555BD8 /* GGBringgUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGBringgUtils.h; path = sources/model/utils/GGBringgUtils.h; sourceTree = "<group>"; };
+		CD82758B359BE8A749468E39F8400232 /* SocketIOClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketIOClient.swift; path = Source/SocketIOClient.swift; sourceTree = "<group>"; };
+		D17FF3CE95972940B539D37D4FBFE574 /* SSLSecurity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SSLSecurity.swift; path = Source/SSLSecurity.swift; sourceTree = "<group>"; };
+		D32FC1E99FF0AE91F26AA50A35866E11 /* Socket.IO-Client-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Socket.IO-Client-Swift-umbrella.h"; sourceTree = "<group>"; };
+		D432C8BC61E87AEE5C6CEDCCB06523B3 /* SocketEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketEngine.swift; path = Source/SocketEngine.swift; sourceTree = "<group>"; };
+		D5E38A4C092C690023DB4CBCC92C26EC /* BringgTracking.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = BringgTracking.modulemap; sourceTree = "<group>"; };
+		D995FCCC0657E97CA6908EC7DC1616D8 /* GGTrackerManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GGTrackerManager.m; path = sources/model/managars/GGTrackerManager.m; sourceTree = "<group>"; };
+		D9E2E9EF9AD1768472AC9AB55317C0A0 /* GGNetworkUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGNetworkUtils.h; path = sources/model/utils/GGNetworkUtils.h; sourceTree = "<group>"; };
+		DB9D76DB0B2CD1C9E702BCA3E23120FD /* GGRating.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GGRating.m; path = sources/model/GGRating.m; sourceTree = "<group>"; };
+		DE0EC1D9829829792D25E97DC54DF4E3 /* NSString+Extensions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+Extensions.m"; path = "sources/extensions/NSString+Extensions.m"; sourceTree = "<group>"; };
+		DE3E07647C79B52CF67FE3FDEC06BBA6 /* WebSocket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WebSocket.swift; path = Source/WebSocket.swift; sourceTree = "<group>"; };
+		DF48BB138A44B3F7E0A3F164A5583222 /* SocketAckManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketAckManager.swift; path = Source/SocketAckManager.swift; sourceTree = "<group>"; };
+		E39A1A4A5658441540AC8662547ED71E /* GGNetworkUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GGNetworkUtils.m; path = sources/model/utils/GGNetworkUtils.m; sourceTree = "<group>"; };
+		EA4E03E4C3F561AE0E09417DAAD635C3 /* NSObject+Observer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+Observer.h"; path = "sources/extensions/NSObject+Observer.h"; sourceTree = "<group>"; };
+		EBA6B28833D746940A52C7D5494012EC /* GGHTTPClientManager_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGHTTPClientManager_Private.h; path = sources/model/managars/GGHTTPClientManager_Private.h; sourceTree = "<group>"; };
 		EC5DCD148F70077144662E1C48480F21 /* Pods-BringgTrackingSDKDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BringgTrackingSDKDemo-frameworks.sh"; sourceTree = "<group>"; };
-		EE273CC60FDBC5662C437BD719916330 /* BringgTracking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BringgTracking.xcconfig; sourceTree = "<group>"; };
-		F306E01D91D86C36440F2FAD6F23C988 /* SocketIOClientStatus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketIOClientStatus.swift; path = Source/SocketIOClientStatus.swift; sourceTree = "<group>"; };
-		F36F6652863175FDE16D90EF0BEF19B7 /* WebSocket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WebSocket.swift; path = Source/WebSocket.swift; sourceTree = "<group>"; };
-		F57959BBDDA9210163F0CBFB7527AE25 /* Socket.IO-Client-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Socket.IO-Client-Swift-prefix.pch"; sourceTree = "<group>"; };
+		F16E4F92E835E77AB59D4185D4BAF3D2 /* SocketLogger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketLogger.swift; path = Source/SocketLogger.swift; sourceTree = "<group>"; };
 		F5FF9335553A7854BE5D6FE004D27246 /* SocketIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SocketIO.framework; path = "Socket.IO-Client-Swift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F83D48B450D21095FBEC2185F938BE67 /* SocketExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketExtensions.swift; path = Source/SocketExtensions.swift; sourceTree = "<group>"; };
-		FD80A7ADAB722173423A36E7463C4AFB /* SocketTypes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketTypes.swift; path = Source/SocketTypes.swift; sourceTree = "<group>"; };
-		FE598E9A36A21850CAB7EAF6D8CC67E9 /* NSString+Extensions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSString+Extensions.h"; sourceTree = "<group>"; };
+		F8CEA04DAAD016D1785152533356BF91 /* Socket.IO-Client-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Socket.IO-Client-Swift-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,18 +243,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04261653CA29701454E736D3C86C89A6 /* extensions */ = {
-			isa = PBXGroup;
-			children = (
-				2FAE135DF6E1DB2C579C6DA1C8631D68 /* NSObject+Observer.h */,
-				991A53AADFCEE9D7E84EA0204BA6CD86 /* NSObject+Observer.m */,
-				FE598E9A36A21850CAB7EAF6D8CC67E9 /* NSString+Extensions.h */,
-				36A30EF228DE15619E3DD925C6CE3A87 /* NSString+Extensions.m */,
-			);
-			name = extensions;
-			path = extensions;
-			sourceTree = "<group>";
-		};
 		0455CA35F40800D1DF46D1939CED27DA /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,51 +251,37 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		06FCB82AA93FF76BA547AB1D3AB0ADFF /* Socket.IO-Client-Swift */ = {
+		324BC20BFB9BDB5C3408105C19B0CEC1 /* Socket.IO-Client-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				9B59BDFD692606D25A027C43E6C89A5C /* SocketAckEmitter.swift */,
-				0F244CCBBA45069AA8A524715B8E5966 /* SocketAckManager.swift */,
-				6D9571AF94B7FB655E7868AEF99404CB /* SocketAnyEvent.swift */,
-				2B1526DC8C1273F235789BF159D7714F /* SocketClientManager.swift */,
-				31F0F03BBE73D643AD0486ADFE0A8AC5 /* SocketEngine.swift */,
-				51D342D3CD8230E8928AFA54BF2F79D0 /* SocketEngineClient.swift */,
-				525F0BEBFC24363C1C12BFED1C52E09A /* SocketEnginePacketType.swift */,
-				E330F9F321E4350813202BD51BC3F67A /* SocketEnginePollable.swift */,
-				1670BB5EB79304C745E1AE522C2461EE /* SocketEngineSpec.swift */,
-				5603ECF44D6231ED2C54E8BC2F385A37 /* SocketEngineWebsocket.swift */,
-				043D782257DB50BC7B57630A5BD577C6 /* SocketEventHandler.swift */,
-				F83D48B450D21095FBEC2185F938BE67 /* SocketExtensions.swift */,
-				38EAE89FD26A461FD18EFD671BC2A669 /* SocketIOClient.swift */,
-				9693A3F4FEDC4DE12781103EE82CB97D /* SocketIOClientConfiguration.swift */,
-				AC6DB44BEB912798F945A7288622BC11 /* SocketIOClientOption.swift */,
-				320E64E91F0F5C8DABC045FC2BF66DF1 /* SocketIOClientSpec.swift */,
-				F306E01D91D86C36440F2FAD6F23C988 /* SocketIOClientStatus.swift */,
-				29A3BB339105AF5BC77EB85BD3CB18E6 /* SocketLogger.swift */,
-				117F685036DDF69767FA0894A36AFD79 /* SocketPacket.swift */,
-				6AE9ACCB4FBAE731DCA98FD8DB00CF2B /* SocketParsable.swift */,
-				670BE73CF5968D8D6D6C8AAC526F90E2 /* SocketStringReader.swift */,
-				FD80A7ADAB722173423A36E7463C4AFB /* SocketTypes.swift */,
-				996BB3B147D524EF800F2194B91709F1 /* SSLSecurity.swift */,
-				F36F6652863175FDE16D90EF0BEF19B7 /* WebSocket.swift */,
-				C964BA47013163C7F484F1A789B76193 /* Support Files */,
+				A8F91932D4362AE97BF77BA3F93A0103 /* SocketAckEmitter.swift */,
+				DF48BB138A44B3F7E0A3F164A5583222 /* SocketAckManager.swift */,
+				32E57F963641E0E6A23C0CBBE68ED49A /* SocketAnyEvent.swift */,
+				B9C7A9CCB750ADEF88ED38D661D9A058 /* SocketClientManager.swift */,
+				D432C8BC61E87AEE5C6CEDCCB06523B3 /* SocketEngine.swift */,
+				14F88554C8967996FB77B7C6FFA95352 /* SocketEngineClient.swift */,
+				32F54685A87439EB95E7E81FE3C497CA /* SocketEnginePacketType.swift */,
+				40D8EE3B42621092F4BDB15ACCCFD41C /* SocketEnginePollable.swift */,
+				452A9BB2D28BB7A72E72E1AC48511F07 /* SocketEngineSpec.swift */,
+				0610AC7C16FDB20F8DA2DFAD53C4ED72 /* SocketEngineWebsocket.swift */,
+				7C1B2069027764ABFDFFB749111294B8 /* SocketEventHandler.swift */,
+				6C35B988FF05E3F5FB910B5D773BB693 /* SocketExtensions.swift */,
+				CD82758B359BE8A749468E39F8400232 /* SocketIOClient.swift */,
+				ADB62C9491274C0D3554C7EF1EB6EED9 /* SocketIOClientConfiguration.swift */,
+				C4666444F0EAEBE4381CBFABA34BA47C /* SocketIOClientOption.swift */,
+				BA6B6F8B4175D0BF611B6F95655A38D8 /* SocketIOClientSpec.swift */,
+				729FE072D046B0C2966F6BB5FDDDDDC9 /* SocketIOClientStatus.swift */,
+				F16E4F92E835E77AB59D4185D4BAF3D2 /* SocketLogger.swift */,
+				37991FBF309E4FFA4525A0C0B474A7E5 /* SocketPacket.swift */,
+				52B800011C68D3F93864EFD1E9DE8BEE /* SocketParsable.swift */,
+				21B0CE8BD0015B86523D06A4F26EA7F1 /* SocketStringReader.swift */,
+				A95C5D6852117A8E1AC32938E369D48E /* SocketTypes.swift */,
+				D17FF3CE95972940B539D37D4FBFE574 /* SSLSecurity.swift */,
+				DE3E07647C79B52CF67FE3FDEC06BBA6 /* WebSocket.swift */,
+				F5E3CFD58B595F92F0248A030234CD2B /* Support Files */,
 			);
 			name = "Socket.IO-Client-Swift";
 			path = "Socket.IO-Client-Swift";
-			sourceTree = "<group>";
-		};
-		34C3F8CE2EE72CE64D68B4EA482C7D58 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				039D64AB79478C8F7D9196FFB8ADF795 /* BringgTracking.modulemap */,
-				EE273CC60FDBC5662C437BD719916330 /* BringgTracking.xcconfig */,
-				6EA4D892C946405ED56A98D0A9B2A729 /* BringgTracking-dummy.m */,
-				D723A3F7B1B76F384C15C07847049BCB /* BringgTracking-prefix.pch */,
-				4D60E75C21A6C98C0DCA8E560343C8E4 /* BringgTracking-umbrella.h */,
-				1499F874D5B028CBA61685B611895A27 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../customer-sdk-ios-demo/Pods/Target Support Files/BringgTracking";
 			sourceTree = "<group>";
 		};
 		5040A72CAA701FE707793DDA097DD29E /* Pods-BringgTrackingSDKDemo */ = {
@@ -328,66 +302,6 @@
 			path = "Target Support Files/Pods-BringgTrackingSDKDemo";
 			sourceTree = "<group>";
 		};
-		5CF62C67ABCBAF05E8D07B690A9CB571 /* model */ = {
-			isa = PBXGroup;
-			children = (
-				C2C9F49C3345C906CBF3B5C1F62D723D /* BringgGlobals.h */,
-				9F1CC50E8D9D666E5AEF80F3615069F1 /* BringgPrivates.h */,
-				6C606807C4449B609519D3B6B548E231 /* GGCustomer.h */,
-				499A0F71F7E232B41195340A86E939DA /* GGCustomer.m */,
-				C72D3BC7ED15AE72C0F77BAA962049FE /* GGDriver.h */,
-				E12351858CEE968439D4C9CA0085CD4B /* GGDriver.m */,
-				A1C1F6F5F69554AC8C8784DEA851A2A4 /* GGFindMe.h */,
-				4184B2093F7706196B42ECE19B7C1E4D /* GGFindMe.m */,
-				AA6453692F4559DDBF12C5BCE3E40E99 /* GGItem.h */,
-				6D345208F54DC65848D3740258C6424F /* GGItem.m */,
-				4F5C695A447A997A51A9927443C9B426 /* GGOrder.h */,
-				D1933EBB3901EEBF4F3A595F0F042F38 /* GGOrder.m */,
-				B7BD0766007AF62B8D77138A5884440F /* GGOrderBuilder.h */,
-				0ADF1967BF10FC779FBD78B2D3E8183E /* GGOrderBuilder.m */,
-				9754A0FD1EF5C743775E137E994604E1 /* GGRating.h */,
-				62A6EA8AA013C6A707C81F87AB57A2FF /* GGRating.m */,
-				938C2D5A1A28CE6647C77CDB5209EC4F /* GGRealTimeAdapter.h */,
-				7212A5B8D8251B24099D1F03161DD633 /* GGRealTimeAdapter.m */,
-				92B85B9E4B149692E82F0D9CA86FC142 /* GGRealTimeInternals.h */,
-				7F7D45DA272159A994ABEF53879DB331 /* GGRealTimeMontior.h */,
-				A63ADD979F6608B43CD5A063F77CF01B /* GGRealTimeMontior.m */,
-				13B10A08D045C37864831C19336A9A55 /* GGRealTimeMontior+Private.h */,
-				29264DC9359BF765639C3DDA62562676 /* GGSharedLocation.h */,
-				32C525A0BB09D94373D53710A963E1AD /* GGSharedLocation.m */,
-				D7F086A723542AC5428A861F5134E4A3 /* GGWaypoint.h */,
-				CC3654BF78C8AB61B31E455CD812B496 /* GGWaypoint.m */,
-				60131C0C856437643E6F407B9ACB38C2 /* managars */,
-				9313E9F5261014F6B97776FA0C5AA552 /* utils */,
-			);
-			name = model;
-			path = model;
-			sourceTree = "<group>";
-		};
-		5E633C6BD7D8C51DC370036E59DD8FD3 /* Reachibility */ = {
-			isa = PBXGroup;
-			children = (
-				784C4B740746CF4324E4C9D1AA2C29D6 /* Reachability.h */,
-				CBE2E85071861B994EED43F36742A8BB /* Reachability.m */,
-			);
-			name = Reachibility;
-			path = Reachibility;
-			sourceTree = "<group>";
-		};
-		60131C0C856437643E6F407B9ACB38C2 /* managars */ = {
-			isa = PBXGroup;
-			children = (
-				A68531E35D93D1819936DFC6F59BEA06 /* GGHTTPClientManager.h */,
-				4A522C7DFC57184530A9DB2171631C36 /* GGHTTPClientManager.m */,
-				84E9B1E36165F110EF3C765F83158B91 /* GGHTTPClientManager_Private.h */,
-				82818F611304AFC9E5BD6A403BB440C7 /* GGTrackerManager.h */,
-				4BE05AEC6A14DA7DBCB1F4D9E7B997F6 /* GGTrackerManager.m */,
-				E4074D34023AC01BAC80BB65BEE6F2F6 /* GGTrackerManager_Private.h */,
-			);
-			name = managars;
-			path = managars;
-			sourceTree = "<group>";
-		};
 		632EFBA21464CDBA9BCE77DF9E8229AC /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -398,54 +312,79 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		731F037DD202058D59DA4D6369844BB8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A64DACF37D8EAF156CA47260D676D3F8 /* BringgTracking */,
+				324BC20BFB9BDB5C3408105C19B0CEC1 /* Socket.IO-Client-Swift */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				8226D1BCD8CA69AF123C82B8D26772D7 /* Development Pods */,
 				E2C37056BE09C244A45B5D7B1A1652A4 /* Frameworks */,
-				87AC66C613B2A233B3C94B7B15C485E3 /* Pods */,
+				731F037DD202058D59DA4D6369844BB8 /* Pods */,
 				632EFBA21464CDBA9BCE77DF9E8229AC /* Products */,
 				0455CA35F40800D1DF46D1939CED27DA /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		8226D1BCD8CA69AF123C82B8D26772D7 /* Development Pods */ = {
+		A64DACF37D8EAF156CA47260D676D3F8 /* BringgTracking */ = {
 			isa = PBXGroup;
 			children = (
-				AC883AE45E1948AD6760FAFDB38A7EAF /* BringgTracking */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		87AC66C613B2A233B3C94B7B15C485E3 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				06FCB82AA93FF76BA547AB1D3AB0ADFF /* Socket.IO-Client-Swift */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		9313E9F5261014F6B97776FA0C5AA552 /* utils */ = {
-			isa = PBXGroup;
-			children = (
-				2602C08010578E4788DF57B8620EF74E /* GGBringgUtils.h */,
-				C3074E6ED68DF2298CDCFD6AC24B78B0 /* GGBringgUtils.m */,
-				1C6B2105D19188700AF777C8EA839366 /* GGNetworkUtils.h */,
-				1D0246E8742CC434297C2E345046002F /* GGNetworkUtils.m */,
-			);
-			name = utils;
-			path = utils;
-			sourceTree = "<group>";
-		};
-		AC883AE45E1948AD6760FAFDB38A7EAF /* BringgTracking */ = {
-			isa = PBXGroup;
-			children = (
-				D095EA1E51923C9B9427153A2DFA6C6F /* sources */,
-				34C3F8CE2EE72CE64D68B4EA482C7D58 /* Support Files */,
+				4843C94026CB84CFF301B4C0DA055794 /* BringgGlobals.h */,
+				2E68DDA34F1608E5C54D20F19EEC83EE /* BringgPrivates.h */,
+				9C5BE1C520AD5B0BAEF0A96FABD17BF1 /* BringgTracking.h */,
+				7C038A42AF963A78CBB0C9B427A1F140 /* BringgTrackingClient.h */,
+				A4F66F769E0129A8EB0A54CA7859B72C /* BringgTrackingClient.m */,
+				C736940D9D92351FE1D14CA4563CAB1C /* BringgTrackingClient_Private.h */,
+				CA6B30411950C8F4CA997B307B555BD8 /* GGBringgUtils.h */,
+				762511E35E6DDBAEA595F59771969B24 /* GGBringgUtils.m */,
+				C3BD291C80AD98324E5DFE8CBF609A28 /* GGCustomer.h */,
+				2306AE68DD06613E1EFAF35DB2C22760 /* GGCustomer.m */,
+				7A6B56001BB207A2527655E428F4F8B1 /* GGDriver.h */,
+				84A67F73B5E34D51A67F777D3A53E1A3 /* GGDriver.m */,
+				0AF8DB19E8274ABC583CE15680B5AC11 /* GGFindMe.h */,
+				53FFA5D44F9541A5A08FC3BDB6A15799 /* GGFindMe.m */,
+				2E97DDCF79DCC5511F9E78927C8A0103 /* GGHTTPClientManager.h */,
+				75939AD624F6D9A1BEB4CC20BD177EC9 /* GGHTTPClientManager.m */,
+				EBA6B28833D746940A52C7D5494012EC /* GGHTTPClientManager_Private.h */,
+				B23FD119E8266D75C1D0BB68AC4305DD /* GGItem.h */,
+				4BBD7D6D1E9AE9B2A514707511AE3D00 /* GGItem.m */,
+				D9E2E9EF9AD1768472AC9AB55317C0A0 /* GGNetworkUtils.h */,
+				E39A1A4A5658441540AC8662547ED71E /* GGNetworkUtils.m */,
+				13E2058846F1BA4CE0097AA8515FB4BB /* GGOrder.h */,
+				B68C0E6AE0836429516B92A7D71855EC /* GGOrder.m */,
+				C386FE8DE927CF180514B490B39C56F5 /* GGOrderBuilder.h */,
+				795E6AC97C0D0985A6D5531AFC4347CE /* GGOrderBuilder.m */,
+				C317B2AD0E6CF3EC5C95BB00E7CB819B /* GGRating.h */,
+				DB9D76DB0B2CD1C9E702BCA3E23120FD /* GGRating.m */,
+				6A2A6134CD4B4A333F8A20C42BC71ECF /* GGRealTimeAdapter.h */,
+				7CE5D6894ECDC5920F660359BE6658AD /* GGRealTimeAdapter.m */,
+				73642BAD6E7573CA93E35A2DED3FF5B4 /* GGRealTimeInternals.h */,
+				7BFB48007F84D5EE5B8DA1139CFCE9E3 /* GGRealTimeMontior.h */,
+				AB348A0F0AAF2C4A4A9C3291B53D43D4 /* GGRealTimeMontior.m */,
+				1CCFC863336395846F00E7B35737F836 /* GGRealTimeMontior+Private.h */,
+				2728A8E32C490C5A1185A52667EDE0CB /* GGSharedLocation.h */,
+				BFD4B7D033EE85259051EC038B374921 /* GGSharedLocation.m */,
+				08A5779B02A44128C78B40956B996B3F /* GGTrackerManager.h */,
+				D995FCCC0657E97CA6908EC7DC1616D8 /* GGTrackerManager.m */,
+				A0EC96B43746A1F0C2D0DB03D059A019 /* GGTrackerManager_Private.h */,
+				9209036973D232ECFC9DA436404D5626 /* GGWaypoint.h */,
+				9740572CA8303440CA045B45B9226FCC /* GGWaypoint.m */,
+				EA4E03E4C3F561AE0E09417DAAD635C3 /* NSObject+Observer.h */,
+				73F51C75EAD1C5BB41F232C7E31614F5 /* NSObject+Observer.m */,
+				2C1D5F5282E83F514A45ECBA6DD3254D /* NSString+Extensions.h */,
+				DE0EC1D9829829792D25E97DC54DF4E3 /* NSString+Extensions.m */,
+				17238ADAE3FF5D6156CB4035B95A238F /* Reachability.h */,
+				C80436EBD2F9B640D9FC1A7D60BFA444 /* Reachability.m */,
+				E685F9CA5F49EFB068D356FEB9C196E5 /* Support Files */,
 			);
 			name = BringgTracking;
-			path = "../../customer-sdk-ios";
+			path = BringgTracking;
 			sourceTree = "<group>";
 		};
 		B29D33C61DCF6B527D7CFD89ED1B5E33 /* iOS */ = {
@@ -454,35 +393,6 @@
 				0B858A0A0AA4BA41AB9902E35BDB9F58 /* Foundation.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		C964BA47013163C7F484F1A789B76193 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				4E852147BB8CA11C60363B97C1193E41 /* Info.plist */,
-				05DD98DF656FDC7D8E64CD40CC3F4047 /* Socket.IO-Client-Swift.modulemap */,
-				9F9012D1CF800972BED941165B70893F /* Socket.IO-Client-Swift.xcconfig */,
-				87905EC17B5665096942646DB7542569 /* Socket.IO-Client-Swift-dummy.m */,
-				F57959BBDDA9210163F0CBFB7527AE25 /* Socket.IO-Client-Swift-prefix.pch */,
-				3F57EC4469168DB9A573C09EAF2AEF49 /* Socket.IO-Client-Swift-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Socket.IO-Client-Swift";
-			sourceTree = "<group>";
-		};
-		D095EA1E51923C9B9427153A2DFA6C6F /* sources */ = {
-			isa = PBXGroup;
-			children = (
-				BA42230C98D4CC26A2B93EE64EB63F32 /* BringgTracking.h */,
-				C9CE25991615F9E0D37C5F0070A02CD7 /* BringgTrackingClient.h */,
-				179EC8D1C73EA142CF02812E078A8763 /* BringgTrackingClient.m */,
-				49F88AAB0E04C604A9B9B1AE2810E739 /* BringgTrackingClient_Private.h */,
-				04261653CA29701454E736D3C86C89A6 /* extensions */,
-				FDC7F3C5B21A94349580310E0E50C445 /* libs */,
-				5CF62C67ABCBAF05E8D07B690A9CB571 /* model */,
-			);
-			name = sources;
-			path = sources;
 			sourceTree = "<group>";
 		};
 		E2C37056BE09C244A45B5D7B1A1652A4 /* Frameworks */ = {
@@ -494,13 +404,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FDC7F3C5B21A94349580310E0E50C445 /* libs */ = {
+		E685F9CA5F49EFB068D356FEB9C196E5 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				5E633C6BD7D8C51DC370036E59DD8FD3 /* Reachibility */,
+				D5E38A4C092C690023DB4CBCC92C26EC /* BringgTracking.modulemap */,
+				87354C4448B035CAF563FE94206D8FDD /* BringgTracking.xcconfig */,
+				94A472AC402F47E4D2862F5C98D998ED /* BringgTracking-dummy.m */,
+				78F954BF1664D0C925C538F1489CFAB9 /* BringgTracking-prefix.pch */,
+				76A8D53FD517181D61BA36EF1BF655C4 /* BringgTracking-umbrella.h */,
+				1FEECE9730F5B1E18ACE0A12D7FBF24B /* Info.plist */,
 			);
-			name = libs;
-			path = libs;
+			name = "Support Files";
+			path = "../Target Support Files/BringgTracking";
+			sourceTree = "<group>";
+		};
+		F5E3CFD58B595F92F0248A030234CD2B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3835BDE9839227441124408D303F1CD6 /* Info.plist */,
+				59299EC96987671A1B36D52D75E32424 /* Socket.IO-Client-Swift.modulemap */,
+				957476E793EECF804936D2F4FF2A9C13 /* Socket.IO-Client-Swift.xcconfig */,
+				F8CEA04DAAD016D1785152533356BF91 /* Socket.IO-Client-Swift-dummy.m */,
+				8FB9FFE87DBF995FAB1A62F295E2580C /* Socket.IO-Client-Swift-prefix.pch */,
+				D32FC1E99FF0AE91F26AA50A35866E11 /* Socket.IO-Client-Swift-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Socket.IO-Client-Swift";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -522,38 +451,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E08B68F2015361A241E34297CFF2D94B /* Headers */ = {
+		74D2097FA614B5270A44248429D229F4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91D0FA7914FF108E87785CC63EC4F43F /* BringgGlobals.h in Headers */,
-				730B3CB1822862775EE382B47829F8AA /* BringgPrivates.h in Headers */,
-				BEE634682B1A5191826F11A20C551F92 /* BringgTracking-umbrella.h in Headers */,
-				3FBC8E1F6310E59028663E3F9BDE6DA0 /* BringgTracking.h in Headers */,
-				3D502C92A6379C0DC8AD9A03EF8407ED /* BringgTrackingClient.h in Headers */,
-				AF7F3B28D2CBE6F11963717B632F2E67 /* BringgTrackingClient_Private.h in Headers */,
-				E452F32060D0F935CC3784678A68B572 /* GGBringgUtils.h in Headers */,
-				527A4F9E010A42277505AC8EF6A1805D /* GGCustomer.h in Headers */,
-				4806EED10D5244AFACA7241FDF619466 /* GGDriver.h in Headers */,
-				6B9BAC5FCEC4CD991FEEB74969FF0426 /* GGFindMe.h in Headers */,
-				66753ECED007F1A2C09106C293375064 /* GGHTTPClientManager.h in Headers */,
-				D5FC5A41B86D68D8A668F7645A0C199B /* GGHTTPClientManager_Private.h in Headers */,
-				5BEFB2C420E59CE597DC78E26F4F0D5C /* GGItem.h in Headers */,
-				435FEA269B98BFA6CC4688F1C43C214A /* GGNetworkUtils.h in Headers */,
-				31EAC7900CC0283748CAB031E190D8C7 /* GGOrder.h in Headers */,
-				1AA8DB270CB188129BE4D1506CDCECA9 /* GGOrderBuilder.h in Headers */,
-				F8D2E71E45944ED95064DEAA807373A7 /* GGRating.h in Headers */,
-				5A5519C160B65DCE52DD89EC2008AB3A /* GGRealTimeAdapter.h in Headers */,
-				EF5A982ED7F74E6B18B2755C5E64C9B2 /* GGRealTimeInternals.h in Headers */,
-				8D67F72911DEF2B80D6F130BE368690D /* GGRealTimeMontior+Private.h in Headers */,
-				F9FB932E0BE61B4E2CF089BA3FBA962C /* GGRealTimeMontior.h in Headers */,
-				5105FA4DC21692743A7E55D16F0DB294 /* GGSharedLocation.h in Headers */,
-				B4C0EEE84E571CDC129063D6D0E80AD4 /* GGTrackerManager.h in Headers */,
-				08ED82BE7DF9BB4199FF510ED98B4769 /* GGTrackerManager_Private.h in Headers */,
-				39C090CD6EB4975152769FAEF90E16B5 /* GGWaypoint.h in Headers */,
-				438A325C375AAD13E3D572FEABC039E6 /* NSObject+Observer.h in Headers */,
-				0FC7BE5F97DF544625A24F9AF24E6577 /* NSString+Extensions.h in Headers */,
-				E068C8FF1EDC4CE36FFDEE4BB0EB3FAE /* Reachability.h in Headers */,
+				95C0BB3B1EF3B84CEC6D54E82587F5DA /* BringgGlobals.h in Headers */,
+				75AF932F09B31A45F6193E192F28DF72 /* BringgPrivates.h in Headers */,
+				8CB163C07AA945A746FE8B3DFA1AFC3E /* BringgTracking-umbrella.h in Headers */,
+				7E4653E7AEF2B856E9DE7C566E5E8E81 /* BringgTracking.h in Headers */,
+				1C535E0210A538C5504F2D5D19289C16 /* BringgTrackingClient.h in Headers */,
+				C0C90AF2D11CD70BE7E122FABCD49A50 /* BringgTrackingClient_Private.h in Headers */,
+				A6F649F5C0946E09A8DA1CF32103A1E3 /* GGBringgUtils.h in Headers */,
+				57FBBBC91A426D643CDA0B2A90FADF36 /* GGCustomer.h in Headers */,
+				9A61DDBF3044DC9BA5E4AF676FCF7C18 /* GGDriver.h in Headers */,
+				EEAABD48D37EA55C95E0F45B7C08F57E /* GGFindMe.h in Headers */,
+				E6BEA31A9426D912A257B5228F72B9D8 /* GGHTTPClientManager.h in Headers */,
+				9D93C7BAB549F3FA29849C7F7AC63917 /* GGHTTPClientManager_Private.h in Headers */,
+				1C10E9BEABA7ADC68F69D5FCFAD2B3B6 /* GGItem.h in Headers */,
+				50E20DE10C041F98425115F3C9EE87D4 /* GGNetworkUtils.h in Headers */,
+				32F77A6BC7CB978CD4098D12835C5631 /* GGOrder.h in Headers */,
+				866799C898C3951578512C2F780EDF97 /* GGOrderBuilder.h in Headers */,
+				64A241E67A5A95B0D8E485B0C8F578E5 /* GGRating.h in Headers */,
+				95A15A31C367697AB036E85FFA2F16FF /* GGRealTimeAdapter.h in Headers */,
+				694EEE74A105AF9768167641394F769A /* GGRealTimeInternals.h in Headers */,
+				0D6D4008E92DF03A51CCCD9BF740F6E0 /* GGRealTimeMontior+Private.h in Headers */,
+				B6D55BD12222B6A2F4455C0A585B4507 /* GGRealTimeMontior.h in Headers */,
+				046C3056794E8455F68D334FA4B3A8B2 /* GGSharedLocation.h in Headers */,
+				A5503F81BDD8D79090FF2F57A9E35634 /* GGTrackerManager.h in Headers */,
+				5F927B69B547B81D08698FEC464F05A3 /* GGTrackerManager_Private.h in Headers */,
+				4514B778D07007F6387619876A44AC06 /* GGWaypoint.h in Headers */,
+				42E28FD5A73FBF2A86E5B4734C576FC8 /* NSObject+Observer.h in Headers */,
+				E949F57771FC44E6B48C9F391C803D81 /* NSString+Extensions.h in Headers */,
+				D7B037D6224590DDE294587A7EF38786 /* Reachability.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,9 +493,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0E3BD1AC34F034A6A5F2696B406C4EA5 /* Build configuration list for PBXNativeTarget "BringgTracking" */;
 			buildPhases = (
-				A5AD5E6FA36D7B7CF98BDD74CB29FD34 /* Sources */,
+				3DDD9833D7244F21F21853723CCA0412 /* Sources */,
 				C0B1701AAD61704DE0EFDDC85C4C8CAC /* Frameworks */,
-				E08B68F2015361A241E34297CFF2D94B /* Headers */,
+				74D2097FA614B5270A44248429D229F4 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -683,30 +612,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A5AD5E6FA36D7B7CF98BDD74CB29FD34 /* Sources */ = {
+		3DDD9833D7244F21F21853723CCA0412 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B26F4BD15CB5AC2B8760FEC535C205E4 /* BringgTracking-dummy.m in Sources */,
-				7234CD62D69910833CCF6AE2A70DFA92 /* BringgTrackingClient.m in Sources */,
-				B6E291D045764BC77B321494240BF74A /* GGBringgUtils.m in Sources */,
-				0D17F29A107B42D791E9BCCAC3D605A3 /* GGCustomer.m in Sources */,
-				7EAB742DEE6AE02B81FC214DBCC4FE40 /* GGDriver.m in Sources */,
-				5FDC1F09DECF0BD40099AB08492ECAAF /* GGFindMe.m in Sources */,
-				CBD3723A95FC0DA2FE6F6387D1F707CE /* GGHTTPClientManager.m in Sources */,
-				CADEFC27D841AFDE6EE18B3E0FE154C2 /* GGItem.m in Sources */,
-				F194B40D38C40504650DFC20B5F54675 /* GGNetworkUtils.m in Sources */,
-				96296F1AD869B5B4146BB70F9261EAEB /* GGOrder.m in Sources */,
-				FD4D2865109A81FF71FBCB202568CEDC /* GGOrderBuilder.m in Sources */,
-				B96ABCDF393D51A156504EA60943BBE9 /* GGRating.m in Sources */,
-				8C4BDFF052EE8FD3327F80795C86530E /* GGRealTimeAdapter.m in Sources */,
-				460453F14E5FE070B85B6B8FB8547BF3 /* GGRealTimeMontior.m in Sources */,
-				47817F461A803F103F7B1AAD8E004AF5 /* GGSharedLocation.m in Sources */,
-				2A7014A8193CF8990DAE56A5392ADBC4 /* GGTrackerManager.m in Sources */,
-				5EAF849B5D19231B790AF2ECD6F67006 /* GGWaypoint.m in Sources */,
-				F3C8FA502C620441DFD1F4147CEF24F1 /* NSObject+Observer.m in Sources */,
-				90683C9FC993BADDD047E252EE9B95D2 /* NSString+Extensions.m in Sources */,
-				A634D15EFF72C381C3C7190439FABB01 /* Reachability.m in Sources */,
+				D0381C300FE337E114698AC3F604FB91 /* BringgTracking-dummy.m in Sources */,
+				B226D4B05901E585DCED0A6C2C081E76 /* BringgTrackingClient.m in Sources */,
+				0806E15B4645EB8F83347EC6D5BCF556 /* GGBringgUtils.m in Sources */,
+				C9BF1B71917AB5279F71920B4469C109 /* GGCustomer.m in Sources */,
+				5F26D007EF96EA8B167833693A3BDC99 /* GGDriver.m in Sources */,
+				2DE26185B1819A33F60AFC2DE7B83C85 /* GGFindMe.m in Sources */,
+				300ADBE0F0DBAE3DCF168BD8DB424AD6 /* GGHTTPClientManager.m in Sources */,
+				9BE2A7048A9B5FAAEA70792F4E6BC859 /* GGItem.m in Sources */,
+				92F0357E1A98FFAF4871FD6AD7C70264 /* GGNetworkUtils.m in Sources */,
+				4808C04C861978EF8507C1A7A76D3A7B /* GGOrder.m in Sources */,
+				C2CFCCD51211EF167D9A676FAB126977 /* GGOrderBuilder.m in Sources */,
+				37F1596EE63BC01C3B3F6E7C21BF94FD /* GGRating.m in Sources */,
+				805F3346AF04234FA965D1B270EB7256 /* GGRealTimeAdapter.m in Sources */,
+				3379BF3791C0FAF456F3253C68ADE402 /* GGRealTimeMontior.m in Sources */,
+				F4BD1678F8AC722BCDA3AD641C83D4F5 /* GGSharedLocation.m in Sources */,
+				9F986D9DC82AF41E010CF704017D25FE /* GGTrackerManager.m in Sources */,
+				B0B2047FF2C93125FC97435B37F85AE3 /* GGWaypoint.m in Sources */,
+				773AF0B1DBCD3F019C84AE783F11259B /* NSObject+Observer.m in Sources */,
+				0F2E0FE2EDB271ED664B12F4A8E09F47 /* NSString+Extensions.m in Sources */,
+				B9CA6D3378D7A800430F4CB9F1494E7B /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -734,16 +663,16 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2DCB76AE2333E22DA97C2CF4A0B7163E /* Release */ = {
+		07043AF6C4E069B697C3770801CC436F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EE273CC60FDBC5662C437BD719916330 /* BringgTracking.xcconfig */;
+			baseConfigurationReference = 87354C4448B035CAF563FE94206D8FDD /* BringgTracking.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -756,16 +685,101 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/BringgTracking/BringgTracking.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = BringgTracking;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
+		};
+		089BBF631BF807BB5FA6EE15E3673FBD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 957476E793EECF804936D2F4FF2A9C13 /* Socket.IO-Client-Swift.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Socket.IO-Client-Swift/Socket.IO-Client-Swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Socket.IO-Client-Swift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Socket.IO-Client-Swift/Socket.IO-Client-Swift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SocketIO;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1C7D17A37D091C98D2F0DD886C3A9320 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
 		};
 		2EE328935BBB163D7720921416E3A614 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -850,6 +864,41 @@
 			};
 			name = Release;
 		};
+		3680E263A8865C3AD38AA54D591B4376 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 957476E793EECF804936D2F4FF2A9C13 /* Socket.IO-Client-Swift.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Socket.IO-Client-Swift/Socket.IO-Client-Swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Socket.IO-Client-Swift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Socket.IO-Client-Swift/Socket.IO-Client-Swift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SocketIO;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		45A3598ABDC5449AFEF98E4638FB3775 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3F92AF8CE8AEE3141540D5A19F51006F /* Pods-BringgTrackingSDKDemo.release.xcconfig */;
@@ -888,42 +937,9 @@
 			};
 			name = Release;
 		};
-		486A3384D2613132415BDD6D07122FC0 /* Debug */ = {
+		599025A0F424F6913A179B3CEC28E12E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EE273CC60FDBC5662C437BD719916330 /* BringgTracking.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/BringgTracking/BringgTracking-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/BringgTracking/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/BringgTracking/BringgTracking.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = BringgTracking;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		B82944A40EE5E1FB5CD07845E533B191 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9F9012D1CF800972BED941165B70893F /* Socket.IO-Client-Swift.xcconfig */;
+			baseConfigurationReference = 87354C4448B035CAF563FE94206D8FDD /* BringgTracking.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -937,17 +953,17 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Socket.IO-Client-Swift/Socket.IO-Client-Swift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Socket.IO-Client-Swift/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/BringgTracking/BringgTracking-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BringgTracking/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Socket.IO-Client-Swift/Socket.IO-Client-Swift.modulemap";
+				MODULEMAP_FILE = "Target Support Files/BringgTracking/BringgTracking.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = SocketIO;
+				PRODUCT_NAME = BringgTracking;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -955,97 +971,14 @@
 			};
 			name = Release;
 		};
-		C104F7F091290C3D1E248192F07FE689 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = NO;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_DEBUG=1",
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Debug;
-		};
-		EAD9A5F50093FF2344E7FC7216E8319C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9F9012D1CF800972BED941165B70893F /* Socket.IO-Client-Swift.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Socket.IO-Client-Swift/Socket.IO-Client-Swift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Socket.IO-Client-Swift/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Socket.IO-Client-Swift/Socket.IO-Client-Swift.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = SocketIO;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		0E3BD1AC34F034A6A5F2696B406C4EA5 /* Build configuration list for PBXNativeTarget "BringgTracking" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				486A3384D2613132415BDD6D07122FC0 /* Debug */,
-				2DCB76AE2333E22DA97C2CF4A0B7163E /* Release */,
+				07043AF6C4E069B697C3770801CC436F /* Debug */,
+				599025A0F424F6913A179B3CEC28E12E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1053,7 +986,7 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C104F7F091290C3D1E248192F07FE689 /* Debug */,
+				1C7D17A37D091C98D2F0DD886C3A9320 /* Debug */,
 				34FE9531DA9AF2820790339988D5FF41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1062,8 +995,8 @@
 		841F0B9491C749525B9E7006312EE2E4 /* Build configuration list for PBXNativeTarget "Socket.IO-Client-Swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EAD9A5F50093FF2344E7FC7216E8319C /* Debug */,
-				B82944A40EE5E1FB5CD07845E533B191 /* Release */,
+				089BBF631BF807BB5FA6EE15E3673FBD /* Debug */,
+				3680E263A8865C3AD38AA54D591B4376 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
