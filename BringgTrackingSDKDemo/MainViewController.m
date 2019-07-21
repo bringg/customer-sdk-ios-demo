@@ -10,9 +10,6 @@
 #define kBringgDeveloperToken @"{YOUR_DEV_ACCESS_TOKEN}"
 #define ARC4RANDOM_MAX      0x100000000
 
-
-
-
 @interface MainViewController ()
 
 
@@ -128,6 +125,18 @@
     }
     
  
+}
+
+- (IBAction)didPressCall:(id)sender {
+    if (!_currentMonitoredOrder || !_currentMonitoredOrder.sharedLocationUUID){
+        NSLog(@"please watch order before calling to a driver");
+        return;
+    }
+    else {
+        [self.trackingClient getMaskedNumberWithShareUUID:_currentMonitoredOrder.sharedLocationUUID forPhoneNumber:MY_PHONE_NUMBER withCompletionHandler:^(BOOL success, NSString * _Nullable phoneNumber, NSError * _Nullable error) {
+            NSLog(@"MaskedNumber:%@, error: %@ ,phoneNumber: %@", success ? @"success" : @"failed", error, phoneNumber);
+        }];
+    }
 }
 
 
@@ -259,15 +268,33 @@
     NSString *customerToken    = self.customerTokenField.text;
     NSString *sharedUUID    = self.shareUUIDField.text;
     
-    if (customerToken == nil || customerToken.length == 0 || sharedUUID == nil || sharedUUID.length == 0) {
-        UIAlertView  *alertView = [[UIAlertView alloc] initWithTitle:@"General Service Error" message:@"Customer Token and Shared UUID cannot be empty" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-        
+    if (sharedUUID == nil || sharedUUID.length == 0) {
+        UIAlertView  *alertView = [[UIAlertView alloc] initWithTitle:@"General Service Error" message:@"Shared UUID cannot be empty" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         [alertView show];
         return;
     }
+    if (customerToken == nil || customerToken.length == 0) {
+        UIAlertController * alert=   [UIAlertController alertControllerWithTitle:@"Info"
+                                                                         message:@"Do you want to watch order with shared UUID only ?"
+                                                                  preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 [self.trackingClient startWatchingOrderWithShareUUID:sharedUUID delegate:self];
+                                 [alert dismissViewControllerAnimated:YES completion:nil];
+                             }];
+        UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault
+                                 handler:^(UIAlertAction * action)
+                                 {
+                                     [alert dismissViewControllerAnimated:YES completion:nil];
+                                 }];
+        [alert addAction:ok];
+        [alert addAction:cancel];
+        [self presentViewController:alert animated:YES completion:nil];
+    } else {
+        [self.trackingClient startWatchingOrderWithShareUUID:sharedUUID customerAccessToken:customerToken delegate:self];
+    }
     
-    
-    [self.trackingClient startWatchingOrderWithShareUUID:sharedUUID customerAccessToken:customerToken delegate:self];
    
 }
 

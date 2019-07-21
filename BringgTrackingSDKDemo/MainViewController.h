@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *connectionButton;
 @property (weak, nonatomic) IBOutlet UILabel *orderLabel;
 @property (weak, nonatomic) IBOutlet UITextField *orderField;
+@property (weak, nonatomic) IBOutlet UIButton *callButton;
 
 
 @property (weak, nonatomic) IBOutlet UIButton *orderButton;
