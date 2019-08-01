@@ -1,12 +1,12 @@
 PODS:
-  - BringgTracking (1.20.0):
+  - BringgTracking (1.21.0):
     - Socket.IO-Client-Swift (~> 15.1.0)
   - Socket.IO-Client-Swift (15.1.0):
     - Starscream (~> 3.1)
   - Starscream (3.1.0)
 
 DEPENDENCIES:
-  - BringgTracking (~> 1.20.0)
+  - BringgTracking (~> 1.21.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -15,10 +15,10 @@ SPEC REPOS:
     - Starscream
 
 SPEC CHECKSUMS:
-  BringgTracking: 325fa975fa7986e3c7b552bf8359ef0353319068
+  BringgTracking: d64b37d63a60c9b10ff8edfd4c6c5ce00b70dccf
   Socket.IO-Client-Swift: 7cb44c0ffb86e158cee32d0642d30ec5fdcf8f61
   Starscream: 08172b481e145289c4930cb567230fb55897cfa4
 
-PODFILE CHECKSUM: 59fcbbf2e95349ee4fac47927acb7aa89d2b4188
+PODFILE CHECKSUM: fbe0e6669d078015cee339d365c3112602a0e8d6
 
 COCOAPODS: 1.7.3
