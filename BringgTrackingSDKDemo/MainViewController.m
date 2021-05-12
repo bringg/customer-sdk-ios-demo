@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #define kBringgDeveloperToken @"{YOUR_DEV_ACCESS_TOKEN}"
 #define ARC4RANDOM_MAX      0x100000000
+#define MY_PHONE_NUMBER @""
 
 @interface MainViewController ()
 
